@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "fixtures": "node scripts/generate-fixtures.mjs",
     "lint:copy": "node scripts/lint-copy.mjs",
-    "build": "npm run lint:copy && astro build",
+    "build": "npm run lint:copy && astro build && npm run check:links",
+    "check:links": "node scripts/check-links.mjs",
     "preview": "astro preview",
     "indexnow": "node scripts/indexnow-submit.mjs"
   },

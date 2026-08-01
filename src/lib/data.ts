@@ -140,10 +140,9 @@ export function packageCards(citySlug: string): PackageCard[] {
     if (offer.kind !== 'package' || offer.city !== citySlug) continue;
     const pkg = packages.find((p) => p.id === offer.package_id);
     if (!pkg) continue;
-    const verifiedParams = pkg.panels.reduce(
-      (sum, slug) => sum + (panelsBySlug[slug]?.params.length ?? 0),
-      0,
-    );
+    const verifiedParams =
+      pkg.panels.reduce((sum, slug) => sum + (panelsBySlug[slug]?.params.length ?? 0), 0) +
+      (pkg.biomarkers?.length ?? 0);
     const enriched = enrich(offer);
     cards.push({
       pkg,
@@ -158,11 +157,32 @@ export function packageCards(citySlug: string): PackageCard[] {
 export function coverageRows(cards: PackageCard[]): CoverageRow[] {
   const slugs = new Set<string>();
   for (const c of cards) for (const s of c.pkg.panels) slugs.add(s);
-  const ordered = panels.filter((p) => slugs.has(p.slug));
-  return ordered.map((panel) => ({
-    panel,
-    included: cards.map((c) => c.pkg.panels.includes(panel.slug)),
-  }));
+  const rows: CoverageRow[] = panels
+    .filter((p) => slugs.has(p.slug))
+    .map((panel) => ({
+      panel,
+      included: cards.map((c) => c.pkg.panels.includes(panel.slug)),
+    }));
+
+  // Standalone biomarkers get their own single-parameter rows. Without this a
+  // package that includes only vitamin D would either vanish from the matrix
+  // or, worse, be shown as covering the whole vitamins panel.
+  const singles = new Map<string, string>();
+  for (const c of cards) {
+    for (const entry of c.pkg.biomarkers ?? []) {
+      const [slug, name] = entry.split('|');
+      if (!singles.has(slug)) singles.set(slug, name ?? slug);
+    }
+  }
+  for (const [slug, name] of singles) {
+    rows.push({
+      panel: { slug, name, params: [name] },
+      included: cards.map((c) =>
+        (c.pkg.biomarkers ?? []).some((b) => b.split('|')[0] === slug),
+      ),
+    });
+  }
+  return rows;
 }
 
 // ---- national ----
@@ -220,7 +240,10 @@ export function allRoutes(): RouteDef[] {
     }
   }
   for (const test of tests) {
-    routes.push({ slug: testNationalSlug(test.slug), kind: 'test-national', testSlug: test.slug });
+    // National guide pages need at least one live price behind them.
+    if (nationalRange(test.slug) !== null) {
+      routes.push({ slug: testNationalSlug(test.slug), kind: 'test-national', testSlug: test.slug });
+    }
     for (const city of cities) {
       const rows = testOffers(test.slug, city.slug);
       const distinct = new Set(rows.map((r) => r.offer.provider)).size;
@@ -236,6 +259,27 @@ export function allRoutes(): RouteDef[] {
   }
   routesCache = routes;
   return routes;
+}
+
+/** Tests that actually have a published page in this city. Link modules must
+ *  use this — linking to a page the publish gate removed creates a 404. */
+export function publishedTestsIn(citySlug: string): TestDef[] {
+  const slugs = new Set(
+    allRoutes()
+      .filter((r) => r.kind === 'test-city' && r.citySlug === citySlug)
+      .map((r) => r.testSlug),
+  );
+  return tests.filter((t) => slugs.has(t.slug));
+}
+
+/** Cities where this test has a published page. */
+export function publishedCitiesFor(testSlug: string): City[] {
+  const slugs = new Set(
+    allRoutes()
+      .filter((r) => r.kind === 'test-city' && r.testSlug === testSlug)
+      .map((r) => r.citySlug),
+  );
+  return cities.filter((c) => slugs.has(c.slug));
 }
 
 /** Newest last_verified across a set of offers — feeds sitemap lastmod. */

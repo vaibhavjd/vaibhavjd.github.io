@@ -93,6 +93,9 @@ export interface PackageDef {
   name: string;
   claimed_params: number;
   panels: string[];
+  /** Single-biomarker inclusions as "slug|Display Name" — a package with
+   *  vitamin D alone must not be shown as covering the whole vitamins panel. */
+  biomarkers?: string[];
   consult_included: boolean;
   smart_report: boolean;
   fasting_required: boolean;

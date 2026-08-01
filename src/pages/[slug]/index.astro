@@ -20,6 +20,8 @@ import {
   coverageRows,
   cityRangesFor,
   nationalRange,
+  publishedTestsIn,
+  publishedCitiesFor,
   hubSlug,
   fbcSlug,
   testCitySlug,
@@ -210,13 +212,13 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
       <FaqList faqs={tcFaqs} heading={`${test.short} in ${city.name}: quick answers`} />
       <LinkGrid
         heading={`${test.short} test in other cities`}
-        links={otherCities
-          .filter((c) => allRoutes().some((r) => r.slug === testCitySlug(test.slug, c.slug)))
+        links={publishedCitiesFor(test.slug)
+          .filter((c) => c.slug !== city.slug)
           .map((c) => ({ href: `/${testCitySlug(test.slug, c.slug)}/`, label: c.name }))}
       />
       <LinkGrid
         heading={`Other tests in ${city.name}`}
-        links={tests
+        links={publishedTestsIn(city.slug)
           .filter((t) => t.slug !== test.slug)
           .slice(0, 10)
           .map((t) => ({ href: `/${testCitySlug(t.slug, city.slug)}/`, label: `${t.short} test` }))}
@@ -235,14 +237,18 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
       <FaqList faqs={fbcFaqs} heading={`Full body checkup in ${city.name}: quick answers`} />
       <LinkGrid
         heading="Full body checkup in other cities"
-        links={otherCities.map((c) => ({ href: `/${fbcSlug(c.slug)}/`, label: c.name }))}
+        links={otherCities
+          .filter((c) => allRoutes().some((r) => r.slug === fbcSlug(c.slug)))
+          .map((c) => ({ href: `/${fbcSlug(c.slug)}/`, label: c.name }))}
       />
       <LinkGrid
         heading={`Popular tests in ${city.name}`}
-        links={tests.slice(0, 10).map((t) => ({
-          href: `/${testCitySlug(t.slug, city.slug)}/`,
-          label: `${t.short} test`,
-        }))}
+        links={publishedTestsIn(city.slug)
+          .slice(0, 10)
+          .map((t) => ({
+            href: `/${testCitySlug(t.slug, city.slug)}/`,
+            label: `${t.short} test`,
+          }))}
       />
     </div>
   )}

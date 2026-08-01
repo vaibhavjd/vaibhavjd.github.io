@@ -183,7 +183,7 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
                   <th scope="row" class="sticky left-0 bg-white p-3 text-left font-medium">
                     {row.name}
                     <span class="num block text-xs font-normal text-ink-soft">
-                      {row.params} parameters
+                      {row.params} {row.params === 1 ? 'parameter' : 'parameters'}
                     </span>
                   </th>
                   {visible.map(({ p, i }) => (
