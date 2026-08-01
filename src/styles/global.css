@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Brand tokens — single source of truth for the visual system.
+   Navy = brand, amber = prices/savings only, green = "cheapest/best value"
+   chips only. Keep it that disciplined. */
+@theme {
+  --color-navy: #17325b;
+  --color-navy-800: #1d3f72;
+  --color-navy-100: #e8edf5;
+  --color-amber: #f59e0b;
+  --color-amber-100: #fef3c7;
+  --color-good: #16a34a;
+  --color-good-100: #dcfce7;
+  --color-paper: #fafaf8;
+  --color-ink: #1a202c;
+  --color-ink-soft: #4a5568;
+  --color-line: #e2e8f0;
+  --font-heading: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+}
+
+/* Every price on the site aligns because of this. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .chip,
+  .chip-good,
+  .chip-trust,
+  .chip-muted,
+  .chip-amber {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap;
+  }
+  .chip-good {
+    @apply bg-good-100 text-good;
+  }
+  .chip-trust {
+    @apply bg-navy-100 text-navy;
+  }
+  .chip-muted {
+    @apply bg-gray-100 text-ink-soft;
+  }
+  .chip-amber {
+    @apply bg-amber-100 text-amber-700;
+  }
+  .btn-primary {
+    @apply inline-block rounded-lg bg-navy px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-navy-800;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-white p-4;
+  }
+  .table-wrap {
+    @apply overflow-x-auto rounded-xl border border-line bg-white;
+  }
+  .prose-tight p {
+    @apply my-3 leading-relaxed;
+  }
+}

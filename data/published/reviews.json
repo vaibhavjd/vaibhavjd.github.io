@@ -1,0 +1,1298 @@
+[
+  {
+    "provider": "thyrocare",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.6,
+    "count": 7680,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-mumbai"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.8,
+    "count": 1574,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-delhi"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 3.7,
+    "count": 15605,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-bengaluru"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.2,
+    "count": 22170,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-hyderabad"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.6,
+    "count": 4787,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-chennai"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.6,
+    "count": 6773,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-kolkata"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "pune",
+    "source": "google",
+    "rating": 4.5,
+    "count": 5984,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-pune"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.2,
+    "count": 7830,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-ahmedabad"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 3.8,
+    "count": 3998,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-jaipur"
+  },
+  {
+    "provider": "thyrocare",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.3,
+    "count": 12959,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-thyrocare-lucknow"
+  },
+  {
+    "provider": "thyrocare",
+    "city": null,
+    "source": "play",
+    "rating": 4.1,
+    "count": 241447,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-thyrocare"
+  },
+  {
+    "provider": "thyrocare",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.3,
+    "count": 17982,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-thyrocare"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 3.6,
+    "count": 5984,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-mumbai"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.1,
+    "count": 3281,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-delhi"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.6,
+    "count": 8552,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-bengaluru"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 3.8,
+    "count": 12712,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-hyderabad"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.5,
+    "count": 12264,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-chennai"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.4,
+    "count": 2671,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-kolkata"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.8,
+    "count": 13122,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-pune"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.1,
+    "count": 10733,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-ahmedabad"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.3,
+    "count": 12470,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-jaipur"
+  },
+  {
+    "provider": "redcliffe",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.8,
+    "count": 17458,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-redcliffe-lucknow"
+  },
+  {
+    "provider": "redcliffe",
+    "city": null,
+    "source": "play",
+    "rating": 4.6,
+    "count": 33812,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-redcliffe"
+  },
+  {
+    "provider": "redcliffe",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.4,
+    "count": 22939,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-redcliffe"
+  },
+  {
+    "provider": "healthians",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 3.7,
+    "count": 16549,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-mumbai"
+  },
+  {
+    "provider": "healthians",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.5,
+    "count": 16006,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-delhi"
+  },
+  {
+    "provider": "healthians",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 3.8,
+    "count": 2992,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-bengaluru"
+  },
+  {
+    "provider": "healthians",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 3.7,
+    "count": 5576,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-hyderabad"
+  },
+  {
+    "provider": "healthians",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.6,
+    "count": 21624,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-chennai"
+  },
+  {
+    "provider": "healthians",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.1,
+    "count": 17072,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-kolkata"
+  },
+  {
+    "provider": "healthians",
+    "city": "pune",
+    "source": "google",
+    "rating": 4.8,
+    "count": 19695,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-pune"
+  },
+  {
+    "provider": "healthians",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 3.7,
+    "count": 11760,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-ahmedabad"
+  },
+  {
+    "provider": "healthians",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 3.7,
+    "count": 21856,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-jaipur"
+  },
+  {
+    "provider": "healthians",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4,
+    "count": 15058,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-healthians-lucknow"
+  },
+  {
+    "provider": "healthians",
+    "city": null,
+    "source": "play",
+    "rating": 4.2,
+    "count": 9785,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-healthians"
+  },
+  {
+    "provider": "healthians",
+    "city": null,
+    "source": "appstore",
+    "rating": 3.8,
+    "count": 3448,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-healthians"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.4,
+    "count": 773,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-mumbai"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.7,
+    "count": 14321,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-delhi"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 3.7,
+    "count": 8300,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-bengaluru"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.5,
+    "count": 21483,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-hyderabad"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.5,
+    "count": 2975,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-chennai"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 3.7,
+    "count": 22606,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-kolkata"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "pune",
+    "source": "google",
+    "rating": 4.2,
+    "count": 22235,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-pune"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 3.8,
+    "count": 19701,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-ahmedabad"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.4,
+    "count": 11564,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-jaipur"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.4,
+    "count": 17590,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-tata-1mg-lucknow"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": null,
+    "source": "play",
+    "rating": 4.2,
+    "count": 332141,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-tata-1mg"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": null,
+    "source": "appstore",
+    "rating": 3.8,
+    "count": 7543,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-tata-1mg"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4,
+    "count": 3557,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-mumbai"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.5,
+    "count": 13403,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-delhi"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 3.8,
+    "count": 2704,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-bengaluru"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4,
+    "count": 22477,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-hyderabad"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "chennai",
+    "source": "google",
+    "rating": 3.9,
+    "count": 2921,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-chennai"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 3.8,
+    "count": 8707,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-kolkata"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.8,
+    "count": 15307,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-pune"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 3.9,
+    "count": 6505,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-ahmedabad"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.1,
+    "count": 14734,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-jaipur"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.7,
+    "count": 16269,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-pharmeasy-labs-lucknow"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": null,
+    "source": "play",
+    "rating": 4.3,
+    "count": 145394,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-pharmeasy-labs"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.2,
+    "count": 21305,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-pharmeasy-labs"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.7,
+    "count": 2993,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-mumbai"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.3,
+    "count": 8145,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-delhi"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.2,
+    "count": 20403,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-bengaluru"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.8,
+    "count": 8952,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-hyderabad"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.5,
+    "count": 13400,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-chennai"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4,
+    "count": 18549,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-kolkata"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "pune",
+    "source": "google",
+    "rating": 4.1,
+    "count": 22397,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-pune"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.7,
+    "count": 10298,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-ahmedabad"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.5,
+    "count": 5440,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-jaipur"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.3,
+    "count": 6798,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-dr-lal-pathlabs-lucknow"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": null,
+    "source": "play",
+    "rating": 3.9,
+    "count": 287553,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-dr-lal-pathlabs"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.5,
+    "count": 5209,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-dr-lal-pathlabs"
+  },
+  {
+    "provider": "metropolis",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 3.7,
+    "count": 9770,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-mumbai"
+  },
+  {
+    "provider": "metropolis",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.7,
+    "count": 17398,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-delhi"
+  },
+  {
+    "provider": "metropolis",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.5,
+    "count": 17455,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-bengaluru"
+  },
+  {
+    "provider": "metropolis",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 3.9,
+    "count": 11086,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-hyderabad"
+  },
+  {
+    "provider": "metropolis",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.3,
+    "count": 24022,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-chennai"
+  },
+  {
+    "provider": "metropolis",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.7,
+    "count": 23246,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-kolkata"
+  },
+  {
+    "provider": "metropolis",
+    "city": "pune",
+    "source": "google",
+    "rating": 4,
+    "count": 6666,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-pune"
+  },
+  {
+    "provider": "metropolis",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.6,
+    "count": 21249,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-ahmedabad"
+  },
+  {
+    "provider": "metropolis",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.1,
+    "count": 18484,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-jaipur"
+  },
+  {
+    "provider": "metropolis",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.5,
+    "count": 16198,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-metropolis-lucknow"
+  },
+  {
+    "provider": "metropolis",
+    "city": null,
+    "source": "play",
+    "rating": 4.4,
+    "count": 9053,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-metropolis"
+  },
+  {
+    "provider": "metropolis",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.3,
+    "count": 20633,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-metropolis"
+  },
+  {
+    "provider": "agilus",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.6,
+    "count": 12176,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-mumbai"
+  },
+  {
+    "provider": "agilus",
+    "city": "delhi",
+    "source": "google",
+    "rating": 3.6,
+    "count": 21988,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-delhi"
+  },
+  {
+    "provider": "agilus",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.5,
+    "count": 2906,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-bengaluru"
+  },
+  {
+    "provider": "agilus",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.3,
+    "count": 6886,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-hyderabad"
+  },
+  {
+    "provider": "agilus",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4,
+    "count": 24306,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-chennai"
+  },
+  {
+    "provider": "agilus",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.1,
+    "count": 12953,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-kolkata"
+  },
+  {
+    "provider": "agilus",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.9,
+    "count": 2557,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-pune"
+  },
+  {
+    "provider": "agilus",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.7,
+    "count": 10925,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-ahmedabad"
+  },
+  {
+    "provider": "agilus",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.1,
+    "count": 1415,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-jaipur"
+  },
+  {
+    "provider": "agilus",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.7,
+    "count": 9807,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-agilus-lucknow"
+  },
+  {
+    "provider": "agilus",
+    "city": null,
+    "source": "play",
+    "rating": 4.4,
+    "count": 164422,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-agilus"
+  },
+  {
+    "provider": "agilus",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.5,
+    "count": 9702,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-agilus"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.3,
+    "count": 3431,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-mumbai"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.5,
+    "count": 12937,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-delhi"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.5,
+    "count": 21663,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-bengaluru"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.6,
+    "count": 9611,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-hyderabad"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "chennai",
+    "source": "google",
+    "rating": 3.9,
+    "count": 5574,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-chennai"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.6,
+    "count": 16867,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-kolkata"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.7,
+    "count": 13974,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-pune"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4.2,
+    "count": 13098,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-ahmedabad"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.6,
+    "count": 24288,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-jaipur"
+  },
+  {
+    "provider": "apollo-247",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4,
+    "count": 5419,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-apollo-247-lucknow"
+  },
+  {
+    "provider": "apollo-247",
+    "city": null,
+    "source": "play",
+    "rating": 4.7,
+    "count": 118884,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-apollo-247"
+  },
+  {
+    "provider": "apollo-247",
+    "city": null,
+    "source": "appstore",
+    "rating": 4,
+    "count": 25847,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-apollo-247"
+  },
+  {
+    "provider": "max-lab",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 3.7,
+    "count": 23858,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-mumbai"
+  },
+  {
+    "provider": "max-lab",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4.4,
+    "count": 5248,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-delhi"
+  },
+  {
+    "provider": "max-lab",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4,
+    "count": 1999,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-bengaluru"
+  },
+  {
+    "provider": "max-lab",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.4,
+    "count": 15578,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-hyderabad"
+  },
+  {
+    "provider": "max-lab",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.4,
+    "count": 9253,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-chennai"
+  },
+  {
+    "provider": "max-lab",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.8,
+    "count": 9047,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-kolkata"
+  },
+  {
+    "provider": "max-lab",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.7,
+    "count": 478,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-pune"
+  },
+  {
+    "provider": "max-lab",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 4,
+    "count": 1318,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-ahmedabad"
+  },
+  {
+    "provider": "max-lab",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.2,
+    "count": 1147,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-jaipur"
+  },
+  {
+    "provider": "max-lab",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.4,
+    "count": 20395,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-max-lab-lucknow"
+  },
+  {
+    "provider": "max-lab",
+    "city": null,
+    "source": "play",
+    "rating": 4.1,
+    "count": 12554,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-max-lab"
+  },
+  {
+    "provider": "max-lab",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.4,
+    "count": 30461,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-max-lab"
+  },
+  {
+    "provider": "orange-health",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.8,
+    "count": 14835,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-mumbai"
+  },
+  {
+    "provider": "orange-health",
+    "city": "delhi",
+    "source": "google",
+    "rating": 4,
+    "count": 10778,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-delhi"
+  },
+  {
+    "provider": "orange-health",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4.7,
+    "count": 16155,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-bengaluru"
+  },
+  {
+    "provider": "orange-health",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.5,
+    "count": 4587,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-hyderabad"
+  },
+  {
+    "provider": "orange-health",
+    "city": "chennai",
+    "source": "google",
+    "rating": 3.7,
+    "count": 17051,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-chennai"
+  },
+  {
+    "provider": "orange-health",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 4.1,
+    "count": 11743,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-kolkata"
+  },
+  {
+    "provider": "orange-health",
+    "city": "pune",
+    "source": "google",
+    "rating": 4.6,
+    "count": 1549,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-pune"
+  },
+  {
+    "provider": "orange-health",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 3.7,
+    "count": 5656,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-ahmedabad"
+  },
+  {
+    "provider": "orange-health",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.7,
+    "count": 16336,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-jaipur"
+  },
+  {
+    "provider": "orange-health",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 3.7,
+    "count": 7672,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-orange-health-lucknow"
+  },
+  {
+    "provider": "orange-health",
+    "city": null,
+    "source": "play",
+    "rating": 4.1,
+    "count": 73390,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-orange-health"
+  },
+  {
+    "provider": "orange-health",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.2,
+    "count": 13814,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-orange-health"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "mumbai",
+    "source": "google",
+    "rating": 4.7,
+    "count": 7524,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-mumbai"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "delhi",
+    "source": "google",
+    "rating": 3.8,
+    "count": 18471,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-delhi"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "bengaluru",
+    "source": "google",
+    "rating": 4,
+    "count": 11918,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-bengaluru"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "hyderabad",
+    "source": "google",
+    "rating": 4.2,
+    "count": 6844,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-hyderabad"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "chennai",
+    "source": "google",
+    "rating": 4.6,
+    "count": 2543,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-chennai"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "kolkata",
+    "source": "google",
+    "rating": 3.7,
+    "count": 17454,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-kolkata"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "pune",
+    "source": "google",
+    "rating": 3.6,
+    "count": 8259,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-pune"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "ahmedabad",
+    "source": "google",
+    "rating": 3.6,
+    "count": 11319,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-ahmedabad"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "jaipur",
+    "source": "google",
+    "rating": 4.3,
+    "count": 12614,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-jaipur"
+  },
+  {
+    "provider": "medibuddy",
+    "city": "lucknow",
+    "source": "google",
+    "rating": 4.5,
+    "count": 11057,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-place-medibuddy-lucknow"
+  },
+  {
+    "provider": "medibuddy",
+    "city": null,
+    "source": "play",
+    "rating": 4.2,
+    "count": 105744,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-play-medibuddy"
+  },
+  {
+    "provider": "medibuddy",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.2,
+    "count": 24441,
+    "fetched_at": "2026-07-28",
+    "ref": "fixture-ios-medibuddy"
+  }
+]

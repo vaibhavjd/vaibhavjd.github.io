@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="How we compare labs — editorial policy"
+  description="Where our prices come from, how often they update, how rankings work, and how to report an error."
+  path="/editorial-policy/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'How we compare', path: '/editorial-policy/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">How we compare</h1>
+
+    <h2 class="mt-6 text-xl font-bold">Where prices come from</h2>
+    <p>
+      Automated checks read each lab's public website — the same pages you'd
+      see as a customer. We record the listed price, MRP, home-collection fee,
+      any platform charges, and coupon codes the lab itself advertises. Fees a
+      lab only reveals at checkout are marked "shown at checkout" rather than
+      guessed.
+    </p>
+
+    <h2 class="mt-6 text-xl font-bold">How often prices update</h2>
+    <p>
+      Nightly checks cover a rotating set of labs, so every lab is re-verified
+      at least weekly. Each row shows its own "verified" date. Rows older than
+      14 days get a stale marker; older than 30 days, we pull them off the page
+      entirely.
+    </p>
+
+    <h2 class="mt-6 text-xl font-bold">How rankings work</h2>
+    <p>
+      Default sort is lowest total payable: listed price, plus collection and
+      platform fees, minus advertised coupons. You can re-sort by coverage or
+      price-per-parameter. No lab can pay to move up; if sponsored placement
+      ever exists, it will be labelled on the listing itself.
+    </p>
+
+    <h2 class="mt-6 text-xl font-bold">How package contents are verified</h2>
+    <p>
+      We map each package's published contents onto standard panels (CBC, lipid
+      profile, liver function and so on). Where our verified count differs from
+      the lab's claimed count, both numbers are shown. Mappings a human has
+      checked carry a "verified" mark; the rest are automated and flagged for
+      review.
+    </p>
+
+    <h2 class="mt-6 text-xl font-bold">Ratings</h2>
+    <p>
+      Star ratings come from Google, the Play Store and the App Store, each
+      labelled with its source. We don't collect or edit reviews ourselves and
+      we don't fold ratings into the price ranking.
+    </p>
+
+    <h2 class="mt-6 text-xl font-bold">Mistakes</h2>
+    <p>
+      Prices change and scrapers miss things. If a number here doesn't match
+      the lab's site, <a href="/contact/" class="text-navy underline">tell us</a> —
+      corrections ship within a working day. Labs can use the same address for
+      data disputes or removal requests.
+    </p>
+  </div>
+</BaseLayout>

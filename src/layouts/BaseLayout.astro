@@ -1,0 +1,131 @@
+---
+import '../styles/global.css';
+import { meta } from '@lib/data';
+import { absUrl, breadcrumbLd, type Crumb } from '@lib/seo';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  crumbs?: Crumb[];
+  jsonLd?: object[];
+}
+
+const { title, description, path, crumbs = [], jsonLd = [] } = Astro.props;
+
+const staging = import.meta.env.PUBLIC_STAGING !== 'false';
+const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
+const gscToken = import.meta.env.PUBLIC_GSC_VERIFICATION || '';
+const bingToken = import.meta.env.PUBLIC_BING_VERIFICATION || '';
+const canonical = absUrl(path);
+const isFixture = meta.data_mode === 'fixture';
+
+const ldBlocks = [...(crumbs.length > 1 ? [breadcrumbLd(crumbs)] : []), ...jsonLd];
+
+const gtmHead = gtmId
+  ? `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`
+  : '';
+
+// dataLayer events work with or without GTM present; GTM just picks them up.
+const trackScript = `window.dataLayer=window.dataLayer||[];
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-outbound]');if(!a)return;window.dataLayer.push({event:'outbound_click',provider:a.dataset.provider||null,test:a.dataset.test||null,city:a.dataset.city||null,position:a.dataset.position||null});});
+document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.matches&&d.matches('details[data-track]')&&d.open){window.dataLayer.push({event:d.dataset.track,provider:d.dataset.provider||null});}},true);`;
+---
+
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {staging && <meta name="robots" content="noindex, nofollow" />}
+    {gscToken && <meta name="google-site-verification" content={gscToken} />}
+    {bingToken && <meta name="msvalidate.01" content={bingToken} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="My Lab Tests" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    />
+    {gtmHead && <script is:inline set:html={gtmHead} />}
+    {ldBlocks.map((ld) => (
+      <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    ))}
+  </head>
+  <body class="min-h-screen bg-paper text-ink">
+    {gtmId && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        />
+      </noscript>
+    )}
+
+    {isFixture && (
+      <div class="bg-amber-100 px-4 py-2 text-center text-sm text-ink">
+        <strong>Sample data preview.</strong> Prices on this staging build are
+        placeholders while live lab feeds are wired up — don't book off these
+        numbers yet.
+      </div>
+    )}
+
+    <header class="border-b border-line bg-white">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+        <a href="/" class="no-underline">
+          <span class="font-heading text-xl font-extrabold text-navy">My Lab Tests</span>
+          <span class="ml-2 hidden text-sm text-ink-soft sm:inline">Compare lab tests. Pay the right price.</span>
+        </a>
+        <nav class="flex items-center gap-4 text-sm font-medium">
+          <a href="/#tests" class="text-navy no-underline hover:underline">Tests</a>
+          <a href="/#cities" class="text-navy no-underline hover:underline">Cities</a>
+          <a href="/#checkups" class="text-navy no-underline hover:underline">Full body checkup</a>
+          <a href="/about/" class="text-navy no-underline hover:underline">About</a>
+        </nav>
+      </div>
+    </header>
+
+    {crumbs.length > 1 && <Breadcrumbs crumbs={crumbs} />}
+
+    <main class="mx-auto max-w-6xl px-4 py-6">
+      <slot />
+    </main>
+
+    <footer class="mt-12 border-t border-line bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-ink-soft">
+        <p class="rounded-lg bg-navy-100 p-3 text-navy">
+          My Lab Tests compares prices and service details; it does not give
+          medical advice. Test results need a doctor's interpretation. If you're
+          unwell, see a doctor first — don't self-prescribe tests or treatment.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+          <a href="/about/" class="hover:underline">About</a>
+          <a href="/editorial-policy/" class="hover:underline">How we compare</a>
+          <a href="/contact/" class="hover:underline">Contact</a>
+          <a href="/disclaimer/" class="hover:underline">Disclaimer</a>
+          <a href="/privacy/" class="hover:underline">Privacy</a>
+          <a href="/terms/" class="hover:underline">Terms</a>
+        </div>
+        <p class="mt-4">
+          Ratings shown come from Google, the Play Store or the App Store, with
+          attribution on each. Booking happens on the lab's own website — we
+          link out and never collect payment.
+        </p>
+        <p class="mt-2">© 2026 My Lab Tests · Data updated {meta.generated_at.slice(0, 10)}</p>
+      </div>
+    </footer>
+
+    <script is:inline set:html={trackScript} />
+  </body>
+</html>

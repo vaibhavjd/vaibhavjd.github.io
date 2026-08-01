@@ -1,0 +1,332 @@
+[
+  {
+    "id": "thyrocare-fbc-1",
+    "provider": "thyrocare",
+    "name": "Aarogyam Basic",
+    "claimed_params": 61,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes"
+    ],
+    "consult_included": false,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "thyrocare-fbc-2",
+    "provider": "thyrocare",
+    "name": "Aarogyam Advanced",
+    "claimed_params": 84,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "iron",
+      "urine",
+      "cardiac-risk"
+    ],
+    "consult_included": false,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "redcliffe-fbc-1",
+    "provider": "redcliffe",
+    "name": "Smart Full Body Checkup",
+    "claimed_params": 66,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "urine"
+    ],
+    "consult_included": true,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "redcliffe-fbc-2",
+    "provider": "redcliffe",
+    "name": "Smart Full Body Advanced",
+    "claimed_params": 88,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "iron",
+      "urine",
+      "inflammation"
+    ],
+    "consult_included": true,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "healthians-fbc-1",
+    "provider": "healthians",
+    "name": "Full Body Checkup Essential",
+    "claimed_params": 61,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes"
+    ],
+    "consult_included": true,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "healthians-fbc-2",
+    "provider": "healthians",
+    "name": "Full Body Checkup Total",
+    "claimed_params": 90,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "iron",
+      "electrolytes",
+      "urine"
+    ],
+    "consult_included": true,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "tata-1mg-fbc-1",
+    "provider": "tata-1mg",
+    "name": "Full Body Checkup Essential",
+    "claimed_params": 66,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "urine"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "pharmeasy-labs-fbc-1",
+    "provider": "pharmeasy-labs",
+    "name": "Full Body Checkup Advanced",
+    "claimed_params": 65,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "dr-lal-pathlabs-fbc-1",
+    "provider": "dr-lal-pathlabs",
+    "name": "Swasthfit Full Body 1",
+    "claimed_params": 61,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "dr-lal-pathlabs-fbc-2",
+    "provider": "dr-lal-pathlabs",
+    "name": "Swasthfit Full Body 3",
+    "claimed_params": 92,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "iron",
+      "electrolytes",
+      "urine",
+      "inflammation"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "metropolis-fbc-1",
+    "provider": "metropolis",
+    "name": "TruHealth Prime",
+    "claimed_params": 66,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "urine"
+    ],
+    "consult_included": false,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "agilus-fbc-1",
+    "provider": "agilus",
+    "name": "Complete Health Screen",
+    "claimed_params": 68,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "urine"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "apollo-247-fbc-1",
+    "provider": "apollo-247",
+    "name": "Apollo Full Body Check Essential",
+    "claimed_params": 66,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "urine"
+    ],
+    "consult_included": true,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "max-lab-fbc-1",
+    "provider": "max-lab",
+    "name": "Max Whole Body Screen",
+    "claimed_params": 61,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes"
+    ],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "orange-health-fbc-1",
+    "provider": "orange-health",
+    "name": "Smart Full Body Checkup",
+    "claimed_params": 70,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes",
+      "vitamins",
+      "urine"
+    ],
+    "consult_included": false,
+    "smart_report": true,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "medibuddy-fbc-1",
+    "provider": "medibuddy",
+    "name": "Full Body Health Checkup",
+    "claimed_params": 61,
+    "panels": [
+      "cbc",
+      "lipid",
+      "lft",
+      "kft",
+      "thyroid",
+      "diabetes"
+    ],
+    "consult_included": true,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  }
+]

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkGrid from '@components/LinkGrid.astro';
+import {
+  cities,
+  tests,
+  nationalRange,
+  packageCards,
+  hubSlug,
+  fbcSlug,
+  testNationalSlug,
+} from '@lib/data';
+import { formatINR } from '@lib/format';
+import { organizationLd, websiteLd } from '@lib/seo';
+
+const testLinks = tests
+  .map((t) => {
+    const r = nationalRange(t.slug);
+    return r
+      ? { href: `/${testNationalSlug(t.slug)}/`, label: `${t.short} test`, sub: `from ${formatINR(r.min)}` }
+      : null;
+  })
+  .filter((x): x is NonNullable<typeof x> => x !== null);
+
+const cityLinks = cities.map((c) => ({
+  href: `/${hubSlug(c.slug)}/`,
+  label: c.name,
+  sub: c.state,
+}));
+
+const fbcLinks = cities
+  .map((c) => {
+    const cards = packageCards(c.slug);
+    return cards.length
+      ? { href: `/${fbcSlug(c.slug)}/`, label: c.name, sub: `from ${formatINR(cards[0].enriched.total)}` }
+      : null;
+  })
+  .filter((x): x is NonNullable<typeof x> => x !== null);
+
+const title = 'My Lab Tests — compare lab test prices across India’s top labs';
+const description =
+  'One place to compare lab tests and full body checkups across Thyrocare, Redcliffe, Dr Lal PathLabs, Healthians, Tata 1mg and more — all-in prices with collection fees, coupons, report times and ratings, city by city.';
+---
+
+<BaseLayout title={title} description={description} path="/" jsonLd={[organizationLd(), websiteLd()]}>
+  <section class="py-6 text-center sm:py-10">
+    <h1 class="mx-auto max-w-3xl text-3xl font-extrabold sm:text-4xl">
+      Compare lab tests. Pay the right price.
+    </h1>
+    <p class="mx-auto mt-3 max-w-2xl text-ink-soft">
+      The same CBC costs ₹200 at one lab and ₹500 at another. We check India's
+      big diagnostics brands nightly — prices, hidden fees, coupons, report
+      times, ratings — so you pick in minutes, not phone calls.
+    </p>
+  </section>
+
+  <section class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+    <div class="card">
+      <h2 class="font-heading text-base font-bold">Totals, not teasers</h2>
+      <p class="mt-1 text-sm text-ink-soft">
+        Our price includes home-collection charges, platform fees and live
+        coupon codes. The number you see is the number you pay.
+      </p>
+    </div>
+    <div class="card">
+      <h2 class="font-heading text-base font-bold">Packages, de-constructed</h2>
+      <p class="mt-1 text-sm text-ink-soft">
+        "90 parameters" vs "63 tests"? We break every package into the same
+        standard panels so you compare like with like.
+      </p>
+    </div>
+    <div class="card">
+      <h2 class="font-heading text-base font-bold">Independent, by design</h2>
+      <p class="mt-1 text-sm text-ink-soft">
+        Every lab runs through the same pipeline and default sort is lowest
+        price. Booking happens on the lab's own site — we never take payment.
+      </p>
+    </div>
+  </section>
+
+  <div class="mt-10 space-y-10">
+    <div id="cities"><LinkGrid heading="Lab tests by city" links={cityLinks} /></div>
+    <div id="checkups"><LinkGrid heading="Full body checkup by city" links={fbcLinks} /></div>
+    <div id="tests"><LinkGrid heading="All tests" links={testLinks} /></div>
+  </div>
+</BaseLayout>

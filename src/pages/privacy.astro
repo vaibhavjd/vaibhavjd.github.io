@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy policy"
+  description="What My Lab Tests collects (very little), what it doesn't, and the analytics it runs."
+  path="/privacy/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy', path: '/privacy/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">Privacy</h1>
+    <p>
+      Short version: we have no accounts, no forms and no payments, so there's
+      very little to collect.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">What we collect</h2>
+    <p>
+      Standard analytics via Google Analytics 4 (loaded through Google Tag
+      Manager): pages viewed, approximate location by city, device type, and
+      which outbound lab links get clicked. We use it to see which comparisons
+      help people. We don't collect names, phone numbers, health details or
+      payment information — the site has nowhere to enter them.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">What happens when you book</h2>
+    <p>
+      Clicking "Book" takes you to the lab's own website. From that point their
+      privacy policy applies, not ours. Anything you share there — name,
+      address, samples, reports — never passes through us.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">Cookies</h2>
+    <p>
+      Only the ones Google Analytics sets for measurement. Block them and the
+      site works exactly the same.
+    </p>
+    <p class="text-sm text-ink-soft">
+      Questions or deletion requests: hello@mylabtests.in.
+    </p>
+  </div>
+</BaseLayout>

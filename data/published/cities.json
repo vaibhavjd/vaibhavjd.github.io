@@ -1,0 +1,12 @@
+[
+  { "slug": "mumbai", "name": "Mumbai", "state": "Maharashtra" },
+  { "slug": "delhi", "name": "Delhi", "state": "Delhi NCR" },
+  { "slug": "bengaluru", "name": "Bengaluru", "state": "Karnataka" },
+  { "slug": "hyderabad", "name": "Hyderabad", "state": "Telangana" },
+  { "slug": "chennai", "name": "Chennai", "state": "Tamil Nadu" },
+  { "slug": "kolkata", "name": "Kolkata", "state": "West Bengal" },
+  { "slug": "pune", "name": "Pune", "state": "Maharashtra" },
+  { "slug": "ahmedabad", "name": "Ahmedabad", "state": "Gujarat" },
+  { "slug": "jaipur", "name": "Jaipur", "state": "Rajasthan" },
+  { "slug": "lucknow", "name": "Lucknow", "state": "Uttar Pradesh" }
+]

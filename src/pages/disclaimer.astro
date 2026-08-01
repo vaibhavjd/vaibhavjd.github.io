@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Medical & data disclaimer"
+  description="What My Lab Tests is for, what it isn't, and the limits of the data we publish."
+  path="/disclaimer/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Disclaimer', path: '/disclaimer/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">Disclaimer</h1>
+    <h2 class="mt-6 text-xl font-bold">Not medical advice</h2>
+    <p>
+      Everything on this site — test explainers, FAQs, comparisons — is general
+      information. It is not a diagnosis, a prescription, or a substitute for a
+      doctor. Don't start, stop or change any treatment based on what you read
+      here, and don't self-order tests to manage a condition without medical
+      guidance.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">Prices can move</h2>
+    <p>
+      Prices, fees, coupons and package contents are collected automatically
+      from lab websites and re-checked on a schedule, but labs change them
+      without notice. The lab's own checkout is always the final word. Every
+      row shows the date we last verified it.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">Third-party services</h2>
+    <p>
+      Bookings, sample collection, testing and reports are entirely between you
+      and the lab you choose. Ratings displayed come from Google, the Play
+      Store and the App Store and belong to those platforms.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">Emergencies</h2>
+    <p>
+      If you're seriously unwell, skip the comparison shopping — call a doctor
+      or get to a hospital.
+    </p>
+  </div>
+</BaseLayout>

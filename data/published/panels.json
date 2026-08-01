@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "cbc",
+    "name": "Complete Blood Count",
+    "params": ["Hemoglobin", "RBC Count", "WBC Count", "Platelet Count", "Hematocrit (PCV)", "MCV", "MCH", "MCHC", "RDW-CV", "RDW-SD", "Neutrophils %", "Lymphocytes %", "Monocytes %", "Eosinophils %", "Basophils %", "Absolute Neutrophils", "Absolute Lymphocytes", "Absolute Monocytes", "Absolute Eosinophils", "Absolute Basophils", "MPV"]
+  },
+  {
+    "slug": "lipid",
+    "name": "Lipid Profile",
+    "params": ["Total Cholesterol", "HDL Cholesterol", "LDL Cholesterol", "VLDL Cholesterol", "Triglycerides", "TC/HDL Ratio", "LDL/HDL Ratio", "Non-HDL Cholesterol"]
+  },
+  {
+    "slug": "lft",
+    "name": "Liver Function",
+    "params": ["Total Bilirubin", "Direct Bilirubin", "Indirect Bilirubin", "SGOT (AST)", "SGPT (ALT)", "Alkaline Phosphatase", "GGT", "Total Protein", "Albumin", "Globulin", "A/G Ratio"]
+  },
+  {
+    "slug": "kft",
+    "name": "Kidney Function",
+    "params": ["Urea", "Blood Urea Nitrogen", "Creatinine", "Uric Acid", "BUN/Creatinine Ratio", "Calcium", "Phosphorus", "Sodium", "Potassium", "Chloride"]
+  },
+  {
+    "slug": "thyroid",
+    "name": "Thyroid Profile",
+    "params": ["Total T3", "Total T4", "TSH"]
+  },
+  {
+    "slug": "diabetes",
+    "name": "Diabetes Screen",
+    "params": ["Fasting Glucose", "HbA1c", "Estimated Average Glucose"]
+  },
+  {
+    "slug": "vitamins",
+    "name": "Vitamins",
+    "params": ["Vitamin D (25-OH)", "Vitamin B12"]
+  },
+  {
+    "slug": "iron",
+    "name": "Iron Studies",
+    "params": ["Serum Iron", "TIBC", "Transferrin Saturation", "Ferritin"]
+  },
+  {
+    "slug": "electrolytes",
+    "name": "Electrolytes",
+    "params": ["Sodium", "Potassium", "Chloride"]
+  },
+  {
+    "slug": "urine",
+    "name": "Urine Routine",
+    "params": ["Colour", "Appearance", "pH", "Specific Gravity", "Protein", "Glucose", "Ketones", "Blood", "Leukocyte Esterase", "Microscopic Examination"]
+  },
+  {
+    "slug": "inflammation",
+    "name": "Inflammation Markers",
+    "params": ["ESR", "CRP"]
+  },
+  {
+    "slug": "cardiac-risk",
+    "name": "Cardiac Risk Markers",
+    "params": ["hs-CRP", "Homocysteine", "Lipoprotein(a)"]
+  },
+  {
+    "slug": "pancreas",
+    "name": "Pancreas",
+    "params": ["Amylase", "Lipase"]
+  },
+  {
+    "slug": "hormones",
+    "name": "Hormones",
+    "params": ["Testosterone (Total)"]
+  }
+]

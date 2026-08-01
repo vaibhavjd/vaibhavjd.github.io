@@ -1,0 +1,103 @@
+---
+// The core comparison table for a test in a city. Server-rendered, zero JS —
+// the fee breakdown uses native <details>. Sorted by total payable upstream.
+import type { EnrichedOffer } from '@lib/types';
+import { formatINR, formatTat, formatDate, slotLabel } from '@lib/format';
+import RatingLine from './RatingLine.astro';
+
+interface Props {
+  rows: EnrichedOffer[];
+  testSlug: string;
+  citySlug: string;
+}
+const { rows, testSlug, citySlug } = Astro.props;
+---
+
+<div class="table-wrap">
+  <table class="w-full min-w-[720px] border-collapse text-sm">
+    <thead>
+      <tr class="border-b border-line bg-navy-100 text-left text-navy">
+        <th class="p-3">Lab</th>
+        <th class="p-3">Total payable</th>
+        <th class="p-3">Report in</th>
+        <th class="p-3">Home collection</th>
+        <th class="p-3">Rating</th>
+        <th class="p-3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((r, i) => (
+        <tr class="border-b border-line align-top last:border-0">
+          <td class="p-3">
+            <div class="font-semibold">{r.provider.name}</div>
+            <div class="mt-1 flex flex-wrap gap-1">
+              {i === 0 && <span class="chip-good">Cheapest</span>}
+              {r.provider.nabl && <span class="chip-trust">NABL</span>}
+              {!r.provider.in_house_lab && <span class="chip-muted">Partner labs</span>}
+              {r.offer.coupon && (
+                <span class="chip-amber">Code {r.offer.coupon.code}</span>
+              )}
+            </div>
+            <div class="mt-1 text-xs text-ink-soft">
+              verified {formatDate(r.offer.last_verified)}
+            </div>
+          </td>
+          <td class="p-3">
+            <details data-track="compare_expand" data-provider={r.provider.slug}>
+              <summary class="cursor-pointer list-none">
+                <span class="num text-lg font-bold text-amber-700">{formatINR(r.total)}</span>
+                {r.savingsVsMrp > 0 && (
+                  <span class="num ml-1 text-xs text-ink-soft line-through">{formatINR(r.offer.mrp)}</span>
+                )}
+                <span class="ml-1 text-xs text-navy underline">breakup</span>
+              </summary>
+              <dl class="num mt-2 space-y-1 text-xs text-ink-soft">
+                <div class="flex justify-between gap-4"><dt>Test price</dt><dd>{formatINR(r.offer.price)}</dd></div>
+                <div class="flex justify-between gap-4">
+                  <dt>Collection fee</dt>
+                  <dd>{r.appliedCollectionFee === 0 ? 'Free' : formatINR(r.appliedCollectionFee)}</dd>
+                </div>
+                {r.offer.other_fees.map((f) => (
+                  <div class="flex justify-between gap-4"><dt>{f.label}</dt><dd>{formatINR(f.amount)}</dd></div>
+                ))}
+                {r.couponOff > 0 && (
+                  <div class="flex justify-between gap-4 text-good">
+                    <dt>Coupon {r.offer.coupon?.code}</dt><dd>−{formatINR(r.couponOff)}</dd>
+                  </div>
+                )}
+                <div class="flex justify-between gap-4 border-t border-line pt-1 font-semibold text-ink">
+                  <dt>You pay</dt><dd>{formatINR(r.total)}</dd>
+                </div>
+              </dl>
+            </details>
+          </td>
+          <td class="num p-3">{formatTat(r.offer.tat_hours)}</td>
+          <td class="p-3">
+            <div>{slotLabel(r.offer.earliest_slot)}</div>
+            <div class="text-xs text-ink-soft">
+              {r.appliedCollectionFee === 0
+                ? 'Free home visit'
+                : `Home visit ${formatINR(r.appliedCollectionFee)}`}
+            </div>
+          </td>
+          <td class="p-3"><RatingLine rating={r.rating} /></td>
+          <td class="p-3">
+            <a
+              href={r.offer.source_url}
+              rel="nofollow noopener"
+              target="_blank"
+              class="btn-primary whitespace-nowrap"
+              data-outbound
+              data-provider={r.provider.slug}
+              data-test={testSlug}
+              data-city={citySlug}
+              data-position={String(i + 1)}
+            >
+              Book on {r.provider.name.split(' ')[0]}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

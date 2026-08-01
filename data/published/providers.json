@@ -1,0 +1,241 @@
+[
+  {
+    "slug": "thyrocare",
+    "name": "Thyrocare",
+    "kind": "national_chain",
+    "website": "https://www.thyrocare.com",
+    "booking_url": "https://www.thyrocare.com",
+    "nabl": true,
+    "cap": true,
+    "in_house_lab": true,
+    "centers_nationwide": 1200,
+    "usps": [
+      { "kind": "low_price", "title": "Volume pricing", "detail": "Processes lakhs of samples daily at a central lab, which keeps prices low." },
+      { "kind": "smart_report", "title": "Trend reports", "detail": "Reports plot your values against past bookings." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 0, "free_above_inr": null },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Aarogyam Basic", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes"], "claimed_params": 61, "consult_included": false, "smart_report": true },
+      { "name": "Aarogyam Advanced", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "iron", "urine", "cardiac-risk"], "claimed_params": 84, "consult_included": false, "smart_report": true }
+    ]
+  },
+  {
+    "slug": "redcliffe",
+    "name": "Redcliffe Labs",
+    "kind": "at_home_lab",
+    "website": "https://redcliffelabs.com",
+    "booking_url": "https://redcliffelabs.com",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": true,
+    "centers_nationwide": 80,
+    "usps": [
+      { "kind": "free_consult", "title": "Free doctor call", "detail": "A doctor explains abnormal values on a free call after your report." },
+      { "kind": "smart_report", "title": "Smart report", "detail": "Colour-coded report with plain-language notes per parameter." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 0, "free_above_inr": null },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Smart Full Body Checkup", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "urine"], "claimed_params": 66, "consult_included": true, "smart_report": true },
+      { "name": "Smart Full Body Advanced", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "iron", "urine", "inflammation"], "claimed_params": 88, "consult_included": true, "smart_report": true }
+    ]
+  },
+  {
+    "slug": "healthians",
+    "name": "Healthians",
+    "kind": "at_home_lab",
+    "website": "https://www.healthians.com",
+    "booking_url": "https://www.healthians.com",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": true,
+    "centers_nationwide": 40,
+    "usps": [
+      { "kind": "free_consult", "title": "Post-report consult", "detail": "Free tele-consult to walk through your report." },
+      { "kind": "retest_free", "title": "Free re-test", "detail": "Repeats the test at no charge if a sample fails quality checks." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 0, "free_above_inr": null },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Full Body Checkup Essential", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes"], "claimed_params": 61, "consult_included": true, "smart_report": false },
+      { "name": "Full Body Checkup Total", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "iron", "electrolytes", "urine"], "claimed_params": 90, "consult_included": true, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "tata-1mg",
+    "name": "Tata 1mg Labs",
+    "kind": "online_aggregator",
+    "website": "https://www.1mg.com/labs",
+    "booking_url": "https://www.1mg.com/labs",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": false,
+    "centers_nationwide": null,
+    "usps": [
+      { "kind": "loyalty_cashback", "title": "1mg cash", "detail": "Cashback credited to your 1mg wallet on most bookings." },
+      { "kind": "app", "title": "Everything in one app", "detail": "Reports, medicines and consults sit in the same account." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 99, "free_above_inr": 500 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Full Body Checkup Essential", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "urine"], "claimed_params": 66, "consult_included": false, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "pharmeasy-labs",
+    "name": "PharmEasy Labs",
+    "kind": "online_aggregator",
+    "website": "https://pharmeasy.in/diagnostics",
+    "booking_url": "https://pharmeasy.in/diagnostics",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": false,
+    "centers_nationwide": null,
+    "usps": [
+      { "kind": "membership", "title": "PharmEasy Plus", "detail": "Members get an extra discount on most lab bookings." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 99, "free_above_inr": 500 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Full Body Checkup Advanced", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins"], "claimed_params": 65, "consult_included": false, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "dr-lal-pathlabs",
+    "name": "Dr Lal PathLabs",
+    "kind": "national_chain",
+    "website": "https://www.lalpathlabs.com",
+    "booking_url": "https://www.lalpathlabs.com",
+    "nabl": true,
+    "cap": true,
+    "in_house_lab": true,
+    "centers_nationwide": 5000,
+    "usps": [
+      { "kind": "network", "title": "Walk-in anywhere", "detail": "Thousands of collection centres if you'd rather not wait at home." },
+      { "kind": "trust", "title": "40+ years of practice", "detail": "One of India's oldest pathology chains; CAP-accredited reference lab." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 150, "free_above_inr": 1000 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Swasthfit Full Body 1", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes"], "claimed_params": 61, "consult_included": false, "smart_report": false },
+      { "name": "Swasthfit Full Body 3", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "iron", "electrolytes", "urine", "inflammation"], "claimed_params": 92, "consult_included": false, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "metropolis",
+    "name": "Metropolis",
+    "kind": "national_chain",
+    "website": "https://www.metropolisindia.com",
+    "booking_url": "https://www.metropolisindia.com",
+    "nabl": true,
+    "cap": true,
+    "in_house_lab": true,
+    "centers_nationwide": 3500,
+    "usps": [
+      { "kind": "trust", "title": "Specialist lab network", "detail": "Runs specialised assays in-house that smaller labs outsource." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 100, "free_above_inr": 800 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "TruHealth Prime", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "urine"], "claimed_params": 66, "consult_included": false, "smart_report": true }
+    ]
+  },
+  {
+    "slug": "agilus",
+    "name": "Agilus (SRL)",
+    "kind": "national_chain",
+    "website": "https://www.agilus.in",
+    "booking_url": "https://www.agilus.in",
+    "nabl": true,
+    "cap": true,
+    "in_house_lab": true,
+    "centers_nationwide": 4000,
+    "usps": [
+      { "kind": "network", "title": "Wide centre network", "detail": "Large walk-in network across metros and tier-2 cities." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 100, "free_above_inr": 800 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Complete Health Screen", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "urine"], "claimed_params": 68, "consult_included": false, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "apollo-247",
+    "name": "Apollo 24|7",
+    "kind": "national_chain",
+    "website": "https://www.apollo247.com/lab-tests",
+    "booking_url": "https://www.apollo247.com/lab-tests",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": true,
+    "centers_nationwide": 2000,
+    "usps": [
+      { "kind": "hospital_backed", "title": "Apollo hospital network", "detail": "Reports link into Apollo's hospital and doctor ecosystem." },
+      { "kind": "membership", "title": "Circle membership", "detail": "Circle members get extra discounts and free collection." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 99, "free_above_inr": 500 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Apollo Full Body Check Essential", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "urine"], "claimed_params": 66, "consult_included": true, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "max-lab",
+    "name": "Max Lab",
+    "kind": "national_chain",
+    "website": "https://www.maxlab.co.in",
+    "booking_url": "https://www.maxlab.co.in",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": true,
+    "centers_nationwide": 500,
+    "usps": [
+      { "kind": "hospital_backed", "title": "Max Healthcare labs", "detail": "Samples processed in Max hospital laboratories." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 100, "free_above_inr": 700 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Max Whole Body Screen", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes"], "claimed_params": 61, "consult_included": false, "smart_report": false }
+    ]
+  },
+  {
+    "slug": "orange-health",
+    "name": "Orange Health",
+    "kind": "at_home_lab",
+    "website": "https://www.orangehealth.in",
+    "booking_url": "https://www.orangehealth.in",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": true,
+    "centers_nationwide": 8,
+    "usps": [
+      { "kind": "express_collection", "title": "60-minute collection", "detail": "A phlebotomist reaches you within the hour in covered areas." },
+      { "kind": "fast_report", "title": "Reports in 6 hours", "detail": "Most routine tests report the same day." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 0, "free_above_inr": null },
+    "express_minutes": 60,
+    "fbc_templates": [
+      { "name": "Smart Full Body Checkup", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes", "vitamins", "urine"], "claimed_params": 70, "consult_included": false, "smart_report": true }
+    ]
+  },
+  {
+    "slug": "medibuddy",
+    "name": "MediBuddy",
+    "kind": "online_aggregator",
+    "website": "https://www.medibuddy.in",
+    "booking_url": "https://www.medibuddy.in",
+    "nabl": true,
+    "cap": false,
+    "in_house_lab": false,
+    "centers_nationwide": null,
+    "usps": [
+      { "kind": "corporate", "title": "Corporate wallet friendly", "detail": "Works with most employer health wallets and OPD plans." }
+    ],
+    "home_collection": { "available": true, "fee_inr": 99, "free_above_inr": 600 },
+    "express_minutes": null,
+    "fbc_templates": [
+      { "name": "Full Body Health Checkup", "panels": ["cbc", "lipid", "lft", "kft", "thyroid", "diabetes"], "claimed_params": 61, "consult_included": true, "smart_report": false }
+    ]
+  }
+]

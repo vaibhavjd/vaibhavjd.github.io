@@ -1,0 +1,319 @@
+---
+// One route, four templates: city hub, full-body-checkup comparison,
+// test×city comparison, national test explainer. allRoutes() applies the
+// ≥3-provider publish gate, and the sitemap reuses the same list.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceTable from '@components/PriceTable.astro';
+import InsightBlock from '@components/InsightBlock.astro';
+import FaqList from '@components/FaqList.astro';
+import LinkGrid from '@components/LinkGrid.astro';
+import ComparisonMatrix from '@components/ComparisonMatrix';
+import {
+  allRoutes,
+  cities,
+  tests,
+  citiesBySlug,
+  testsBySlug,
+  testOffers,
+  insightsFor,
+  packageCards,
+  coverageRows,
+  cityRangesFor,
+  nationalRange,
+  hubSlug,
+  fbcSlug,
+  testCitySlug,
+  testNationalSlug,
+  lastVerifiedOf,
+  PROVIDER_GATE,
+  type RouteDef,
+} from '@lib/data';
+import { testCityFaqs } from '@lib/faqs';
+import { faqLd, offerListLd, medicalTestLd, medicalWebPageLd, type Crumb } from '@lib/seo';
+import { formatINR, formatDate } from '@lib/format';
+
+export function getStaticPaths() {
+  return allRoutes().map((r) => ({ params: { slug: r.slug }, props: r }));
+}
+
+const { kind, citySlug, testSlug } = Astro.props as RouteDef;
+const path = `/${Astro.params.slug}/`;
+const city = citySlug ? citiesBySlug[citySlug] : null;
+const test = testSlug ? testsBySlug[testSlug] : null;
+
+let title = '';
+let description = '';
+let h1 = '';
+const crumbs: Crumb[] = [{ name: 'Home', path: '/' }];
+const jsonLd: object[] = [];
+
+// ---------- test × city ----------
+const tcRows = kind === 'test-city' && test && city ? testOffers(test.slug, city.slug) : [];
+const tcInsights = tcRows.length ? insightsFor(tcRows) : null;
+const tcUpdated = tcRows.length ? lastVerifiedOf(tcRows) : '';
+const tcFaqs =
+  kind === 'test-city' && test && city && tcInsights
+    ? testCityFaqs(test, city, tcInsights, tcUpdated)
+    : [];
+if (kind === 'test-city' && test && city && tcInsights) {
+  h1 = `${test.short} test in ${city.name}`;
+  title = `${test.short} test price in ${city.name} — compare ${tcInsights.n} labs | My Lab Tests`;
+  description = `${test.short} in ${city.name} costs ${formatINR(tcInsights.min)}–${formatINR(tcInsights.max)} across ${tcInsights.n} labs (verified ${formatDate(tcUpdated)}). All-in prices with collection fees, coupons, report times and ratings.`;
+  crumbs.push(
+    { name: `Lab tests in ${city.name}`, path: `/${hubSlug(city.slug)}/` },
+    { name: `${test.short} test`, path },
+  );
+  jsonLd.push(
+    medicalWebPageLd(title, path, tcUpdated),
+    medicalTestLd(test, path),
+    offerListLd(`${test.short} test in ${city.name}`, path, tcRows),
+    faqLd(tcFaqs),
+  );
+}
+
+// ---------- full body checkup × city ----------
+const fbcCards = kind === 'fbc' && city ? packageCards(city.slug) : [];
+const fbcCov = fbcCards.length ? coverageRows(fbcCards) : [];
+const fbcFaqs: Array<{ q: string; a: string }> = [];
+if (kind === 'fbc' && city && fbcCards.length) {
+  const cheap = fbcCards[0];
+  const bestValue = [...fbcCards].sort((a, b) => a.pricePerParam - b.pricePerParam)[0];
+  const updated = lastVerifiedOf(fbcCards.map((c) => c.enriched));
+  h1 = `Full body checkup in ${city.name}`;
+  title = `Full body checkup in ${city.name} — ${fbcCards.length} packages compared | My Lab Tests`;
+  description = `Full body checkup packages in ${city.name} from ${formatINR(cheap.enriched.total)}. ${fbcCards.length} packages de-constructed parameter by parameter: prices with fees, coverage, report times, ratings.`;
+  crumbs.push(
+    { name: `Lab tests in ${city.name}`, path: `/${hubSlug(city.slug)}/` },
+    { name: 'Full body checkup', path },
+  );
+  fbcFaqs.push(
+    {
+      q: `How much does a full body checkup cost in ${city.name}?`,
+      a: `${formatINR(fbcCards[0].enriched.total)} to ${formatINR(fbcCards[fbcCards.length - 1].enriched.total)} across ${fbcCards.length} packages as of ${formatDate(updated)}, all fees included.`,
+    },
+    {
+      q: `Which is the cheapest full body checkup in ${city.name}?`,
+      a: `${cheap.enriched.provider.name} ${cheap.pkg.name} at ${formatINR(cheap.enriched.total)} — ${cheap.verifiedParams} parameters we could verify against its panel list.`,
+    },
+    {
+      q: 'Which package gives the most value per parameter?',
+      a: `${bestValue.enriched.provider.name} ${bestValue.pkg.name} works out to ${formatINR(bestValue.pricePerParam)} per verified parameter.`,
+    },
+    {
+      q: 'Why do labs claim different parameter counts for similar packages?',
+      a: 'Labs count sub-parameters differently — one lab counts a lipid profile as 8 results, another as 10. We de-construct every package into the same standard panels so you compare like with like.',
+    },
+  );
+  jsonLd.push(
+    medicalWebPageLd(title, path, updated),
+    offerListLd(`Full body checkup in ${city.name}`, path, fbcCards.map((c) => c.enriched)),
+    faqLd(fbcFaqs),
+  );
+}
+const fbcPkgProps = fbcCards.map((c) => ({
+  id: c.pkg.id,
+  providerName: c.enriched.provider.name,
+  providerSlug: c.pkg.provider,
+  pkgName: c.pkg.name,
+  total: c.enriched.total,
+  mrp: c.enriched.offer.mrp,
+  couponCode: c.enriched.offer.coupon?.code ?? null,
+  claimed: c.pkg.claimed_params,
+  verified: c.verifiedParams,
+  perParam: c.pricePerParam,
+  tat: c.enriched.offer.tat_hours,
+  consult: c.pkg.consult_included,
+  smart: c.pkg.smart_report,
+  nabl: c.enriched.provider.nabl,
+  freeCollection: c.enriched.appliedCollectionFee === 0,
+  rating: c.enriched.rating,
+  bookUrl: c.enriched.offer.source_url,
+  city: city?.slug ?? '',
+}));
+const fbcRowProps = fbcCov.map((r) => ({
+  name: r.panel.name,
+  params: r.panel.params.length,
+  included: r.included,
+}));
+
+// ---------- city hub ----------
+const hubTests =
+  kind === 'city-hub' && city
+    ? tests
+        .map((t) => {
+          const rows = testOffers(t.slug, city.slug);
+          const distinct = new Set(rows.map((r) => r.offer.provider)).size;
+          if (distinct < PROVIDER_GATE) return null;
+          return { test: t, min: rows[0].total, n: distinct };
+        })
+        .filter((x): x is { test: (typeof tests)[0]; min: number; n: number } => x !== null)
+    : [];
+const hubFbc = kind === 'city-hub' && city ? packageCards(city.slug).slice(0, 3) : [];
+if (kind === 'city-hub' && city) {
+  const cheapestTest = [...hubTests].sort((a, b) => a.min - b.min)[0];
+  h1 = `Lab tests in ${city.name}`;
+  title = `Lab tests in ${city.name} — prices from ${hubTests.length} tests compared | My Lab Tests`;
+  description = `Compare lab test prices in ${city.name}: ${hubTests.length} tests across India's big diagnostics brands, from ${formatINR(cheapestTest?.min ?? 0)}. All-in prices with home-collection fees and coupons.`;
+  crumbs.push({ name: `Lab tests in ${city.name}`, path });
+}
+
+// ---------- national test ----------
+const natRange = kind === 'test-national' && test ? nationalRange(test.slug) : null;
+const natCities = kind === 'test-national' && test ? cityRangesFor(test.slug) : [];
+const natFaqs =
+  kind === 'test-national' && test && natRange
+    ? [
+        {
+          q: `What does a ${test.short} test cost in India?`,
+          a: `${formatINR(natRange.min)} to ${formatINR(natRange.max)} depending on city and lab, based on ${natRange.n} current prices across ${natCities.length} cities. City pages below show live comparisons.`,
+        },
+        ...test.faqs,
+      ]
+    : [];
+if (kind === 'test-national' && test && natRange) {
+  h1 = test.name;
+  title = `${test.name}: price, purpose and preparation | My Lab Tests`;
+  description = `${test.measures} Prices run ${formatINR(natRange.min)}–${formatINR(natRange.max)} across Indian labs. What it checks, how to prepare, and city-wise comparisons.`;
+  crumbs.push({ name: `${test.short} test`, path });
+  jsonLd.push(medicalTestLd(test, path), faqLd(natFaqs));
+}
+
+const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
+---
+
+<BaseLayout title={title} description={description} path={path} crumbs={crumbs} jsonLd={jsonLd}>
+  <h1 class="text-2xl font-extrabold sm:text-3xl">{h1}</h1>
+
+  {kind === 'test-city' && test && city && tcInsights && (
+    <div class="mt-4 space-y-8">
+      <InsightBlock insights={tcInsights} label={`A ${test.short} test`} cityName={city.name} />
+      <section>
+        <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 class="text-xl font-bold">Compare {tcInsights.n} labs</h2>
+          <span class="text-xs text-ink-soft">
+            Totals include collection fees and live coupons · verified {formatDate(tcUpdated)}
+          </span>
+        </div>
+        <PriceTable rows={tcRows} testSlug={test.slug} citySlug={city.slug} />
+      </section>
+      <section class="card">
+        <h2 class="text-xl font-bold">About this test</h2>
+        <p class="mt-2">{test.measures}</p>
+        <p class="mt-2 text-ink-soft">{test.why}</p>
+        <p class="mt-2 text-sm">
+          <strong>Preparation:</strong> {test.prep}{' '}
+          <a href={`/${testNationalSlug(test.slug)}/`} class="text-navy underline">
+            Full {test.short} guide →
+          </a>
+        </p>
+      </section>
+      <FaqList faqs={tcFaqs} heading={`${test.short} in ${city.name}: quick answers`} />
+      <LinkGrid
+        heading={`${test.short} test in other cities`}
+        links={otherCities
+          .filter((c) => allRoutes().some((r) => r.slug === testCitySlug(test.slug, c.slug)))
+          .map((c) => ({ href: `/${testCitySlug(test.slug, c.slug)}/`, label: c.name }))}
+      />
+      <LinkGrid
+        heading={`Other tests in ${city.name}`}
+        links={tests
+          .filter((t) => t.slug !== test.slug)
+          .slice(0, 10)
+          .map((t) => ({ href: `/${testCitySlug(t.slug, city.slug)}/`, label: `${t.short} test` }))}
+      />
+    </div>
+  )}
+
+  {kind === 'fbc' && city && fbcCards.length > 0 && (
+    <div class="mt-4 space-y-8">
+      <p class="max-w-3xl text-ink-soft">
+        Every package below is de-constructed into the same standard panels, so
+        the "90 parameters" claims finally mean something. Totals include home
+        collection and current coupon codes.
+      </p>
+      <ComparisonMatrix client:load pkgs={fbcPkgProps} rows={fbcRowProps} />
+      <FaqList faqs={fbcFaqs} heading={`Full body checkup in ${city.name}: quick answers`} />
+      <LinkGrid
+        heading="Full body checkup in other cities"
+        links={otherCities.map((c) => ({ href: `/${fbcSlug(c.slug)}/`, label: c.name }))}
+      />
+      <LinkGrid
+        heading={`Popular tests in ${city.name}`}
+        links={tests.slice(0, 10).map((t) => ({
+          href: `/${testCitySlug(t.slug, city.slug)}/`,
+          label: `${t.short} test`,
+        }))}
+      />
+    </div>
+  )}
+
+  {kind === 'city-hub' && city && (
+    <div class="mt-4 space-y-8">
+      <p class="max-w-3xl text-ink-soft">
+        {hubTests.length} tests compared across India's big diagnostics brands
+        in {city.name}. Prices are all-in — home-collection fees and live
+        coupons included — and re-checked on a nightly schedule.
+      </p>
+      {hubFbc.length > 0 && (
+        <section class="card bg-navy-100/50">
+          <h2 class="text-xl font-bold">Full body checkup deals</h2>
+          <p class="mt-1 text-sm text-ink-soft">
+            From {formatINR(hubFbc[0].enriched.total)} ({hubFbc[0].enriched.provider.name}{' '}
+            {hubFbc[0].pkg.name}, {hubFbc[0].verifiedParams} verified parameters).
+          </p>
+          <a href={`/${fbcSlug(city.slug)}/`} class="btn-primary mt-3">
+            Compare {packageCards(city.slug).length} packages →
+          </a>
+        </section>
+      )}
+      <LinkGrid
+        heading={`All tests in ${city.name}`}
+        links={hubTests.map(({ test: t, min, n }) => ({
+          href: `/${testCitySlug(t.slug, city.slug)}/`,
+          label: `${t.short} test`,
+          sub: `from ${formatINR(min)} · ${n} labs`,
+        }))}
+      />
+      <LinkGrid
+        heading="Lab tests in other cities"
+        links={otherCities.map((c) => ({ href: `/${hubSlug(c.slug)}/`, label: c.name }))}
+      />
+    </div>
+  )}
+
+  {kind === 'test-national' && test && natRange && (
+    <div class="mt-4 space-y-8">
+      <p class="max-w-3xl">
+        {test.measures} Across Indian labs it costs
+        <strong class="num"> {formatINR(natRange.min)}–{formatINR(natRange.max)}</strong>;
+        pick your city below for a live comparison.
+      </p>
+      <section class="card">
+        <h2 class="text-xl font-bold">Why doctors order it</h2>
+        <p class="mt-2">{test.why}</p>
+        <h2 class="mt-4 text-xl font-bold">How to prepare</h2>
+        <p class="mt-2">{test.prep}</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Sample: {test.sample} · Report typically in {test.tat_hours[0]}–{test.tat_hours[1]} hours
+          {test.fasting_hours > 0 ? ` · Fasting: ${test.fasting_hours} hours` : ' · No fasting'}
+        </p>
+      </section>
+      <LinkGrid
+        heading={`${test.short} test price by city`}
+        links={natCities.map(({ city: c, min, n }) => ({
+          href: `/${testCitySlug(test.slug, c.slug)}/`,
+          label: c.name,
+          sub: `from ${formatINR(min)} · ${n} labs`,
+        }))}
+      />
+      <FaqList faqs={natFaqs} />
+      <LinkGrid
+        heading="Related tests"
+        links={tests
+          .filter((t) => t.slug !== test.slug && t.category === test.category)
+          .slice(0, 5)
+          .map((t) => ({ href: `/${testNationalSlug(t.slug)}/`, label: t.short }))}
+      />
+    </div>
+  )}
+</BaseLayout>

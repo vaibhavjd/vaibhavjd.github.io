@@ -1,0 +1,33 @@
+# One phrase per line, case-insensitive, matched on word boundaries.
+# These read as machine-written filler; the build fails if they appear in
+# page copy. Grow this list whenever a tell slips through review.
+delve
+seamless
+seamlessly
+comprehensive
+unlock
+elevate
+empower
+robust
+leverage
+holistic
+game-changer
+game changer
+look no further
+it's important to note
+it is important to note
+embark
+journey
+landscape
+realm
+we've got you covered
+your one-stop
+one-stop shop
+in today's fast-paced world
+hassle-free
+cutting-edge
+state-of-the-art
+best-in-class
+world-class
+revolutionize
+supercharge

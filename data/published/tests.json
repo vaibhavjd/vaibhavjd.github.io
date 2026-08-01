@@ -1,0 +1,477 @@
+[
+  {
+    "slug": "cbc",
+    "name": "Complete Blood Count (CBC)",
+    "short": "CBC",
+    "aka": ["Hemogram", "Full Blood Count"],
+    "category": "Routine",
+    "band": [200, 500],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "Counts and sizes your red cells, white cells and platelets — 21 parameters from one tube of blood.",
+    "why": "It's the first test most doctors order. Low hemoglobin points to anaemia, unusual white counts to infection, low platelets to dengue or other causes.",
+    "prep": "No fasting needed. Any time of day works.",
+    "faqs": [
+      { "q": "Does a CBC need fasting?", "a": "No. You can eat and drink normally before a CBC." },
+      { "q": "What does a CBC detect?", "a": "Anaemia, most infections, platelet problems and several blood disorders. It flags issues; your doctor interprets them." }
+    ],
+    "panel_slugs": ["cbc"]
+  },
+  {
+    "slug": "thyroid-profile",
+    "name": "Thyroid Profile (T3, T4, TSH)",
+    "short": "Thyroid",
+    "aka": ["TFT", "Thyroid Function Test"],
+    "category": "Hormones",
+    "band": [300, 750],
+    "fasting_hours": 0,
+    "tat_hours": [12, 24],
+    "sample": "Blood",
+    "measures": "TSH plus the two thyroid hormones T3 and T4.",
+    "why": "Tiredness, weight change, hair fall and irregular periods often trace back to the thyroid. TSH alone misses some cases; the full profile doesn't.",
+    "prep": "No fasting. Morning samples give the most consistent TSH values.",
+    "faqs": [
+      { "q": "Should I take my thyroid tablet before the test?", "a": "Give your sample first, then take the tablet. Levothyroxine taken just before can push T4 up temporarily." },
+      { "q": "Is fasting needed for a thyroid test?", "a": "No, though labs prefer morning samples because TSH swings through the day." }
+    ],
+    "panel_slugs": ["thyroid"]
+  },
+  {
+    "slug": "hba1c",
+    "name": "HbA1c (Glycated Hemoglobin)",
+    "short": "HbA1c",
+    "aka": ["Glycosylated Hemoglobin", "A1c"],
+    "category": "Diabetes",
+    "band": [300, 600],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "Your average blood sugar over the last 2–3 months, as a percentage.",
+    "why": "One-off sugar readings jump around. HbA1c doesn't, which is why doctors use it to diagnose diabetes and track control.",
+    "prep": "No fasting needed — a key advantage over the fasting glucose test.",
+    "faqs": [
+      { "q": "What is a normal HbA1c?", "a": "Below 5.7% is typical, 5.7–6.4% is prediabetes, 6.5% or above suggests diabetes. Cut-offs vary slightly by lab." },
+      { "q": "Can I eat before an HbA1c test?", "a": "Yes. Food on the day doesn't change a 3-month average." }
+    ],
+    "panel_slugs": ["diabetes"]
+  },
+  {
+    "slug": "blood-sugar-fasting",
+    "name": "Fasting Blood Sugar (FBS)",
+    "short": "FBS",
+    "aka": ["Fasting Glucose", "FBG"],
+    "category": "Diabetes",
+    "band": [80, 250],
+    "fasting_hours": 8,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "Your blood glucose after an overnight fast.",
+    "why": "Cheap, quick and still the standard first check for diabetes, usually paired with HbA1c.",
+    "prep": "Fast 8–12 hours. Water is fine; tea and coffee are not.",
+    "faqs": [
+      { "q": "How long should I fast?", "a": "8 to 12 hours. Longer than 14 hours can skew the value the other way." },
+      { "q": "What counts as a normal fasting sugar?", "a": "70–99 mg/dL is typical. 100–125 suggests prediabetes; 126 or above on two occasions suggests diabetes." }
+    ],
+    "panel_slugs": ["diabetes"]
+  },
+  {
+    "slug": "lipid-profile",
+    "name": "Lipid Profile",
+    "short": "Lipid",
+    "aka": ["Cholesterol Test", "Lipid Panel"],
+    "category": "Heart",
+    "band": [400, 900],
+    "fasting_hours": 10,
+    "tat_hours": [12, 24],
+    "sample": "Blood",
+    "measures": "Total, HDL and LDL cholesterol, triglycerides, and their ratios — 8 parameters.",
+    "why": "High LDL and triglycerides quietly damage arteries for years before symptoms. This is the test that catches it early.",
+    "prep": "Most labs ask for a 10–12 hour fast, though many now accept non-fasting samples. Follow what your lab says.",
+    "faqs": [
+      { "q": "Is fasting compulsory for a lipid profile?", "a": "Guidelines now allow non-fasting samples for screening, but Indian labs mostly still ask for 10–12 hours. Triglycerides read higher after food." },
+      { "q": "How often should I check cholesterol?", "a": "Once a year if values are normal; every 3–6 months if you're on statins or changing diet, as your doctor advises." }
+    ],
+    "panel_slugs": ["lipid"]
+  },
+  {
+    "slug": "liver-function",
+    "name": "Liver Function Test (LFT)",
+    "short": "LFT",
+    "aka": ["Liver Panel", "Hepatic Panel"],
+    "category": "Organ health",
+    "band": [400, 900],
+    "fasting_hours": 8,
+    "tat_hours": [12, 24],
+    "sample": "Blood",
+    "measures": "Bilirubin, liver enzymes (SGPT, SGOT, ALP, GGT) and proteins — 11 parameters.",
+    "why": "Fatty liver is common in India and shows no symptoms early. Raised enzymes are usually the first clue.",
+    "prep": "Fast 8–10 hours for the cleanest readings. Skip alcohol for 24 hours before.",
+    "faqs": [
+      { "q": "Why are SGPT and SGOT raised?", "a": "Common causes: fatty liver, alcohol, some medicines, and viral hepatitis. One raised reading needs a repeat, not panic." },
+      { "q": "Do I need to stop medicines before an LFT?", "a": "No — but list them for your doctor, since several common drugs nudge liver enzymes." }
+    ],
+    "panel_slugs": ["lft"]
+  },
+  {
+    "slug": "kidney-function",
+    "name": "Kidney Function Test (KFT)",
+    "short": "KFT",
+    "aka": ["RFT", "Renal Panel"],
+    "category": "Organ health",
+    "band": [400, 900],
+    "fasting_hours": 0,
+    "tat_hours": [12, 24],
+    "sample": "Blood",
+    "measures": "Creatinine, urea, uric acid and electrolytes — 10 parameters covering how well your kidneys filter.",
+    "why": "Diabetes and high BP damage kidneys silently. Creatinine rises only after real damage, so regular checks matter if you have either.",
+    "prep": "No fasting strictly needed; many labs bundle it with fasting tests anyway.",
+    "faqs": [
+      { "q": "What creatinine level is worrying?", "a": "Above roughly 1.3 mg/dL for men or 1.1 for women deserves a doctor's look — muscular builds run slightly higher naturally." },
+      { "q": "Does drinking less water affect the KFT?", "a": "Yes, dehydration can bump urea and creatinine. Drink normally before the test." }
+    ],
+    "panel_slugs": ["kft"]
+  },
+  {
+    "slug": "vitamin-d",
+    "name": "Vitamin D (25-OH)",
+    "short": "Vitamin D",
+    "aka": ["25-Hydroxy Vitamin D", "Calcidiol"],
+    "category": "Vitamins",
+    "band": [900, 2000],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "The storage form of vitamin D in your blood.",
+    "why": "Most urban Indians test low. Deficiency shows up as body aches, low mood and weak bones, and it's cheap to fix once confirmed.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "What level of vitamin D is low?", "a": "Below 20 ng/mL is deficient, 20–30 insufficient, 30–100 adequate. Supplements are dosed to the number, so test before you dose." },
+      { "q": "Why is the vitamin D test costlier than others?", "a": "It runs on immunoassay analysers with pricier reagents. Package bundles usually price it better than standalone." }
+    ],
+    "panel_slugs": ["vitamins"]
+  },
+  {
+    "slug": "vitamin-b12",
+    "name": "Vitamin B12",
+    "short": "B12",
+    "aka": ["Cobalamin"],
+    "category": "Vitamins",
+    "band": [600, 1200],
+    "fasting_hours": 8,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "The B12 level in your blood.",
+    "why": "Vegetarian diets often run low. Deficiency causes fatigue, tingling in hands and feet, and memory fog — all reversible if caught.",
+    "prep": "An 8-hour fast is usually advised. Skip B12 supplements for a few days before, or the result reads falsely high.",
+    "faqs": [
+      { "q": "What is a normal B12 level?", "a": "Roughly 200–900 pg/mL. Symptoms can appear even in the low-normal range, so discuss borderline values." },
+      { "q": "Should I stop my multivitamin before testing B12?", "a": "Yes, for 3–4 days if your doctor agrees — supplements inflate the reading." }
+    ],
+    "panel_slugs": ["vitamins"]
+  },
+  {
+    "slug": "urine-routine",
+    "name": "Urine Routine & Microscopy",
+    "short": "Urine R/M",
+    "aka": ["Urinalysis", "Urine R/E"],
+    "category": "Routine",
+    "band": [100, 350],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Urine",
+    "measures": "Physical, chemical and microscopic examination of urine — protein, sugar, infection markers and more.",
+    "why": "A ₹100-odd test that catches urine infections, early kidney trouble and uncontrolled diabetes.",
+    "prep": "First morning sample is best. Collect mid-stream in the sterile container the lab gives you.",
+    "faqs": [
+      { "q": "How do I collect a mid-stream sample?", "a": "Start passing urine, then collect from the middle of the stream. The first flush carries skin bacteria that spoil results." },
+      { "q": "Protein in urine — serious?", "a": "Trace protein after fever or exercise is common. Persistent protein needs kidney follow-up." }
+    ],
+    "panel_slugs": ["urine"]
+  },
+  {
+    "slug": "esr",
+    "name": "ESR (Erythrocyte Sedimentation Rate)",
+    "short": "ESR",
+    "aka": ["Sed Rate"],
+    "category": "Inflammation",
+    "band": [100, 300],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "How fast your red cells settle in an hour — a rough marker of inflammation.",
+    "why": "Old but useful: persistently high ESR supports diagnoses like TB, arthritis and chronic infection.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "What raises ESR?", "a": "Any inflammation — infection, autoimmune disease, even pregnancy and age. It says something is on; it doesn't say what." },
+      { "q": "ESR vs CRP — which is better?", "a": "CRP moves faster with acute infection; ESR suits slow, chronic conditions. Doctors often order both." }
+    ],
+    "panel_slugs": ["inflammation"]
+  },
+  {
+    "slug": "crp",
+    "name": "CRP (C-Reactive Protein)",
+    "short": "CRP",
+    "aka": ["C Reactive Protein, Quantitative"],
+    "category": "Inflammation",
+    "band": [300, 700],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "A protein your liver releases within hours of inflammation starting.",
+    "why": "Rises fast in bacterial infection and falls fast with treatment, so doctors use it to judge whether antibiotics are working.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "What CRP level indicates infection?", "a": "Above 10 mg/L usually means active inflammation; very high values lean bacterial. Trends matter more than one number." },
+      { "q": "Is CRP the same as hs-CRP?", "a": "No. hs-CRP measures tiny elevations for heart-risk scoring; regular CRP tracks infection and inflammation." }
+    ],
+    "panel_slugs": ["inflammation"]
+  },
+  {
+    "slug": "uric-acid",
+    "name": "Uric Acid",
+    "short": "Uric Acid",
+    "aka": ["Serum Urate"],
+    "category": "Routine",
+    "band": [150, 400],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "The uric acid level in your blood.",
+    "why": "High levels crystallise in joints as gout — classically a hot, swollen big toe — and can form kidney stones.",
+    "prep": "No fasting strictly needed; avoid a heavy non-veg meal the night before.",
+    "faqs": [
+      { "q": "What foods raise uric acid?", "a": "Red meat, organ meat, seafood, beer and sugary drinks. Dal in normal amounts is fine for most people despite the myth." },
+      { "q": "High uric acid but no pain — treat it?", "a": "Often just diet and rechecks. Medicines usually start only after gout attacks or stones. Your doctor decides." }
+    ],
+    "panel_slugs": ["kft"]
+  },
+  {
+    "slug": "iron-studies",
+    "name": "Iron Studies",
+    "short": "Iron",
+    "aka": ["Iron Profile", "Fe Studies"],
+    "category": "Anaemia",
+    "band": [500, 1200],
+    "fasting_hours": 8,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "Serum iron, TIBC, transferrin saturation and ferritin — the full picture of iron stores.",
+    "why": "Anaemia treatment differs by cause. These four values tell iron-deficiency apart from other anaemias so you don't take iron blindly.",
+    "prep": "Morning fasting sample; skip iron tablets that morning.",
+    "faqs": [
+      { "q": "Why test ferritin along with iron?", "a": "Serum iron swings daily; ferritin reflects stored iron. Low ferritin is the surest sign of iron deficiency." },
+      { "q": "Can I take my iron tablet before the test?", "a": "No — take it after the sample, or the reading shoots up misleadingly." }
+    ],
+    "panel_slugs": ["iron"]
+  },
+  {
+    "slug": "ferritin",
+    "name": "Ferritin",
+    "short": "Ferritin",
+    "aka": ["Serum Ferritin"],
+    "category": "Anaemia",
+    "band": [400, 900],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "Your body's stored iron.",
+    "why": "The single best test for iron deficiency — it falls before hemoglobin does. Also checked in hair fall and restless legs.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "What is a normal ferritin level?", "a": "Roughly 20–250 ng/mL for men, 10–120 for women; lab ranges vary. Hair-fall clinics often aim above 50." },
+      { "q": "Can ferritin be high without excess iron?", "a": "Yes — it also rises with inflammation and fatty liver, so doctors read it alongside CRP." }
+    ],
+    "panel_slugs": ["iron"]
+  },
+  {
+    "slug": "electrolytes",
+    "name": "Serum Electrolytes",
+    "short": "Electrolytes",
+    "aka": ["Na/K/Cl"],
+    "category": "Routine",
+    "band": [300, 700],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "Sodium, potassium and chloride.",
+    "why": "Checked in weakness, vomiting, dehydration and for anyone on BP medicines or diuretics, which quietly shift these values.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "Why did my doctor order electrolytes with my BP medicine?", "a": "Several BP drugs move potassium up or down. A yearly check catches it before it causes trouble." },
+      { "q": "What are symptoms of low sodium?", "a": "Nausea, headache, confusion and fatigue — common in older adults and often found only on testing." }
+    ],
+    "panel_slugs": ["electrolytes"]
+  },
+  {
+    "slug": "calcium",
+    "name": "Serum Calcium",
+    "short": "Calcium",
+    "aka": ["Total Calcium"],
+    "category": "Bone",
+    "band": [150, 400],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "The calcium level in your blood.",
+    "why": "Ordered for bone pain, kidney stones and thyroid/parathyroid issues. Usually read together with vitamin D and albumin.",
+    "prep": "No fasting needed; skip calcium supplements that morning.",
+    "faqs": [
+      { "q": "Does low blood calcium mean weak bones?", "a": "Not directly — blood calcium stays stable by drawing from bone. Bone strength needs a DEXA scan; this test screens for other disorders." },
+      { "q": "What causes high calcium?", "a": "Most often parathyroid overactivity or vitamin D excess. Persistent high values always deserve follow-up." }
+    ],
+    "panel_slugs": ["kft"]
+  },
+  {
+    "slug": "testosterone",
+    "name": "Testosterone (Total)",
+    "short": "Testosterone",
+    "aka": ["Serum Testosterone"],
+    "category": "Hormones",
+    "band": [400, 900],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "Total testosterone in blood.",
+    "why": "Checked for low energy, low libido and fertility work-ups in men, and PCOS work-ups in women.",
+    "prep": "Sample before 10 am — levels drop through the day. No fasting needed.",
+    "faqs": [
+      { "q": "Why must testosterone be tested in the morning?", "a": "Levels peak early morning and fall 20–30% by evening. Morning sampling keeps results comparable." },
+      { "q": "One low testosterone report — do I need treatment?", "a": "No. Guidelines ask for at least two morning samples plus symptoms before any therapy talk." }
+    ],
+    "panel_slugs": ["hormones"]
+  },
+  {
+    "slug": "prolactin",
+    "name": "Prolactin",
+    "short": "Prolactin",
+    "aka": ["PRL"],
+    "category": "Hormones",
+    "band": [350, 800],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "The prolactin hormone level.",
+    "why": "Part of irregular-period, infertility and milky-discharge work-ups; also checked with some psychiatric medicines.",
+    "prep": "Sample 3–4 hours after waking, rested. Stress and even a difficult blood draw can raise it.",
+    "faqs": [
+      { "q": "Why was I asked to sit calmly before the prolactin test?", "a": "Prolactin rises with stress, exercise and stimulation. Ten quiet minutes before the draw avoids a false high." },
+      { "q": "Mildly high prolactin — what next?", "a": "Usually a repeat under proper conditions first. Persistent high values get a medicine review and sometimes imaging." }
+    ],
+    "panel_slugs": ["hormones"]
+  },
+  {
+    "slug": "psa",
+    "name": "PSA (Prostate-Specific Antigen)",
+    "short": "PSA",
+    "aka": ["Total PSA"],
+    "category": "Men's health",
+    "band": [500, 1100],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "A protein made by the prostate.",
+    "why": "The standard screen for prostate enlargement and cancer risk in men over 50, or earlier with family history.",
+    "prep": "No fasting. Avoid cycling, ejaculation and prostate exams for 48 hours before — each can raise PSA.",
+    "faqs": [
+      { "q": "What is a normal PSA?", "a": "Under 4 ng/mL is the usual cut-off, but age-specific ranges apply and trends matter more than one value." },
+      { "q": "Does high PSA mean cancer?", "a": "Not by itself — infection, enlargement and recent activity all raise it. It flags who needs a urologist's assessment." }
+    ],
+    "panel_slugs": ["hormones"]
+  },
+  {
+    "slug": "hiv",
+    "name": "HIV Screening (1 & 2)",
+    "short": "HIV",
+    "aka": ["HIV Antibody Test", "HIV Duo"],
+    "category": "Infection",
+    "band": [400, 900],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "Antibodies to HIV-1 and HIV-2 (and the p24 antigen in duo tests).",
+    "why": "Standard before surgeries and in pregnancy, and the only way to know status after possible exposure. Reports are confidential.",
+    "prep": "No fasting. Remember the window period: test 3–4 weeks after exposure for duo tests, with a confirmatory repeat later.",
+    "faqs": [
+      { "q": "How soon after exposure can HIV be detected?", "a": "4th-generation duo tests detect most infections by 3–4 weeks. A negative before 3 months usually gets one repeat to confirm." },
+      { "q": "Is my HIV report kept private?", "a": "Yes. Indian law and lab policy both require confidentiality, and reputable labs share results only with you." }
+    ],
+    "panel_slugs": []
+  },
+  {
+    "slug": "hbsag",
+    "name": "HBsAg (Hepatitis B Surface Antigen)",
+    "short": "HBsAg",
+    "aka": ["Hepatitis B Test", "Australia Antigen"],
+    "category": "Infection",
+    "band": [300, 700],
+    "fasting_hours": 0,
+    "tat_hours": [24, 48],
+    "sample": "Blood",
+    "measures": "The surface protein of the hepatitis B virus.",
+    "why": "Hepatitis B often shows no symptoms for years while it damages the liver. Standard before surgery, in pregnancy and for household contacts of carriers.",
+    "prep": "No fasting needed.",
+    "faqs": [
+      { "q": "HBsAg positive — what does it mean?", "a": "Current infection, recent or chronic. Follow-up tests sort out which, and many chronic carriers just need monitoring." },
+      { "q": "I'm vaccinated — will HBsAg show positive?", "a": "No. Vaccination produces antibodies, not the antigen this test looks for." }
+    ],
+    "panel_slugs": []
+  },
+  {
+    "slug": "beta-hcg",
+    "name": "Beta hCG (Pregnancy Hormone)",
+    "short": "Beta hCG",
+    "aka": ["Serum Pregnancy Test", "Quantitative hCG"],
+    "category": "Women's health",
+    "band": [400, 900],
+    "fasting_hours": 0,
+    "tat_hours": [12, 24],
+    "sample": "Blood",
+    "measures": "The exact level of the pregnancy hormone hCG in blood.",
+    "why": "Detects pregnancy days earlier than urine kits and, tracked over 48 hours, tells doctors whether an early pregnancy is progressing normally.",
+    "prep": "No fasting, any time of day.",
+    "faqs": [
+      { "q": "How early can beta hCG detect pregnancy?", "a": "About 8–10 days after conception — several days before a home urine kit turns positive." },
+      { "q": "Why repeat beta hCG after 48 hours?", "a": "In early pregnancy the value should roughly double every two days. The trend matters more than the single number." }
+    ],
+    "panel_slugs": []
+  },
+  {
+    "slug": "d-dimer",
+    "name": "D-Dimer",
+    "short": "D-Dimer",
+    "aka": ["Fibrin Degradation Fragment"],
+    "category": "Clotting",
+    "band": [900, 1800],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "A fragment released when blood clots break down.",
+    "why": "Ordered urgently for suspected leg-vein clots or lung clots. A normal value largely rules them out; a high one triggers scans.",
+    "prep": "No fasting. Usually ordered same-day by a doctor rather than as a routine screen.",
+    "faqs": [
+      { "q": "What does a high D-Dimer mean?", "a": "Possible clot — but also infection, surgery, pregnancy or age. It rules out clots well; it doesn't confirm them." },
+      { "q": "Should I get a D-Dimer as a routine checkup?", "a": "No. It's a targeted test for suspected clotting, best ordered by a doctor with a reason." }
+    ],
+    "panel_slugs": []
+  },
+  {
+    "slug": "dengue-ns1",
+    "name": "Dengue NS1 Antigen",
+    "short": "Dengue NS1",
+    "aka": ["NS1 ELISA"],
+    "category": "Infection",
+    "band": [500, 1200],
+    "fasting_hours": 0,
+    "tat_hours": [6, 24],
+    "sample": "Blood",
+    "measures": "A dengue virus protein detectable from day 1 of fever.",
+    "why": "In monsoon season, this is the earliest reliable dengue test — positive before antibodies appear. Usually paired with a CBC to watch platelets.",
+    "prep": "No fasting. Best within the first 5 days of fever.",
+    "faqs": [
+      { "q": "When should I test NS1 after fever starts?", "a": "Day 1 to day 5 of fever. After day 5 it fades and the IgM antibody test takes over." },
+      { "q": "NS1 positive — is hospital admission needed?", "a": "Most dengue is managed at home with fluids and daily platelet monitoring. Warning signs like bleeding or severe pain need hospital review." }
+    ],
+    "panel_slugs": []
+  }
+]

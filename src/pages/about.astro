@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About My Lab Tests"
+  description="Who runs My Lab Tests, why it exists, and how it stays independent."
+  path="/about/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">About My Lab Tests</h1>
+    <p>
+      Booking a lab test in India means opening six tabs, decoding six package
+      names, and still not knowing if "90 parameters" beats "63 tests". We got
+      tired of doing that maths for our families, so we built the site that does
+      it for everyone.
+    </p>
+    <p>
+      My Lab Tests compares prices, packages and service quality across India's
+      major diagnostics brands, city by city. Prices are re-checked on a nightly
+      schedule, package contents are broken down into standard panels, and the
+      total you see includes collection fees and live coupons.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">What we are not</h2>
+    <p>
+      We're not a lab, not a booking agent, and not a medical advisor. When you
+      pick an option, you book on the lab's own website — we never handle your
+      sample, your payment or your report. And nothing here replaces a doctor:
+      test results need clinical context we can't give.
+    </p>
+    <h2 class="mt-6 text-xl font-bold">How we stay independent</h2>
+    <p>
+      Every lab — big or small — runs through the same automated pipeline, and
+      the default sort everywhere is lowest total price. The ranking rules are
+      published on our <a href="/editorial-policy/" class="text-navy underline">How we compare</a> page.
+      If a lab ever pays us for placement, it will say so on the listing, in
+      plain words.
+    </p>
+    <p class="text-sm text-ink-soft">
+      Operating entity, registered address and the name of our medical reviewer
+      will be published here before public launch.
+    </p>
+  </div>
+</BaseLayout>

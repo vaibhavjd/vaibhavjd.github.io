@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Terms of use"
+  description="The short, readable terms for using My Lab Tests."
+  path="/terms/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Terms', path: '/terms/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">Terms of use</h1>
+    <p>Using this site means you're okay with the following:</p>
+    <ul class="list-disc space-y-2 pl-5">
+      <li>
+        The site provides price and service comparisons for information only.
+        The <a href="/disclaimer/" class="text-navy underline">disclaimer</a> is
+        part of these terms — nothing here is medical advice.
+      </li>
+      <li>
+        Prices and package details are collected automatically and can lag the
+        lab's website. The lab's own checkout price prevails.
+      </li>
+      <li>
+        Bookings, payments, sample handling and reports are contracts between
+        you and the lab. We're not a party to them and carry no liability for
+        the lab's services.
+      </li>
+      <li>
+        Content and code of this site belong to My Lab Tests. Quote freely with
+        a link; don't republish wholesale.
+      </li>
+      <li>
+        Don't scrape this site at volumes that degrade it for others. (Labs:
+        for data questions use the <a href="/contact/" class="text-navy underline">contact page</a>.)
+      </li>
+      <li>These terms are governed by Indian law.</li>
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact My Lab Tests"
+  description="Report a wrong price, ask a question, or send a data or removal request."
+  path="/contact/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact/' }]}
+>
+  <div class="prose-tight max-w-3xl">
+    <h1 class="text-2xl font-extrabold sm:text-3xl">Contact</h1>
+    <p>
+      Spotted a price that doesn't match the lab's site? That's the most useful
+      mail you can send us — include the page link and a screenshot if you can.
+    </p>
+    <p class="card">
+      <strong>Email:</strong> hello@mylabtests.in<br />
+      <span class="text-sm text-ink-soft">
+        We reply within one working day. Corrections to live data usually ship
+        the same day.
+      </span>
+    </p>
+    <h2 class="mt-6 text-xl font-bold">For labs and brands</h2>
+    <p>
+      Data disputes, factual corrections and removal requests go to the same
+      address with the subject "Data request". Tell us the exact page and what's
+      wrong; verified issues are corrected or removed promptly.
+    </p>
+    <p class="text-sm text-ink-soft">
+      We can't answer medical questions — for anything about your health or
+      your report, please talk to a doctor.
+    </p>
+  </div>
+</BaseLayout>

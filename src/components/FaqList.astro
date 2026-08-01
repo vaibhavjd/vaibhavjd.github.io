@@ -1,0 +1,19 @@
+---
+interface Props {
+  faqs: Array<{ q: string; a: string }>;
+  heading?: string;
+}
+const { faqs, heading = 'Common questions' } = Astro.props;
+---
+
+<section>
+  <h2 class="mb-3 text-xl font-bold">{heading}</h2>
+  <div class="space-y-2">
+    {faqs.map((f) => (
+      <details class="card">
+        <summary class="cursor-pointer font-semibold">{f.q}</summary>
+        <p class="mt-2 text-ink-soft">{f.a}</p>
+      </details>
+    ))}
+  </div>
+</section>

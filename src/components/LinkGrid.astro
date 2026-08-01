@@ -1,0 +1,21 @@
+---
+interface Props {
+  heading: string;
+  links: Array<{ href: string; label: string; sub?: string }>;
+}
+const { heading, links } = Astro.props;
+---
+
+<section>
+  <h2 class="mb-3 text-xl font-bold">{heading}</h2>
+  <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+    {links.map((l) => (
+      <li>
+        <a href={l.href} class="card block no-underline hover:border-navy">
+          <span class="font-medium text-navy">{l.label}</span>
+          {l.sub && <span class="num block text-xs text-ink-soft">{l.sub}</span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

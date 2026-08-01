@@ -1,0 +1,20 @@
+---
+interface Props {
+  rating: { rating: number; count: number; source: string } | null;
+}
+const { rating } = Astro.props;
+const countLabel = rating
+  ? new Intl.NumberFormat('en-IN').format(rating.count)
+  : '';
+---
+
+{rating ? (
+  <span class="whitespace-nowrap text-sm" title={`Ratings from ${rating.source}`}>
+    <span class="text-amber">★</span>
+    <span class="num font-semibold">{rating.rating.toFixed(1)}</span>
+    <span class="num text-ink-soft"> ({countLabel})</span>
+    <span class="block text-xs text-ink-soft">via {rating.source}</span>
+  </span>
+) : (
+  <span class="text-sm text-ink-soft">—</span>
+)}
