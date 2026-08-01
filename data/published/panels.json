@@ -2,71 +2,279 @@
   {
     "slug": "cbc",
     "name": "Complete Blood Count",
-    "params": ["Hemoglobin", "RBC Count", "WBC Count", "Platelet Count", "Hematocrit (PCV)", "MCV", "MCH", "MCHC", "RDW-CV", "RDW-SD", "Neutrophils %", "Lymphocytes %", "Monocytes %", "Eosinophils %", "Basophils %", "Absolute Neutrophils", "Absolute Lymphocytes", "Absolute Monocytes", "Absolute Eosinophils", "Absolute Basophils", "MPV"]
+    "params": [
+      "Hemoglobin",
+      "RBC Count",
+      "WBC Count",
+      "Platelet Count",
+      "Hematocrit (PCV)",
+      "MCV",
+      "MCH",
+      "MCHC",
+      "RDW-CV",
+      "RDW-SD",
+      "Neutrophils %",
+      "Lymphocytes %",
+      "Monocytes %",
+      "Eosinophils %",
+      "Basophils %",
+      "Absolute Neutrophils",
+      "Absolute Lymphocytes",
+      "Absolute Monocytes",
+      "Absolute Eosinophils",
+      "Absolute Basophils",
+      "MPV"
+    ],
+    "param_slugs": [
+      "hemoglobin",
+      "rbc-count",
+      "wbc-count",
+      "platelet-count",
+      "hematocrit-pcv",
+      "mcv",
+      "mch",
+      "mchc",
+      "rdw-cv",
+      "rdw-sd",
+      "neutrophils",
+      "lymphocytes",
+      "monocytes",
+      "eosinophils",
+      "basophils",
+      "absolute-neutrophils",
+      "absolute-lymphocytes",
+      "absolute-monocytes",
+      "absolute-eosinophils",
+      "absolute-basophils",
+      "mpv"
+    ]
   },
   {
     "slug": "lipid",
     "name": "Lipid Profile",
-    "params": ["Total Cholesterol", "HDL Cholesterol", "LDL Cholesterol", "VLDL Cholesterol", "Triglycerides", "TC/HDL Ratio", "LDL/HDL Ratio", "Non-HDL Cholesterol"]
+    "params": [
+      "Total Cholesterol",
+      "HDL Cholesterol",
+      "LDL Cholesterol",
+      "VLDL Cholesterol",
+      "Triglycerides",
+      "TC/HDL Ratio",
+      "LDL/HDL Ratio",
+      "Non-HDL Cholesterol"
+    ],
+    "param_slugs": [
+      "total-cholesterol",
+      "hdl-cholesterol",
+      "ldl-cholesterol",
+      "vldl-cholesterol",
+      "triglycerides",
+      "tc-hdl-ratio",
+      "ldl-hdl-ratio",
+      "non-hdl-cholesterol"
+    ]
   },
   {
     "slug": "lft",
     "name": "Liver Function",
-    "params": ["Total Bilirubin", "Direct Bilirubin", "Indirect Bilirubin", "SGOT (AST)", "SGPT (ALT)", "Alkaline Phosphatase", "GGT", "Total Protein", "Albumin", "Globulin", "A/G Ratio"]
+    "params": [
+      "Total Bilirubin",
+      "Direct Bilirubin",
+      "Indirect Bilirubin",
+      "SGOT (AST)",
+      "SGPT (ALT)",
+      "Alkaline Phosphatase",
+      "GGT",
+      "Total Protein",
+      "Albumin",
+      "Globulin",
+      "A/G Ratio"
+    ],
+    "param_slugs": [
+      "total-bilirubin",
+      "direct-bilirubin",
+      "indirect-bilirubin",
+      "sgot-ast",
+      "sgpt-alt",
+      "alkaline-phosphatase",
+      "ggt",
+      "total-protein",
+      "albumin",
+      "globulin",
+      "a-g-ratio"
+    ]
   },
   {
     "slug": "kft",
     "name": "Kidney Function",
-    "params": ["Urea", "Blood Urea Nitrogen", "Creatinine", "Uric Acid", "BUN/Creatinine Ratio", "Calcium", "Phosphorus", "Sodium", "Potassium", "Chloride"]
+    "params": [
+      "Urea",
+      "Blood Urea Nitrogen",
+      "Creatinine",
+      "Uric Acid",
+      "BUN/Creatinine Ratio",
+      "Calcium",
+      "Phosphorus",
+      "Sodium",
+      "Potassium",
+      "Chloride"
+    ],
+    "param_slugs": [
+      "urea",
+      "blood-urea-nitrogen",
+      "creatinine",
+      "uric-acid",
+      "bun-creatinine-ratio",
+      "calcium",
+      "phosphorus",
+      "sodium",
+      "potassium",
+      "chloride"
+    ]
   },
   {
     "slug": "thyroid",
     "name": "Thyroid Profile",
-    "params": ["Total T3", "Total T4", "TSH"]
+    "params": [
+      "Total T3",
+      "Total T4",
+      "TSH"
+    ],
+    "param_slugs": [
+      "total-t3",
+      "total-t4",
+      "tsh"
+    ]
   },
   {
     "slug": "diabetes",
     "name": "Diabetes Screen",
-    "params": ["Fasting Glucose", "HbA1c", "Estimated Average Glucose"]
+    "params": [
+      "Fasting Glucose",
+      "HbA1c",
+      "Estimated Average Glucose"
+    ],
+    "param_slugs": [
+      "fasting-glucose",
+      "hba1c",
+      "estimated-average-glucose"
+    ]
   },
   {
     "slug": "vitamins",
     "name": "Vitamins",
-    "params": ["Vitamin D (25-OH)", "Vitamin B12"]
+    "params": [
+      "Vitamin D (25-OH)",
+      "Vitamin B12"
+    ],
+    "param_slugs": [
+      "vitamin-d-25-oh",
+      "vitamin-b12"
+    ]
   },
   {
     "slug": "iron",
     "name": "Iron Studies",
-    "params": ["Serum Iron", "TIBC", "Transferrin Saturation", "Ferritin"]
+    "params": [
+      "Serum Iron",
+      "TIBC",
+      "Transferrin Saturation",
+      "Ferritin"
+    ],
+    "param_slugs": [
+      "serum-iron",
+      "tibc",
+      "transferrin-saturation",
+      "ferritin"
+    ]
   },
   {
     "slug": "electrolytes",
     "name": "Electrolytes",
-    "params": ["Sodium", "Potassium", "Chloride"]
+    "params": [
+      "Sodium",
+      "Potassium",
+      "Chloride"
+    ],
+    "param_slugs": [
+      "sodium",
+      "potassium",
+      "chloride"
+    ]
   },
   {
     "slug": "urine",
     "name": "Urine Routine",
-    "params": ["Colour", "Appearance", "pH", "Specific Gravity", "Protein", "Glucose", "Ketones", "Blood", "Leukocyte Esterase", "Microscopic Examination"]
+    "params": [
+      "Colour",
+      "Appearance",
+      "pH",
+      "Specific Gravity",
+      "Protein",
+      "Glucose",
+      "Ketones",
+      "Blood",
+      "Leukocyte Esterase",
+      "Microscopic Examination"
+    ],
+    "param_slugs": [
+      "colour",
+      "appearance",
+      "ph",
+      "specific-gravity",
+      "protein",
+      "glucose",
+      "ketones",
+      "blood",
+      "leukocyte-esterase",
+      "microscopic-examination"
+    ]
   },
   {
     "slug": "inflammation",
     "name": "Inflammation Markers",
-    "params": ["ESR", "CRP"]
+    "params": [
+      "ESR",
+      "CRP"
+    ],
+    "param_slugs": [
+      "esr",
+      "crp"
+    ]
   },
   {
     "slug": "cardiac-risk",
     "name": "Cardiac Risk Markers",
-    "params": ["hs-CRP", "Homocysteine", "Lipoprotein(a)"]
+    "params": [
+      "hs-CRP",
+      "Homocysteine",
+      "Lipoprotein(a)"
+    ],
+    "param_slugs": [
+      "hs-crp",
+      "homocysteine",
+      "lipoprotein-a"
+    ]
   },
   {
     "slug": "pancreas",
     "name": "Pancreas",
-    "params": ["Amylase", "Lipase"]
+    "params": [
+      "Amylase",
+      "Lipase"
+    ],
+    "param_slugs": [
+      "amylase",
+      "lipase"
+    ]
   },
   {
     "slug": "hormones",
     "name": "Hormones",
-    "params": ["Testosterone (Total)"]
+    "params": [
+      "Testosterone (Total)"
+    ],
+    "param_slugs": [
+      "testosterone-total"
+    ]
   }
 ]

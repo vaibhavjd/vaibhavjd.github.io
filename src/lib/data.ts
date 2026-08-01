@@ -140,9 +140,12 @@ export function packageCards(citySlug: string): PackageCard[] {
     if (offer.kind !== 'package' || offer.city !== citySlug) continue;
     const pkg = packages.find((p) => p.id === offer.package_id);
     if (!pkg) continue;
-    const verifiedParams =
-      pkg.panels.reduce((sum, slug) => sum + (panelsBySlug[slug]?.params.length ?? 0), 0) +
-      (pkg.biomarkers?.length ?? 0);
+    // Count distinct biomarkers, so a marker reachable through both a panel
+    // and a standalone mapping is not counted twice.
+    const verifiedParams = pkg.covered?.length
+      ? pkg.covered.length
+      : pkg.panels.reduce((sum, slug) => sum + (panelsBySlug[slug]?.params.length ?? 0), 0) +
+        (pkg.biomarkers?.length ?? 0);
     const enriched = enrich(offer);
     cards.push({
       pkg,
@@ -154,32 +157,57 @@ export function packageCards(citySlug: string): PackageCard[] {
   return cards.sort((a, b) => a.enriched.total - b.enriched.total);
 }
 
+/** Coverage per panel as a FRACTION, not a tick.
+ *
+ *  Providers cut their panels differently to ours. Max Lab's "Liver Detailed
+ *  Profile" carries 5 of our 11 liver markers; showing that as "not included"
+ *  (because no whole-panel match exists) understated it badly, and showing it
+ *  as a full tick would overstate it. Both are wrong on a health page, so each
+ *  cell reports how many of the panel's parameters the package actually has. */
 export function coverageRows(cards: PackageCard[]): CoverageRow[] {
-  const slugs = new Set<string>();
-  for (const c of cards) for (const s of c.pkg.panels) slugs.add(s);
-  const rows: CoverageRow[] = panels
-    .filter((p) => slugs.has(p.slug))
-    .map((panel) => ({
-      panel,
-      included: cards.map((c) => c.pkg.panels.includes(panel.slug)),
-    }));
+  const coveredSets = cards.map((c) => {
+    if (c.pkg.covered?.length) return new Set(c.pkg.covered);
+    // Fallback for older bundles without `covered`: expand whole panels.
+    const s = new Set<string>();
+    for (const slug of c.pkg.panels) {
+      for (const b of panelsBySlug[slug]?.param_slugs ?? []) s.add(b);
+    }
+    for (const entry of c.pkg.biomarkers ?? []) s.add(entry.split('|')[0]);
+    return s;
+  });
 
-  // Standalone biomarkers get their own single-parameter rows. Without this a
-  // package that includes only vitamin D would either vanish from the matrix
-  // or, worse, be shown as covering the whole vitamins panel.
-  const singles = new Map<string, string>();
+  const rows: CoverageRow[] = [];
+  for (const panel of panels) {
+    const slugs = panel.param_slugs ?? [];
+    if (slugs.length === 0) continue;
+    const covered = coveredSets.map((set) => slugs.filter((s) => set.has(s)).length);
+    if (covered.every((n) => n === 0)) continue; // nobody offers it, so omit
+    rows.push({
+      panel,
+      total: slugs.length,
+      covered,
+      included: covered.map((n) => n === slugs.length),
+    });
+  }
+
+  // Markers that belong to no panel we publish still deserve a row.
+  const orphan = new Map<string, string>();
   for (const c of cards) {
     for (const entry of c.pkg.biomarkers ?? []) {
       const [slug, name] = entry.split('|');
-      if (!singles.has(slug)) singles.set(slug, name ?? slug);
+      const inPanel = panels.some((p) => (p.param_slugs ?? []).includes(slug));
+      if (!inPanel && !orphan.has(slug)) orphan.set(slug, name ?? slug);
     }
   }
-  for (const [slug, name] of singles) {
+  for (const [slug, name] of orphan) {
+    const covered = cards.map((c) =>
+      (c.pkg.biomarkers ?? []).some((b) => b.split('|')[0] === slug) ? 1 : 0,
+    );
     rows.push({
-      panel: { slug, name, params: [name] },
-      included: cards.map((c) =>
-        (c.pkg.biomarkers ?? []).some((b) => b.split('|')[0] === slug),
-      ),
+      panel: { slug, name, params: [name], param_slugs: [slug] },
+      total: 1,
+      covered,
+      included: covered.map((n) => n === 1),
     });
   }
   return rows;

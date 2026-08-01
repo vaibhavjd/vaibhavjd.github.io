@@ -136,8 +136,9 @@ const fbcPkgProps = fbcCards.map((c) => ({
 }));
 const fbcRowProps = fbcCov.map((r) => ({
   name: r.panel.name,
-  params: r.panel.params.length,
+  params: r.total,
   included: r.included,
+  covered: r.covered,
 }));
 
 // ---------- city hub ----------

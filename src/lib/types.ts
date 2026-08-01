@@ -60,6 +60,8 @@ export interface Panel {
   slug: string;
   name: string;
   params: string[];
+  /** Biomarker slugs, parallel to `params`. Used to compute partial coverage. */
+  param_slugs?: string[];
 }
 
 export interface OfferFee {
@@ -93,9 +95,11 @@ export interface PackageDef {
   name: string;
   claimed_params: number;
   panels: string[];
-  /** Single-biomarker inclusions as "slug|Display Name" — a package with
+  /** Single-biomarker inclusions as "slug|Display Name". A package with
    *  vitamin D alone must not be shown as covering the whole vitamins panel. */
   biomarkers?: string[];
+  /** Every biomarker slug this package covers, from panels and singles alike. */
+  covered?: string[];
   consult_included: boolean;
   smart_report: boolean;
   fasting_required: boolean;
@@ -144,4 +148,7 @@ export interface PackageCard {
 export interface CoverageRow {
   panel: Panel;
   included: boolean[];
+  /** How many of this panel's parameters each package covers. */
+  covered: number[];
+  total: number;
 }

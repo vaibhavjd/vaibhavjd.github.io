@@ -33,6 +33,8 @@ export interface MatrixRow {
   name: string;
   params: number;
   included: boolean[];
+  /** Parameters of this panel each package actually covers. */
+  covered: number[];
 }
 
 interface Props {
@@ -71,15 +73,18 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
     return idx;
   }, [pkgs, free, fast, nabl, consult, sort]);
 
-  // Split panels by whether every visible package includes them.
+  // A panel is "shared" only when every visible package covers it to the same
+  // depth. Two packages both ticking "Liver Function" while one carries 5 of
+  // 11 markers is exactly the difference a buyer needs to see.
   const { shared, differing } = useMemo(() => {
     const cols = visible.map(({ i }) => i);
     const shared: MatrixRow[] = [];
     const differing: MatrixRow[] = [];
     for (const row of rows) {
-      const vals = cols.map((i) => row.included[i]);
-      if (vals.length > 1 && vals.every(Boolean)) shared.push(row);
-      else if (vals.some(Boolean)) differing.push(row);
+      const counts = cols.map((i) => row.covered[i] ?? 0);
+      const full = counts.every((n) => n === row.params);
+      if (cols.length > 1 && full) shared.push(row);
+      else if (counts.some((n) => n > 0)) differing.push(row);
     }
     return { shared, differing };
   }, [rows, visible]);
@@ -242,9 +247,11 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
           <h2 class="mb-1 font-heading text-xl font-extrabold tracking-tight text-navy">
             Parameter coverage
           </h2>
-          <p class="mb-2.5 max-w-[64ch] text-[13px] text-ink-soft">
-            Panels every package shares are collapsed. The ones below them are where
-            these packages actually differ, and where your money goes.
+          <p class="mb-2.5 max-w-[70ch] text-[13px] text-ink-soft">
+            Panels that every package covers in full are collapsed. Below them is
+            where the packages actually differ. Labs group their panels differently
+            to us, so a package often carries part of one: "5 of 11" means five of
+            that panel's eleven parameters are in the report.
           </p>
 
           <div class="overflow-hidden rounded-xl border border-line bg-white">
@@ -311,15 +318,41 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
                           {row.params} {row.params === 1 ? 'parameter' : 'parameters'}
                         </span>
                       </th>
-                      {visible.map(({ p, i }) => (
-                        <td key={p.id} class="p-3 text-center">
-                          {row.included[i] ? (
-                            <span class="font-bold text-good-700">✓</span>
-                          ) : (
-                            <span class="text-gray-500">not included</span>
-                          )}
-                        </td>
-                      ))}
+                      {visible.map(({ p, i }) => {
+                        const n = row.covered[i] ?? 0;
+                        if (n === 0) {
+                          return (
+                            <td key={p.id} class="p-3 text-center text-[12px] text-gray-500">
+                              not included
+                            </td>
+                          );
+                        }
+                        if (n === row.params) {
+                          return (
+                            <td key={p.id} class="p-3 text-center">
+                              <span class="font-bold text-good-700">✓</span>
+                              {row.params > 1 && (
+                                <span class="num block text-[11px] text-ink-soft">
+                                  all {row.params}
+                                </span>
+                              )}
+                            </td>
+                          );
+                        }
+                        return (
+                          <td key={p.id} class="p-3 text-center">
+                            <span class="num text-[13px] font-bold text-amber-700">
+                              {n} of {row.params}
+                            </span>
+                            <span class="mx-auto mt-1 block h-1 w-10 overflow-hidden rounded-full bg-line">
+                              <span
+                                class="block h-full rounded-full bg-amber"
+                                style={`width:${Math.round((n / row.params) * 100)}%`}
+                              />
+                            </span>
+                          </td>
+                        );
+                      })}
                     </tr>
                   ))}
                 </tbody>
