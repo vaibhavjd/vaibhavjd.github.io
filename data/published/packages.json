@@ -56,8 +56,24 @@
     "provider": "max-lab",
     "name": "Wellwise Total Profile",
     "claimed_params": 84,
-    "panels": [],
-    "biomarkers": [],
+    "panels": [
+      "cbc",
+      "diabetes",
+      "urine"
+    ],
+    "biomarkers": [
+      "tsh|TSH",
+      "urea|Urea",
+      "total-bilirubin|Total Bilirubin",
+      "total-cholesterol|Total Cholesterol",
+      "triglycerides|Triglycerides",
+      "creatinine|Creatinine",
+      "uric-acid|Uric Acid",
+      "direct-bilirubin|Direct Bilirubin",
+      "indirect-bilirubin|Indirect Bilirubin",
+      "sgot-ast|SGOT (AST)",
+      "sgpt-alt|SGPT (ALT)"
+    ],
     "consult_included": false,
     "smart_report": false,
     "fasting_required": true,
@@ -115,8 +131,24 @@
     "provider": "max-lab",
     "name": "Wellwise Essential Profile",
     "claimed_params": 50,
-    "panels": [],
-    "biomarkers": [],
+    "panels": [
+      "cbc",
+      "diabetes",
+      "urine"
+    ],
+    "biomarkers": [
+      "total-cholesterol|Total Cholesterol",
+      "triglycerides|Triglycerides",
+      "tsh|TSH",
+      "urea|Urea",
+      "creatinine|Creatinine",
+      "uric-acid|Uric Acid",
+      "total-bilirubin|Total Bilirubin",
+      "direct-bilirubin|Direct Bilirubin",
+      "indirect-bilirubin|Indirect Bilirubin",
+      "sgot-ast|SGOT (AST)",
+      "sgpt-alt|SGPT (ALT)"
+    ],
     "consult_included": false,
     "smart_report": false,
     "fasting_required": true,

@@ -3,499 +3,1021 @@
     "slug": "cbc",
     "name": "Complete Blood Count (CBC)",
     "short": "CBC",
-    "aka": ["Hemogram", "Full Blood Count"],
+    "aka": [
+      "Hemogram",
+      "Full Blood Count"
+    ],
     "category": "Routine",
-    "band": [200, 500],
+    "band": [
+      200,
+      500
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Counts your red cells, white cells and platelets, and reports haemoglobin, haematocrit and red-cell size (MCV) alongside them — around 21 numbers from one tube of blood.",
+    "measures": "Counts your red cells, white cells and platelets, and reports haemoglobin, haematocrit and red-cell size (MCV) alongside them, around 21 numbers from one tube of blood.",
     "why": "It's the first test most doctors order, because it screens several systems at once. Low haemoglobin points to anaemia, an unusual white-cell count to infection, and falling platelets to dengue or other causes. Through the monsoon months labs run it daily beside dengue testing to watch the platelet trend.",
     "prep": "No fasting needed and any time of day works. If a package bundles the CBC with sugar or lipid tests, follow the fasting rule of the strictest test in that bundle. Tell the technician if you're on blood thinners so they press the puncture site a little longer.",
     "faqs": [
-      { "q": "Does a CBC need fasting?", "a": "No. You can eat and drink normally before a CBC. Fasting only enters the picture when a package bundles it with glucose or lipid tests." },
-      { "q": "What does a CBC detect?", "a": "Anaemia, most infections, platelet problems and several blood disorders. It flags issues; your doctor reads them against your symptoms and decides what follows." },
-      { "q": "What haemoglobin level counts as anaemia?", "a": "WHO uses below 13 g/dL for men, below 12 g/dL for non-pregnant women and below 11 g/dL in pregnancy. Your report prints the lab's own range next to the value. One low reading calls for a doctor's review and usually an iron or ferritin test to find the cause, not a supplement picked off a shelf." }
+      {
+        "q": "Does a CBC need fasting?",
+        "a": "No. You can eat and drink normally before a CBC. Fasting only enters the picture when a package bundles it with glucose or lipid tests."
+      },
+      {
+        "q": "What does a CBC detect?",
+        "a": "Anaemia, most infections, platelet problems and several blood disorders. It flags issues; your doctor reads them against your symptoms and decides what follows."
+      },
+      {
+        "q": "What haemoglobin level counts as anaemia?",
+        "a": "WHO uses below 13 g/dL for men, below 12 g/dL for non-pregnant women and below 11 g/dL in pregnancy. Your report prints the lab's own range next to the value. One low reading calls for a doctor's review and usually an iron or ferritin test to find the cause, not a supplement picked off a shelf."
+      }
     ],
     "sources": [
-      { "title": "Complete Blood Count (CBC) — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/" },
-      { "title": "Anaemia — World Health Organization", "url": "https://www.who.int/news-room/fact-sheets/detail/anaemia" }
+      {
+        "title": "Complete Blood Count (CBC), MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/"
+      },
+      {
+        "title": "Anaemia, World Health Organization",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/anaemia"
+      }
     ],
-    "panel_slugs": ["cbc"]
+    "panel_slugs": [
+      "cbc"
+    ]
   },
   {
     "slug": "thyroid-profile",
     "name": "Thyroid Profile (T3, T4, TSH)",
     "short": "Thyroid",
-    "aka": ["TFT", "Thyroid Function Test"],
+    "aka": [
+      "TFT",
+      "Thyroid Function Test"
+    ],
     "category": "Hormones",
-    "band": [300, 750],
+    "band": [
+      300,
+      750
+    ],
     "fasting_hours": 0,
-    "tat_hours": [12, 24],
+    "tat_hours": [
+      12,
+      24
+    ],
     "sample": "Blood",
     "measures": "TSH plus the two thyroid hormones T3 and T4. TSH is the pituitary's signal to the thyroid, so it moves first and moves furthest.",
     "why": "Tiredness, weight change, hair fall and irregular periods often trace back to the thyroid, and hypothyroidism is common enough in India that doctors screen for it early in those work-ups. TSH alone catches most cases; adding T3 and T4 shows how far the gland has drifted and separates the less common patterns.",
-    "prep": "No fasting for the thyroid test itself. Give the sample in the morning — TSH peaks overnight and drifts down through the day, so morning draws stay comparable report to report. Take your thyroid tablet after the blood is drawn. Tell the lab if you take biotin (vitamin B7), the hair-and-skin supplement, because it interferes with the assay.",
+    "prep": "No fasting for the thyroid test itself. Give the sample in the morning. TSH peaks overnight and drifts down through the day, so morning draws stay comparable report to report. Take your thyroid tablet after the blood is drawn. Tell the lab if you take biotin (vitamin B7), the hair-and-skin supplement, because it interferes with the assay.",
     "faqs": [
-      { "q": "Should I take my thyroid tablet before the test?", "a": "Give your sample first, then take the tablet. Levothyroxine swallowed a couple of hours earlier pushes the T4 reading up and can make control look better than it is." },
-      { "q": "Is fasting needed for a thyroid test?", "a": "No. Labs prefer morning samples because TSH swings through the day, but food doesn't change the result." },
-      { "q": "Can my hair supplement change the result?", "a": "Biotin can, and it's in most hair, skin and nail supplements sold in India. At high doses it skews the immunoassays labs use: TSH reads falsely low while T3 and T4 read falsely high, which mimics an overactive thyroid. Tell your doctor you take it and ask how long to pause before testing." }
+      {
+        "q": "Should I take my thyroid tablet before the test?",
+        "a": "Give your sample first, then take the tablet. Levothyroxine swallowed a couple of hours earlier pushes the T4 reading up and can make control look better than it is."
+      },
+      {
+        "q": "Is fasting needed for a thyroid test?",
+        "a": "No. Labs prefer morning samples because TSH swings through the day, but food doesn't change the result."
+      },
+      {
+        "q": "Can my hair supplement change the result?",
+        "a": "Biotin can, and it's in most hair, skin and nail supplements sold in India. At high doses it skews the immunoassays labs use: TSH reads falsely low while T3 and T4 read falsely high, which mimics an overactive thyroid. Tell your doctor you take it and ask how long to pause before testing."
+      }
     ],
     "sources": [
-      { "title": "TSH (Thyroid-Stimulating Hormone) Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/" },
-      { "title": "Free T4 test — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003517.htm" }
+      {
+        "title": "TSH (Thyroid-Stimulating Hormone) Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/"
+      },
+      {
+        "title": "Free T4 test, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003517.htm"
+      }
     ],
-    "panel_slugs": ["thyroid"]
+    "panel_slugs": [
+      "thyroid"
+    ]
   },
   {
     "slug": "hba1c",
     "name": "HbA1c (Glycated Hemoglobin)",
     "short": "HbA1c",
-    "aka": ["Glycosylated Hemoglobin", "A1c"],
+    "aka": [
+      "Glycosylated Hemoglobin",
+      "A1c"
+    ],
     "category": "Diabetes",
-    "band": [300, 600],
+    "band": [
+      300,
+      600
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Your average blood sugar over the last 2–3 months, reported as the percentage of haemoglobin carrying sugar stuck to it.",
+    "measures": "Your average blood sugar over the last 2 to 3 months, reported as the percentage of haemoglobin carrying sugar stuck to it.",
     "why": "One-off sugar readings jump around with your last meal, your sleep and your stress. HbA1c doesn't, which is why doctors use it both to diagnose diabetes and to judge whether treatment is holding. ICMR, WHO and the ADA all use the same threshold, so a result from any accredited lab reads the same way.",
-    "prep": "No fasting needed — that's the practical advantage over fasting glucose, and it means any home sample collection slot works. Tell the lab if you've had a blood transfusion or heavy blood loss recently, or if you know you have anaemia, thalassaemia trait or another haemoglobin variant, because each of those distorts the number.",
+    "prep": "No fasting needed. That's the practical advantage over fasting glucose, and it means any home sample collection slot works. Tell the lab if you've had a blood transfusion or heavy blood loss recently, or if you know you have anaemia, thalassaemia trait or another haemoglobin variant, because each of those distorts the number.",
     "faqs": [
-      { "q": "What is a normal HbA1c?", "a": "Below 5.7% is normal, 5.7–6.4% is prediabetes, and 6.5% or above meets the diagnostic threshold for diabetes. These are standardised cut-offs, not lab-specific ones — the same numbers apply everywhere. A result near the line gets confirmed on a repeat before any diagnosis is made." },
-      { "q": "Can I eat before an HbA1c test?", "a": "Yes. Food on the day doesn't move a three-month average, so breakfast before the draw is fine." },
-      { "q": "When is HbA1c unreliable?", "a": "Anaemia, thalassaemia trait, sickle-cell trait, recent transfusion or blood loss, chronic kidney disease, liver disease and pregnancy can all skew it. Iron-deficiency anaemia and thalassaemia trait are common in India, so if either applies to you, your doctor may lean on fasting and post-meal glucose instead." }
+      {
+        "q": "What is a normal HbA1c?",
+        "a": "Below 5.7% is normal, 5.7 to 6.4% is prediabetes, and 6.5% or above meets the diagnostic threshold for diabetes. These are standardised cut-offs, not lab-specific ones, the same numbers apply everywhere. A result near the line gets confirmed on a repeat before any diagnosis is made."
+      },
+      {
+        "q": "Can I eat before an HbA1c test?",
+        "a": "Yes. Food on the day doesn't move a three-month average, so breakfast before the draw is fine."
+      },
+      {
+        "q": "When is HbA1c unreliable?",
+        "a": "Anaemia, thalassaemia trait, sickle-cell trait, recent transfusion or blood loss, chronic kidney disease, liver disease and pregnancy can all skew it. Iron-deficiency anaemia and thalassaemia trait are common in India, so if either applies to you, your doctor may lean on fasting and post-meal glucose instead."
+      }
     ],
     "sources": [
-      { "title": "Hemoglobin A1c (HbA1c) Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/" },
-      { "title": "Diabetes Tests & Diagnosis — NIDDK, NIH", "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis" }
+      {
+        "title": "Hemoglobin A1c (HbA1c) Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/"
+      },
+      {
+        "title": "Diabetes Tests & Diagnosis, NIDDK, NIH",
+        "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+      }
     ],
-    "panel_slugs": ["diabetes"]
+    "panel_slugs": [
+      "diabetes"
+    ]
   },
   {
     "slug": "blood-sugar-fasting",
     "name": "Fasting Blood Sugar (FBS)",
     "short": "FBS",
-    "aka": ["Fasting Glucose", "FBG"],
+    "aka": [
+      "Fasting Glucose",
+      "FBG"
+    ],
     "category": "Diabetes",
-    "band": [80, 250],
+    "band": [
+      80,
+      250
+    ],
     "fasting_hours": 8,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
     "measures": "Your blood glucose in mg/dL after an overnight fast.",
-    "why": "It's cheap, fast and still the standard first check for diabetes, usually paired with HbA1c. It's also the number most Indian pre-employment and insurance panels screen on, so it's the one people see most often — worth knowing what the bands actually mean.",
+    "why": "It's cheap, fast and still the standard first check for diabetes, usually paired with HbA1c. It's also the number most Indian pre-employment and insurance panels screen on, so it's the one people see most often, worth knowing what the bands actually mean.",
     "prep": "Fast at least 8 hours; most Indian labs ask for 8 to 12. Plain water is fine and keeps the vein easy to find. Tea, coffee, juice, milk and chewing gum are not. Ask your doctor before skipping or taking any diabetes medicine on a fasting morning. Book the earliest home sample collection slot so you're not still fasting at noon.",
     "faqs": [
-      { "q": "How long should I fast?", "a": "At least 8 hours, and most Indian labs ask for 8 to 12. Water only in that window." },
-      { "q": "What counts as a normal fasting sugar?", "a": "99 mg/dL or below is normal. 100–125 mg/dL is prediabetes under NIDDK, ADA and ICMR criteria — WHO draws that particular line at 110. 126 mg/dL or above, confirmed on a repeat, meets the diagnostic threshold for diabetes, and every major guideline uses 126." },
-      { "q": "Is a normal fasting sugar enough to rule out diabetes?", "a": "Not always. Plenty of people in India show a normal fasting value alongside a high reading two hours after food, so doctors often add a post-meal glucose or an HbA1c. If you have a family history, a large waist or PCOS, ask your doctor which combination fits you." }
+      {
+        "q": "How long should I fast?",
+        "a": "At least 8 hours, and most Indian labs ask for 8 to 12. Water only in that window."
+      },
+      {
+        "q": "What counts as a normal fasting sugar?",
+        "a": "99 mg/dL or below is normal. 100 to 125 mg/dL is prediabetes under NIDDK, ADA and ICMR criteria, WHO draws that particular line at 110. 126 mg/dL or above, confirmed on a repeat, meets the diagnostic threshold for diabetes, and every major guideline uses 126."
+      },
+      {
+        "q": "Is a normal fasting sugar enough to rule out diabetes?",
+        "a": "Not always. Plenty of people in India show a normal fasting value alongside a high reading two hours after food, so doctors often add a post-meal glucose or an HbA1c. If you have a family history, a large waist or PCOS, ask your doctor which combination fits you."
+      }
     ],
     "sources": [
-      { "title": "Blood Glucose Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/" },
-      { "title": "Diabetes Tests & Diagnosis — NIDDK, NIH", "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis" }
+      {
+        "title": "Blood Glucose Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
+      },
+      {
+        "title": "Diabetes Tests & Diagnosis, NIDDK, NIH",
+        "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+      }
     ],
-    "panel_slugs": ["diabetes"]
+    "panel_slugs": [
+      "diabetes"
+    ]
   },
   {
     "slug": "lipid-profile",
     "name": "Lipid Profile",
     "short": "Lipid",
-    "aka": ["Cholesterol Test", "Lipid Panel"],
+    "aka": [
+      "Cholesterol Test",
+      "Lipid Panel"
+    ],
     "category": "Heart",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 10,
-    "tat_hours": [12, 24],
+    "tat_hours": [
+      12,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Total cholesterol, HDL, LDL, triglycerides and the ratios derived from them — usually 8 numbers.",
+    "measures": "Total cholesterol, HDL, LDL, triglycerides and the ratios derived from them, usually 8 numbers.",
     "why": "High LDL and triglycerides damage arteries for years before you feel anything, so screening catches the problem while it's still a number on a page. Indians tend to develop heart disease around a decade earlier than western populations, which is why many doctors here start checking in the 20s and 30s rather than waiting for 40.",
-    "prep": "Fast 9 to 12 hours, water only. Triglycerides are the parameter food moves most, so a fed sample can read markedly higher. Skip alcohol for 24 hours before, since it pushes triglycerides up too. Some labs now accept non-fasting samples for routine screening — follow what your lab prints on the booking confirmation.",
+    "prep": "Fast 9 to 12 hours, water only. Triglycerides are the parameter food moves most, so a fed sample can read markedly higher. Skip alcohol for 24 hours before, since it pushes triglycerides up too. Some labs now accept non-fasting samples for routine screening. Follow what your lab prints on the booking confirmation.",
     "faqs": [
-      { "q": "Is fasting compulsory for a lipid profile?", "a": "Guidelines now accept non-fasting samples for routine screening, but most Indian labs still ask for 9 to 12 hours. Triglycerides read higher after food, so if your doctor is tracking those specifically, fast." },
-      { "q": "How often should I check cholesterol?", "a": "MedlinePlus puts it at roughly every 5 years for adults aged 20 to 65, every 1 to 2 years for men aged 45–65 and women aged 55–65, and yearly after 65. Expect shorter intervals if you're on treatment, have diabetes, or your doctor is watching a change." },
-      { "q": "Which number on the report matters most?", "a": "LDL cholesterol carries most of the risk weight. When triglycerides are high, many doctors also read non-HDL — total cholesterol minus HDL — because it captures more of the harmful particles. One value outside the range isn't a verdict; your doctor weighs it against your blood pressure, sugar, smoking and family history." }
+      {
+        "q": "Is fasting compulsory for a lipid profile?",
+        "a": "Guidelines now accept non-fasting samples for routine screening, but most Indian labs still ask for 9 to 12 hours. Triglycerides read higher after food, so if your doctor is tracking those specifically, fast."
+      },
+      {
+        "q": "How often should I check cholesterol?",
+        "a": "MedlinePlus puts it at roughly every 5 years for adults aged 20 to 65, every 1 to 2 years for men aged 45 to 65 and women aged 55 to 65, and yearly after 65. Expect shorter intervals if you're on treatment, have diabetes, or your doctor is watching a change."
+      },
+      {
+        "q": "Which number on the report matters most?",
+        "a": "LDL cholesterol carries most of the risk weight. When triglycerides are high, many doctors also read non-HDL (total cholesterol minus HDL) because it captures more of the harmful particles. One value outside the range isn't a verdict; your doctor weighs it against your blood pressure, sugar, smoking and family history."
+      }
     ],
     "sources": [
-      { "title": "Cholesterol Levels: What You Need to Know — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/" },
-      { "title": "Blood Cholesterol — NHLBI, NIH", "url": "https://www.nhlbi.nih.gov/health/blood-cholesterol" }
+      {
+        "title": "Cholesterol Levels: What You Need to Know, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+      },
+      {
+        "title": "Blood Cholesterol, NHLBI, NIH",
+        "url": "https://www.nhlbi.nih.gov/health/blood-cholesterol"
+      }
     ],
-    "panel_slugs": ["lipid"]
+    "panel_slugs": [
+      "lipid"
+    ]
   },
   {
     "slug": "liver-function",
     "name": "Liver Function Test (LFT)",
     "short": "LFT",
-    "aka": ["Liver Panel", "Hepatic Panel"],
+    "aka": [
+      "Liver Panel",
+      "Hepatic Panel"
+    ],
     "category": "Organ health",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 10,
-    "tat_hours": [12, 24],
+    "tat_hours": [
+      12,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Bilirubin (total and direct), the enzymes SGPT/ALT, SGOT/AST, ALP and GGT, plus albumin and total protein — about 11 numbers.",
+    "measures": "Bilirubin (total and direct), the enzymes SGPT/ALT, SGOT/AST, ALP and GGT, plus albumin and total protein, about 11 numbers.",
     "why": "Fatty liver is common in India and stays silent for years, and a raised ALT is often the first and only clue. The panel is also run before starting medicines that stress the liver, in jaundice, in unexplained tiredness, and to follow known hepatitis.",
-    "prep": "Fast 10 to 12 hours, water only. Skip alcohol for at least 24 hours before — one night out lifts GGT and the enzymes. List every medicine and supplement you take, including painkillers and ayurvedic or herbal products, since several move liver enzymes on their own. Don't stop anything without asking your doctor.",
+    "prep": "Fast 10 to 12 hours, water only. Skip alcohol for at least 24 hours before, one night out lifts GGT and the enzymes. List every medicine and supplement you take, including painkillers and ayurvedic or herbal products, since several move liver enzymes on their own. Don't stop anything without asking your doctor.",
     "faqs": [
-      { "q": "Why are SGPT and SGOT raised?", "a": "Common causes are fatty liver, alcohol, some medicines and viral hepatitis. SGPT is the same test as ALT and SGOT the same as AST — different labs just use different naming. One mildly raised reading usually earns a repeat in a few weeks rather than alarm." },
-      { "q": "Do I need to stop medicines before an LFT?", "a": "No, and don't stop anything on your own. List them for your doctor instead: paracetamol, statins, anti-TB drugs and several herbal supplements all nudge liver enzymes, and knowing what you take is what makes the result readable." },
-      { "q": "Can an LFT diagnose fatty liver?", "a": "Not on its own. It can show that something is irritating the liver, but an ultrasound or fibroscan is what actually shows fat and stiffness. Many people with fatty liver have completely normal enzymes, so a clean LFT doesn't rule it out." }
+      {
+        "q": "Why are SGPT and SGOT raised?",
+        "a": "Common causes are fatty liver, alcohol, some medicines and viral hepatitis. SGPT is the same test as ALT and SGOT the same as AST, different labs just use different naming. One mildly raised reading usually earns a repeat in a few weeks rather than alarm."
+      },
+      {
+        "q": "Do I need to stop medicines before an LFT?",
+        "a": "No, and don't stop anything on your own. List them for your doctor instead: paracetamol, statins, anti-TB drugs and several herbal supplements all nudge liver enzymes, and knowing what you take is what makes the result readable."
+      },
+      {
+        "q": "Can an LFT diagnose fatty liver?",
+        "a": "Not on its own. It can show that something is irritating the liver, but an ultrasound or fibroscan is what actually shows fat and stiffness. Many people with fatty liver have completely normal enzymes, so a clean LFT doesn't rule it out."
+      }
     ],
     "sources": [
-      { "title": "Liver Function Tests — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/liver-function-tests/" },
-      { "title": "ALT Blood Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/alt-blood-test/" }
+      {
+        "title": "Liver Function Tests, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/liver-function-tests/"
+      },
+      {
+        "title": "ALT Blood Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/alt-blood-test/"
+      }
     ],
-    "panel_slugs": ["lft"]
+    "panel_slugs": [
+      "lft"
+    ]
   },
   {
     "slug": "kidney-function",
     "name": "Kidney Function Test (KFT)",
     "short": "KFT",
-    "aka": ["RFT", "Renal Panel"],
+    "aka": [
+      "RFT",
+      "Renal Panel"
+    ],
     "category": "Organ health",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 0,
-    "tat_hours": [12, 24],
+    "tat_hours": [
+      12,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Creatinine, urea or BUN, uric acid and the electrolytes sodium, potassium and chloride — about 10 numbers, with a calculated eGFR printed alongside on most reports.",
+    "measures": "Creatinine, urea or BUN, uric acid and the electrolytes sodium, potassium and chloride. About 10 numbers, with a calculated eGFR printed alongside on most reports.",
     "why": "Diabetes and high blood pressure are the two biggest causes of kidney disease in India, and both do their damage silently. Creatinine only climbs once a sizeable share of filtering capacity is already gone, so the point of testing early and regularly is to catch the drift rather than wait for a symptom.",
-    "prep": "No fasting strictly needed, though labs usually bundle the KFT with fasting tests inside a package. Drink normally the day before — arriving dehydrated bumps urea and creatinine. Skip a heavy protein or gym-supplement load the previous evening, and mention any painkillers you take regularly.",
+    "prep": "No fasting strictly needed, though labs usually bundle the KFT with fasting tests inside a package. Drink normally the day before. Arriving dehydrated bumps urea and creatinine. Skip a heavy protein or gym-supplement load the previous evening, and mention any painkillers you take regularly.",
     "faqs": [
-      { "q": "What creatinine level is worrying?", "a": "MedlinePlus puts the normal range at 0.7–1.3 mg/dL for men and 0.5–0.95 mg/dL for women. Muscular builds run naturally higher and smaller or older people lower, so your doctor reads the number together with the eGFR beside it rather than on its own." },
-      { "q": "Does drinking less water affect the KFT?", "a": "Yes. Dehydration concentrates the blood and lifts urea and creatinine, which is why a repeat after normal fluid intake often reads better. Drink as you usually would before the test." },
-      { "q": "Is creatinine enough to catch early kidney damage?", "a": "Often not. eGFR, calculated from creatinine along with your age and sex, gives a fuller picture, and a urine albumin-to-creatinine ratio can pick up damage while creatinine still looks fine. If you have diabetes or high BP, ask your doctor whether that urine test belongs in your yearly panel." }
+      {
+        "q": "What creatinine level is worrying?",
+        "a": "MedlinePlus puts the normal range at 0.7 to 1.3 mg/dL for men and 0.5 to 0.95 mg/dL for women. Muscular builds run naturally higher and smaller or older people lower, so your doctor reads the number together with the eGFR beside it rather than on its own."
+      },
+      {
+        "q": "Does drinking less water affect the KFT?",
+        "a": "Yes. Dehydration concentrates the blood and lifts urea and creatinine, which is why a repeat after normal fluid intake often reads better. Drink as you usually would before the test."
+      },
+      {
+        "q": "Is creatinine enough to catch early kidney damage?",
+        "a": "Often not. EGFR, calculated from creatinine along with your age and sex, gives a fuller picture, and a urine albumin-to-creatinine ratio can pick up damage while creatinine still looks fine. If you have diabetes or high BP, ask your doctor whether that urine test belongs in your yearly panel."
+      }
     ],
     "sources": [
-      { "title": "Creatinine blood test — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003475.htm" },
-      { "title": "Chronic Kidney Disease Tests & Diagnosis — NIDDK, NIH", "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/tests-diagnosis" }
+      {
+        "title": "Creatinine blood test, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003475.htm"
+      },
+      {
+        "title": "Chronic Kidney Disease Tests & Diagnosis, NIDDK, NIH",
+        "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/tests-diagnosis"
+      }
     ],
-    "panel_slugs": ["kft"]
+    "panel_slugs": [
+      "kft"
+    ]
   },
   {
     "slug": "vitamin-d",
     "name": "Vitamin D (25-OH)",
     "short": "Vitamin D",
-    "aka": ["25-Hydroxy Vitamin D", "Calcidiol"],
+    "aka": [
+      "25-Hydroxy Vitamin D",
+      "Calcidiol"
+    ],
     "category": "Vitamins",
-    "band": [900, 2000],
+    "band": [
+      900,
+      2000
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "25-hydroxy vitamin D, the storage form your body holds on to. Labs measure this form because it reflects what you've built up from sun, food and supplements over weeks.",
-    "why": "Low vitamin D turns up in a large share of urban Indians despite the sunshine — indoor work, covered clothing, haze and darker skin all cut how much you make. Deficiency shows up as bone and muscle aches and low mood, and severe long-term deficiency softens bone. It's an inexpensive number to establish before anyone talks about dosing.",
-    "prep": "No fasting and no timing rules, so book any slot. If you're already on a weekly or monthly vitamin D dose, tell your doctor when you last took it — the result reflects recent supplementation and a test taken days after a high dose reads high.",
+    "why": "Low vitamin D turns up in a large share of urban Indians despite the sunshine. Indoor work, covered clothing, haze and darker skin all cut how much you make. Deficiency shows up as bone and muscle aches and low mood, and severe long-term deficiency softens bone. It's an inexpensive number to establish before anyone talks about dosing.",
+    "prep": "No fasting and no timing rules, so book any slot. If you're already on a weekly or monthly vitamin D dose, tell your doctor when you last took it. The result reflects recent supplementation and a test taken days after a high dose reads high.",
     "faqs": [
-      { "q": "What level of vitamin D is low?", "a": "NIH states it plainly: below 12 ng/mL is deficient, 12–20 ng/mL is inadequate for some people, and 20 ng/mL or above is adequate for most people's bone and general health. Above 50 ng/mL is too high and can cause harm. The Endocrine Society uses a stricter 30 ng/mL target for patients under treatment, which is why the same value can be labelled 'insufficient' on one report and 'normal' on another. Read the range printed beside your result and let your doctor interpret it." },
-      { "q": "Why is the vitamin D test costlier than others?", "a": "It runs on immunoassay analysers with pricier reagents, and it's a single-analyte test with no panel to spread the cost across. Bundling it into a package usually lands well below the standalone price." },
-      { "q": "Isn't Indian sunlight enough?", "a": "Sunlight is the main source, but how much vitamin D you actually make depends on how much bare skin is exposed, at what hour, through how much haze, and on your skin tone — darker skin needs longer exposure for the same yield. That's why deficiency stays common in sunny cities. The test tells you where you stand; your doctor decides whether anything needs doing about it." }
+      {
+        "q": "What level of vitamin D is low?",
+        "a": "NIH states it plainly: below 12 ng/mL is deficient, 12 to 20 ng/mL is inadequate for some people, and 20 ng/mL or above is adequate for most people's bone and general health. Above 50 ng/mL is too high and can cause harm. The Endocrine Society uses a stricter 30 ng/mL target for patients under treatment, which is why the same value can be labelled 'insufficient' on one report and 'normal' on another. Read the range printed beside your result and let your doctor interpret it."
+      },
+      {
+        "q": "Why is the vitamin D test costlier than others?",
+        "a": "It runs on immunoassay analysers with pricier reagents, and it's a single-analyte test with no panel to spread the cost across. Bundling it into a package usually lands well below the standalone price."
+      },
+      {
+        "q": "Isn't Indian sunlight enough?",
+        "a": "Sunlight is the main source, but how much vitamin D you actually make depends on how much bare skin is exposed, at what hour, through how much haze, and on your skin tone. Darker skin needs longer exposure for the same yield. That's why deficiency stays common in sunny cities. The test tells you where you stand; your doctor decides whether anything needs doing about it."
+      }
     ],
     "sources": [
-      { "title": "Vitamin D — NIH Office of Dietary Supplements", "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/" },
-      { "title": "Vitamin D Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/vitamin-d-test/" }
+      {
+        "title": "Vitamin D, NIH Office of Dietary Supplements",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/"
+      },
+      {
+        "title": "Vitamin D Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/vitamin-d-test/"
+      }
     ],
-    "panel_slugs": ["vitamins"]
+    "panel_slugs": [
+      "vitamins"
+    ]
   },
   {
     "slug": "vitamin-b12",
     "name": "Vitamin B12",
     "short": "B12",
-    "aka": ["Cobalamin"],
+    "aka": [
+      "Cobalamin"
+    ],
     "category": "Vitamins",
-    "band": [600, 1200],
+    "band": [
+      600,
+      1200
+    ],
     "fasting_hours": 8,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "The vitamin B12 level in your blood, reported in pg/mL.",
-    "why": "B12 comes almost entirely from animal foods, so vegetarian and vegan diets — the norm across much of India — run low without fortified foods or a supplement. Deficiency causes fatigue, tingling in the hands and feet, a sore tongue and memory fog, and the nerve symptoms are the ones that stop reversing if they run too long. Long-term metformin and acid-reducing medicines lower B12 as well.",
-    "prep": "Most labs ask you not to eat or drink for 6 to 8 hours before the draw. Pause B12 tablets, injections and multivitamins first, and ask your doctor how many days — a recent dose reads falsely high and hides the deficiency you're testing for. Mention metformin, proton-pump inhibitors and H2 blockers on the lab form.",
+    "why": "B12 comes almost entirely from animal foods, so vegetarian and vegan diets (the norm across much of India) run low without fortified foods or a supplement. Deficiency causes fatigue, tingling in the hands and feet, a sore tongue and memory fog, and the nerve symptoms are the ones that stop reversing if they run too long. Long-term metformin and acid-reducing medicines lower B12 as well.",
+    "prep": "Most labs ask you not to eat or drink for 6 to 8 hours before the draw. Pause B12 tablets, injections and multivitamins first, and ask your doctor how many days. A recent dose reads falsely high and hides the deficiency you're testing for. Mention metformin, proton-pump inhibitors and H2 blockers on the lab form.",
     "faqs": [
-      { "q": "What is a normal B12 level?", "a": "MedlinePlus gives 299–1054 pg/mL. Indian labs often print a lower floor, around 200 pg/mL, so read the range beside your own result. Symptoms can appear in the low-normal band, which is why doctors sometimes add a methylmalonic acid or homocysteine test to settle a borderline case." },
-      { "q": "Should I stop my multivitamin before testing B12?", "a": "Yes, with your doctor's go-ahead. Supplements push the reading up and can mask a real deficiency, so the test tells you about the tablet rather than about you." },
-      { "q": "I'm vegetarian — how often should I check?", "a": "There's no single rule. NIH lists vegetarians and vegans, adults over 60, people who've had stomach or intestinal surgery, and anyone on long-term metformin or acid-reducing tablets as the at-risk groups. If you're in one of them, ask your doctor whether a yearly B12 belongs in your checkup." }
+      {
+        "q": "What is a normal B12 level?",
+        "a": "MedlinePlus gives 299 to 1054 pg/mL. Indian labs often print a lower floor, around 200 pg/mL, so read the range beside your own result. Symptoms can appear in the low-normal band, which is why doctors sometimes add a methylmalonic acid or homocysteine test to settle a borderline case."
+      },
+      {
+        "q": "Should I stop my multivitamin before testing B12?",
+        "a": "Yes, with your doctor's go-ahead. Supplements push the reading up and can mask a real deficiency, so the test tells you about the tablet rather than about you."
+      },
+      {
+        "q": "I'm vegetarian, how often should I check?",
+        "a": "There's no single rule. NIH lists vegetarians and vegans, adults over 60, people who've had stomach or intestinal surgery, and anyone on long-term metformin or acid-reducing tablets as the at-risk groups. If you're in one of them, ask your doctor whether a yearly B12 belongs in your checkup."
+      }
     ],
     "sources": [
-      { "title": "Vitamin B12 level — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003705.htm" },
-      { "title": "Vitamin B12 — NIH Office of Dietary Supplements", "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/" }
+      {
+        "title": "Vitamin B12 level, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003705.htm"
+      },
+      {
+        "title": "Vitamin B12, NIH Office of Dietary Supplements",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+      }
     ],
-    "panel_slugs": ["vitamins"]
+    "panel_slugs": [
+      "vitamins"
+    ]
   },
   {
     "slug": "urine-routine",
     "name": "Urine Routine & Microscopy",
     "short": "Urine R/M",
-    "aka": ["Urinalysis", "Urine R/E"],
+    "aka": [
+      "Urinalysis",
+      "Urine R/E"
+    ],
     "category": "Routine",
-    "band": [100, 350],
+    "band": [
+      100,
+      350
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Urine",
-    "measures": "Physical, chemical and microscopic examination of urine — colour and clarity, protein, sugar, ketones, blood and nitrites, plus pus cells, red cells, crystals and casts under the microscope.",
-    "why": "For roughly ₹100–200 it catches urinary infections, early kidney damage and uncontrolled diabetes, which makes it the best-value test on most panels. Protein appearing in urine is often the first measurable sign that diabetes or high blood pressure has started affecting the kidneys.",
-    "prep": "The first sample after you wake is the most concentrated and the most informative. Wash your hands, use the sterile container the lab provides, and collect mid-stream. Get it to the lab within an hour or two, or refrigerate it — cells break down and bacteria multiply in a sample left standing. Women are usually asked to avoid testing during a period unless the doctor wants it then.",
+    "measures": "Physical, chemical and microscopic examination of urine. Colour and clarity, protein, sugar, ketones, blood and nitrites, plus pus cells, red cells, crystals and casts under the microscope.",
+    "why": "For roughly ₹100 to 200 it catches urinary infections, early kidney damage and uncontrolled diabetes, which makes it the best-value test on most panels. Protein appearing in urine is often the first measurable sign that diabetes or high blood pressure has started affecting the kidneys.",
+    "prep": "The first sample after you wake is the most concentrated and the most informative. Wash your hands, use the sterile container the lab provides, and collect mid-stream. Get it to the lab within an hour or two, or refrigerate it. Cells break down and bacteria multiply in a sample left standing. Women are usually asked to avoid testing during a period unless the doctor wants it then.",
     "faqs": [
-      { "q": "How do I collect a mid-stream sample?", "a": "Wash your hands, start passing urine into the toilet, stop, then collect from the middle of the stream into the sterile container without touching the inside of it. The first flush carries skin bacteria that spoil the result. About 30–60 ml is plenty." },
-      { "q": "Protein in urine — serious?", "a": "Trace protein after a fever, heavy exercise or a hot day is common and usually clears on a repeat. Protein that keeps showing up needs kidney follow-up, typically a urine albumin-to-creatinine ratio ordered by your doctor." },
-      { "q": "How fast should the sample reach the lab?", "a": "Within an hour or two at room temperature. Past that, pus cells and casts break down while any bacteria present multiply, which can turn a normal sample into a falsely abnormal one. If you've booked home sample collection, hand the container over when the technician arrives rather than filling it hours earlier." }
+      {
+        "q": "How do I collect a mid-stream sample?",
+        "a": "Wash your hands, start passing urine into the toilet, stop, then collect from the middle of the stream into the sterile container without touching the inside of it. The first flush carries skin bacteria that spoil the result. About 30 to 60 ml is plenty."
+      },
+      {
+        "q": "Protein in urine, serious?",
+        "a": "Trace protein after a fever, heavy exercise or a hot day is common and usually clears on a repeat. Protein that keeps showing up needs kidney follow-up, typically a urine albumin-to-creatinine ratio ordered by your doctor."
+      },
+      {
+        "q": "How fast should the sample reach the lab?",
+        "a": "Within an hour or two at room temperature. Past that, pus cells and casts break down while any bacteria present multiply, which can turn a normal sample into a falsely abnormal one. If you've booked home sample collection, hand the container over when the technician arrives rather than filling it hours earlier."
+      }
     ],
     "sources": [
-      { "title": "Clean catch urine sample — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/007487.htm" },
-      { "title": "Protein in Urine — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/protein-in-urine/" }
+      {
+        "title": "Clean catch urine sample, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/007487.htm"
+      },
+      {
+        "title": "Protein in Urine, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/protein-in-urine/"
+      }
     ],
-    "panel_slugs": ["urine"]
+    "panel_slugs": [
+      "urine"
+    ]
   },
   {
     "slug": "esr",
     "name": "ESR (Erythrocyte Sedimentation Rate)",
     "short": "ESR",
-    "aka": ["Sed Rate"],
+    "aka": [
+      "Sed Rate"
+    ],
     "category": "Inflammation",
-    "band": [100, 300],
+    "band": [
+      100,
+      300
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
-    "measures": "How far your red cells settle in a tube in one hour, in mm/hr — an indirect marker of inflammation.",
+    "measures": "How far your red cells settle in a tube in one hour, in mm/hr, an indirect marker of inflammation.",
     "why": "It's an old test that still earns its place: a persistently high ESR supports diagnoses like tuberculosis, rheumatoid arthritis and long-running infection, all of which remain common in India. It rises slowly and falls slowly, which makes it better suited to tracking a chronic problem than a sudden one.",
-    "prep": "No fasting and no special preparation. Mention if you're pregnant or menstruating and whether you're anaemic — all three lift ESR on their own, with no illness behind them.",
+    "prep": "No fasting and no special preparation. Mention if you're pregnant or menstruating and whether you're anaemic. All three lift ESR on their own, with no illness behind them.",
     "faqs": [
-      { "q": "What raises ESR?", "a": "Any inflammation — infection, autoimmune disease, kidney disease, some cancers — plus pregnancy, anaemia and simply getting older. It tells your doctor something is going on; it doesn't say what." },
-      { "q": "ESR vs CRP — which is better?", "a": "CRP rises and falls within hours, so it suits acute infection and judging whether treatment is working. ESR moves over days to weeks and suits slow, chronic conditions. Doctors often order both because they answer different questions." },
-      { "q": "Is there one normal ESR number?", "a": "No. The normal range widens with age and runs higher in women, so labs print an age- and sex-specific range beside your result. A mildly high ESR with no symptoms usually gets repeated rather than chased with more tests." }
+      {
+        "q": "What raises ESR?",
+        "a": "Any inflammation (infection, autoimmune disease, kidney disease, some cancers) plus pregnancy, anaemia and simply getting older. It tells your doctor something is going on; it doesn't say what."
+      },
+      {
+        "q": "ESR vs CRP, which is better?",
+        "a": "CRP rises and falls within hours, so it suits acute infection and judging whether treatment is working. ESR moves over days to weeks and suits slow, chronic conditions. Doctors often order both because they answer different questions."
+      },
+      {
+        "q": "Is there one normal ESR number?",
+        "a": "No. The normal range widens with age and runs higher in women, so labs print an age- and sex-specific range beside your result. A mildly high ESR with no symptoms usually gets repeated rather than chased with more tests."
+      }
     ],
     "sources": [
-      { "title": "Erythrocyte Sedimentation Rate (ESR) — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/" }
+      {
+        "title": "Erythrocyte Sedimentation Rate (ESR), MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/"
+      }
     ],
-    "panel_slugs": ["inflammation"]
+    "panel_slugs": [
+      "inflammation"
+    ]
   },
   {
     "slug": "crp",
     "name": "CRP (C-Reactive Protein)",
     "short": "CRP",
-    "aka": ["C Reactive Protein, Quantitative"],
+    "aka": [
+      "C Reactive Protein, Quantitative"
+    ],
     "category": "Inflammation",
-    "band": [300, 700],
+    "band": [
+      300,
+      700
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
     "measures": "C-reactive protein, which your liver releases into the blood within hours of inflammation starting.",
     "why": "CRP climbs fast in bacterial infection and drops fast once treatment starts working, so doctors use the trend to judge whether antibiotics are doing their job. It also helps size up how much inflammation sits behind a fever with no obvious cause.",
-    "prep": "No fasting and no timing rules. Mention any anti-inflammatory medicine or steroid you're taking, since both suppress the value. If your doctor asked specifically for hs-CRP, say so at booking — it's a separate item on the lab menu.",
+    "prep": "No fasting and no timing rules. Mention any anti-inflammatory medicine or steroid you're taking, since both suppress the value. If your doctor asked specifically for hs-CRP, say so at booking, it's a separate item on the lab menu.",
     "faqs": [
-      { "q": "What CRP level indicates infection?", "a": "MedlinePlus treats around 1.0 mg/dL (10 mg/L) and below as the healthy zone. Above that suggests active inflammation, and very high values lean bacterial — a lean, not a rule. What your doctor watches is the direction across a few days." },
-      { "q": "Is CRP the same as hs-CRP?", "a": "No. hs-CRP measures very small elevations and feeds heart-risk scoring; standard CRP covers the much larger swings of infection and inflammation. Ordering the wrong one wastes the sample and the fee." },
-      { "q": "Can CRP tell viral from bacterial infection?", "a": "Not reliably on its own. Bacterial infections tend to drive it higher, but plenty of viral illnesses — dengue among them — raise it too. Your doctor reads CRP alongside your symptoms, your CBC and what's circulating locally rather than as a standalone verdict." }
+      {
+        "q": "What CRP level indicates infection?",
+        "a": "MedlinePlus treats around 1.0 mg/dL (10 mg/L) and below as the healthy zone. Above that suggests active inflammation, and very high values lean bacterial, a lean, not a rule. What your doctor watches is the direction across a few days."
+      },
+      {
+        "q": "Is CRP the same as hs-CRP?",
+        "a": "No. hs-CRP measures very small elevations and feeds heart-risk scoring; standard CRP covers the much larger swings of infection and inflammation. Ordering the wrong one wastes the sample and the fee."
+      },
+      {
+        "q": "Can CRP tell viral from bacterial infection?",
+        "a": "Not reliably on its own. Bacterial infections tend to drive it higher, but plenty of viral illnesses (dengue among them) raise it too. Your doctor reads CRP alongside your symptoms, your CBC and what's circulating locally rather than as a standalone verdict."
+      }
     ],
     "sources": [
-      { "title": "C-Reactive Protein (CRP) Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/" }
+      {
+        "title": "C-Reactive Protein (CRP) Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/"
+      }
     ],
-    "panel_slugs": ["inflammation"]
+    "panel_slugs": [
+      "inflammation"
+    ]
   },
   {
     "slug": "uric-acid",
     "name": "Uric Acid",
     "short": "Uric Acid",
-    "aka": ["Serum Urate"],
+    "aka": [
+      "Serum Urate"
+    ],
     "category": "Routine",
-    "band": [150, 400],
+    "band": [
+      150,
+      400
+    ],
     "fasting_hours": 4,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
     "measures": "The uric acid level in your blood, in mg/dL.",
-    "why": "Uric acid crystallises in joints as gout — classically a hot, swollen big toe that wakes you at night — and can also form kidney stones. It's checked in joint pain, in repeat stone formers, and alongside sugar and blood pressure, because high levels travel with metabolic syndrome.",
-    "prep": "MedlinePlus advises no food or drink for 4 hours before the draw; Indian labs usually bundle uric acid into the fasting morning panel anyway. Skip a heavy non-veg or seafood meal the night before, and mention diuretics and low-dose aspirin — both raise uric acid.",
+    "why": "Uric acid crystallises in joints as gout (classically a hot, swollen big toe that wakes you at night) and can also form kidney stones. It's checked in joint pain, in repeat stone formers, and alongside sugar and blood pressure, because high levels travel with metabolic syndrome.",
+    "prep": "MedlinePlus advises no food or drink for 4 hours before the draw; Indian labs usually bundle uric acid into the fasting morning panel anyway. Skip a heavy non-veg or seafood meal the night before, and mention diuretics and low-dose aspirin, both raise uric acid.",
     "faqs": [
-      { "q": "What foods raise uric acid?", "a": "Red meat, organ meat, seafood, beer and sugary or fructose-sweetened drinks. Dal and other pulses in normal quantities haven't been shown to trigger gout, despite how often they get blamed." },
-      { "q": "High uric acid but no pain — treat it?", "a": "Usually it's watched with diet changes and repeat tests. Medicines generally enter the picture only after gout attacks or stones. That call belongs to your doctor, not to a lab report." },
-      { "q": "What's a normal uric acid level?", "a": "MedlinePlus gives 3.0–7.1 mg/dL for women and 4.0–8.6 mg/dL for men. Crystals can start forming above roughly 6.8 mg/dL, which is why the upper end of the male range sits close to where trouble begins — and why plenty of people run high for years without a single attack." }
+      {
+        "q": "What foods raise uric acid?",
+        "a": "Red meat, organ meat, seafood, beer and sugary or fructose-sweetened drinks. Dal and other pulses in normal quantities haven't been shown to trigger gout, despite how often they get blamed."
+      },
+      {
+        "q": "High uric acid but no pain, treat it?",
+        "a": "Usually it's watched with diet changes and repeat tests. Medicines generally enter the picture only after gout attacks or stones. That call belongs to your doctor, not to a lab report."
+      },
+      {
+        "q": "What's a normal uric acid level?",
+        "a": "MedlinePlus gives 3.0 to 7.1 mg/dL for women and 4.0 to 8.6 mg/dL for men. Crystals can start forming above roughly 6.8 mg/dL, which is why the upper end of the male range sits close to where trouble begins. And why plenty of people run high for years without a single attack."
+      }
     ],
     "sources": [
-      { "title": "Uric acid — blood — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003476.htm" },
-      { "title": "Gout — MedlinePlus", "url": "https://medlineplus.gov/gout.html" }
+      {
+        "title": "Uric acid (blood) MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003476.htm"
+      },
+      {
+        "title": "Gout, MedlinePlus",
+        "url": "https://medlineplus.gov/gout.html"
+      }
     ],
-    "panel_slugs": ["kft"]
+    "panel_slugs": [
+      "kft"
+    ]
   },
   {
     "slug": "iron-studies",
     "name": "Iron Studies",
     "short": "Iron",
-    "aka": ["Iron Profile", "Fe Studies"],
+    "aka": [
+      "Iron Profile",
+      "Fe Studies"
+    ],
     "category": "Anaemia",
-    "band": [500, 1200],
+    "band": [
+      500,
+      1200
+    ],
     "fasting_hours": 12,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
-    "measures": "Serum iron, TIBC, transferrin saturation and ferritin — iron in transit and iron in storage, in one panel.",
+    "measures": "Serum iron, TIBC, transferrin saturation and ferritin. Iron in transit and iron in storage, in one panel.",
     "why": "Anaemia is widespread in India, and treating it well depends on knowing the cause. These four values separate iron deficiency from anaemia of chronic disease and from thalassaemia trait, so nobody ends up on iron tablets they don't need or misses a cause that iron won't fix.",
-    "prep": "Morning sample — serum iron peaks early and falls through the day. Many labs ask you to fast 12 hours; check when you book. Take your iron tablet after the draw, never before: a dose swallowed that morning can send serum iron up several-fold and make a deficient person look normal.",
+    "prep": "Morning sample. Serum iron peaks early and falls through the day. Many labs ask you to fast 12 hours; check when you book. Take your iron tablet after the draw, never before: a dose swallowed that morning can send serum iron up several-fold and make a deficient person look normal.",
     "faqs": [
-      { "q": "Why test ferritin along with iron?", "a": "Serum iron swings by the hour and with your last meal; ferritin reflects the store sitting behind it. Low ferritin is the most reliable single sign of iron deficiency." },
-      { "q": "Can I take my iron tablet before the test?", "a": "No. Take it after the sample. A recent dose inflates serum iron and transferrin saturation, which can hide the very deficiency you're testing for." },
-      { "q": "What is transferrin saturation and why does it matter?", "a": "It's serum iron divided by TIBC, shown as a percentage — how full your iron transport system is. Below roughly 20% points towards iron deficiency, and high values point towards iron overload. It's the parameter that separates a low iron reading caused by shortage from one caused by inflammation." }
+      {
+        "q": "Why test ferritin along with iron?",
+        "a": "Serum iron swings by the hour and with your last meal; ferritin reflects the store sitting behind it. Low ferritin is the most reliable single sign of iron deficiency."
+      },
+      {
+        "q": "Can I take my iron tablet before the test?",
+        "a": "No. Take it after the sample. A recent dose inflates serum iron and transferrin saturation, which can hide the very deficiency you're testing for."
+      },
+      {
+        "q": "What is transferrin saturation and why does it matter?",
+        "a": "It's serum iron divided by TIBC, shown as a percentage, how full your iron transport system is. Below roughly 20% points towards iron deficiency, and high values point towards iron overload. It's the parameter that separates a low iron reading caused by shortage from one caused by inflammation."
+      }
     ],
     "sources": [
-      { "title": "Iron Tests — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/iron-tests/" },
-      { "title": "Ferritin Blood Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/" }
+      {
+        "title": "Iron Tests, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/iron-tests/"
+      },
+      {
+        "title": "Ferritin Blood Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/"
+      }
     ],
-    "panel_slugs": ["iron"]
+    "panel_slugs": [
+      "iron"
+    ]
   },
   {
     "slug": "ferritin",
     "name": "Ferritin",
     "short": "Ferritin",
-    "aka": ["Serum Ferritin"],
+    "aka": [
+      "Serum Ferritin"
+    ],
     "category": "Anaemia",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "Your body's stored iron. Ferritin is the protein iron gets parked in, so the level tracks reserves rather than what's circulating right now.",
-    "why": "Ferritin falls before haemoglobin does, which makes it the earliest signal of iron deficiency — useful when someone is tired or losing hair while the CBC still reads normal. It's also checked in restless legs and before any iron treatment is planned.",
-    "prep": "No fasting for ferritin on its own, though some labs ask for a 12-hour fast when it runs inside a full iron panel. Skip iron tablets that morning. Mention any recent fever, infection or flare of an inflammatory condition — ferritin rises with all of them and can hide a low store.",
+    "why": "Ferritin falls before haemoglobin does, which makes it the earliest signal of iron deficiency. Useful when someone is tired or losing hair while the CBC still reads normal. It's also checked in restless legs and before any iron treatment is planned.",
+    "prep": "No fasting for ferritin on its own, though some labs ask for a 12-hour fast when it runs inside a full iron panel. Skip iron tablets that morning. Mention any recent fever, infection or flare of an inflammatory condition. Ferritin rises with all of them and can hide a low store.",
     "faqs": [
-      { "q": "What is a normal ferritin level?", "a": "MedlinePlus gives 30–400 ng/mL for men and 13–150 ng/mL for women. Ranges differ between labs and assay platforms, so read the one printed on your report. A value in the low double digits alongside symptoms usually gets a doctor's attention even when it technically sits inside the range." },
-      { "q": "Can ferritin be high without excess iron?", "a": "Yes. Ferritin is an acute-phase protein: infection, inflammation, fatty liver, alcohol and obesity all lift it. That's why doctors often read ferritin next to CRP — high ferritin with high CRP usually means inflammation rather than iron overload." },
-      { "q": "Ferritin normal but still anaemic — how?", "a": "Inflammation can hold ferritin inside the normal range while your actual iron stores are low, which happens often alongside chronic infection, kidney disease or an autoimmune condition. Transferrin saturation and CRP help sort it out, and your doctor decides which to add." }
+      {
+        "q": "What is a normal ferritin level?",
+        "a": "MedlinePlus gives 30 to 400 ng/mL for men and 13 to 150 ng/mL for women. Ranges differ between labs and assay platforms, so read the one printed on your report. A value in the low double digits alongside symptoms usually gets a doctor's attention even when it technically sits inside the range."
+      },
+      {
+        "q": "Can ferritin be high without excess iron?",
+        "a": "Yes. Ferritin is an acute-phase protein: infection, inflammation, fatty liver, alcohol and obesity all lift it. That's why doctors often read ferritin next to CRP. High ferritin with high CRP usually means inflammation rather than iron overload."
+      },
+      {
+        "q": "Ferritin normal but still anaemic, how?",
+        "a": "Inflammation can hold ferritin inside the normal range while your actual iron stores are low, which happens often alongside chronic infection, kidney disease or an autoimmune condition. Transferrin saturation and CRP help sort it out, and your doctor decides which to add."
+      }
     ],
     "sources": [
-      { "title": "Ferritin Blood Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/" },
-      { "title": "Ferritin blood test — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003490.htm" }
+      {
+        "title": "Ferritin Blood Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/"
+      },
+      {
+        "title": "Ferritin blood test, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003490.htm"
+      }
     ],
-    "panel_slugs": ["iron"]
+    "panel_slugs": [
+      "iron"
+    ]
   },
   {
     "slug": "electrolytes",
     "name": "Serum Electrolytes",
     "short": "Electrolytes",
-    "aka": ["Na/K/Cl"],
+    "aka": [
+      "Na/K/Cl"
+    ],
     "category": "Routine",
-    "band": [300, 700],
+    "band": [
+      300,
+      700
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Sodium, potassium and chloride — the salts that keep nerve signals, muscle contraction and fluid balance running.",
+    "measures": "Sodium, potassium and chloride. The salts that keep nerve signals, muscle contraction and fluid balance running.",
     "why": "Checked in weakness, vomiting, diarrhoea, cramps and confusion in older adults, and for anyone on BP tablets or diuretics, which quietly shift these numbers. Through an Indian summer, heat and fluid loss make electrolytes a routine part of assessing dehydration.",
-    "prep": "No fasting needed. Don't clench or pump your fist during the draw — it can falsely raise potassium and trigger a needless repeat. Mention diuretics, ACE inhibitors, ARBs and any potassium supplement, since all of them move potassium.",
+    "prep": "No fasting needed. Don't clench or pump your fist during the draw. It can falsely raise potassium and trigger a needless repeat. Mention diuretics, ACE inhibitors, ARBs and any potassium supplement, since all of them move potassium.",
     "faqs": [
-      { "q": "Why did my doctor order electrolytes with my BP medicine?", "a": "Several BP drugs move potassium up or down and some pull sodium down. A periodic check catches the drift before it shows up as cramps, weakness or a rhythm problem." },
-      { "q": "What are symptoms of low sodium?", "a": "Nausea, headache, tiredness and confusion, and in older adults sometimes just a fall or a change in alertness. It's often found only on testing, which is why it sits in routine panels." },
-      { "q": "What's the normal sodium range?", "a": "135 to 145 mEq/L, with potassium at 3.7 to 5.2 mEq/L, per MedlinePlus. Excursions of a point or two are common and rarely mean anything alone; your doctor looks at how far out the value is, how fast it moved and what you're taking." }
+      {
+        "q": "Why did my doctor order electrolytes with my BP medicine?",
+        "a": "Several BP drugs move potassium up or down and some pull sodium down. A periodic check catches the drift before it shows up as cramps, weakness or a rhythm problem."
+      },
+      {
+        "q": "What are symptoms of low sodium?",
+        "a": "Nausea, headache, tiredness and confusion, and in older adults sometimes just a fall or a change in alertness. It's often found only on testing, which is why it sits in routine panels."
+      },
+      {
+        "q": "What's the normal sodium range?",
+        "a": "135 to 145 mEq/L, with potassium at 3.7 to 5.2 mEq/L, per MedlinePlus. Excursions of a point or two are common and rarely mean anything alone; your doctor looks at how far out the value is, how fast it moved and what you're taking."
+      }
     ],
     "sources": [
-      { "title": "Sodium blood test — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003481.htm" },
-      { "title": "Potassium test — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003484.htm" }
+      {
+        "title": "Sodium blood test, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003481.htm"
+      },
+      {
+        "title": "Potassium test, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003484.htm"
+      }
     ],
-    "panel_slugs": ["electrolytes"]
+    "panel_slugs": [
+      "electrolytes"
+    ]
   },
   {
     "slug": "calcium",
     "name": "Serum Calcium",
     "short": "Calcium",
-    "aka": ["Total Calcium"],
+    "aka": [
+      "Total Calcium"
+    ],
     "category": "Bone",
-    "band": [150, 400],
+    "band": [
+      150,
+      400
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
-    "measures": "Total calcium in blood — the protein-bound and free fractions added together.",
+    "measures": "Total calcium in blood. The protein-bound and free fractions added together.",
     "why": "Ordered for bone pain, kidney stones, unexplained tiredness and suspected thyroid or parathyroid problems. It's read alongside albumin and vitamin D, because low albumin drags total calcium down even when your calcium handling is perfectly fine.",
-    "prep": "No fasting for calcium on its own. Skip calcium and vitamin D supplements that morning and take them after the draw. Mention thiazide diuretics, lithium and regular antacid use — each shifts the reading.",
+    "prep": "No fasting for calcium on its own. Skip calcium and vitamin D supplements that morning and take them after the draw. Mention thiazide diuretics, lithium and regular antacid use, each shifts the reading.",
     "faqs": [
-      { "q": "Does low blood calcium mean weak bones?", "a": "Not directly. Blood calcium is held inside a narrow band by pulling from bone when needed, so it can read normal while bones thin. Bone strength is measured by a DEXA scan; this test screens for parathyroid, kidney and vitamin D problems instead." },
-      { "q": "What causes high calcium?", "a": "Most often an overactive parathyroid gland, and less commonly excess vitamin D, some cancers, sarcoidosis or medicines like lithium and thiazides. A high value that repeats always deserves follow-up." },
-      { "q": "What is a normal calcium level?", "a": "MedlinePlus gives 8.8 to 10.3 mg/dL. If your albumin is low the total calcium reads low with it, so doctors either correct for albumin or order an ionised calcium, which measures the active fraction directly." }
+      {
+        "q": "Does low blood calcium mean weak bones?",
+        "a": "Not directly. Blood calcium is held inside a narrow band by pulling from bone when needed, so it can read normal while bones thin. Bone strength is measured by a DEXA scan; this test screens for parathyroid, kidney and vitamin D problems instead."
+      },
+      {
+        "q": "What causes high calcium?",
+        "a": "Most often an overactive parathyroid gland, and less commonly excess vitamin D, some cancers, sarcoidosis or medicines like lithium and thiazides. A high value that repeats always deserves follow-up."
+      },
+      {
+        "q": "What is a normal calcium level?",
+        "a": "MedlinePlus gives 8.8 to 10.3 mg/dL. If your albumin is low the total calcium reads low with it, so doctors either correct for albumin or order an ionised calcium, which measures the active fraction directly."
+      }
     ],
     "sources": [
-      { "title": "Calcium Blood Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/calcium-blood-test/" },
-      { "title": "Serum calcium — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003477.htm" }
+      {
+        "title": "Calcium Blood Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/calcium-blood-test/"
+      },
+      {
+        "title": "Serum calcium, MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003477.htm"
+      }
     ],
-    "panel_slugs": ["kft"]
+    "panel_slugs": [
+      "kft"
+    ]
   },
   {
     "slug": "testosterone",
     "name": "Testosterone (Total)",
     "short": "Testosterone",
-    "aka": ["Serum Testosterone"],
+    "aka": [
+      "Serum Testosterone"
+    ],
     "category": "Hormones",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
-    "measures": "Total testosterone — the protein-bound hormone plus the small free fraction, reported as one number.",
+    "measures": "Total testosterone. The protein-bound hormone plus the small free fraction, reported as one number.",
     "why": "Checked for low energy, low libido, erectile difficulty and fertility work-ups in men, and for irregular periods, acne and unwanted hair growth in women, where PCOS is usually the question. It's also used to monitor anyone already on hormone treatment.",
-    "prep": "Give the sample between 7 and 10 in the morning — levels peak overnight and drift down through the day, and published reference ranges are built on morning values. Some labs ask you to fast for a few hours, since a meal nudges the level down; check when you book. Skip a hard workout the previous evening.",
+    "prep": "Give the sample between 7 and 10 in the morning. Levels peak overnight and drift down through the day, and published reference ranges are built on morning values. Some labs ask you to fast for a few hours, since a meal nudges the level down; check when you book. Skip a hard workout the previous evening.",
     "faqs": [
-      { "q": "Why must testosterone be tested in the morning?", "a": "Levels run highest between roughly 5 and 8 am and fall about 15–25% by evening, sometimes further in younger men. Reference ranges come from morning samples, so an afternoon draw can read low when nothing is actually wrong." },
-      { "q": "One low testosterone report — do I need treatment?", "a": "No. Up to a third of men with a low early-morning value read normal when the test is repeated, so guidelines ask for at least two morning samples plus matching symptoms before treatment is even discussed. That conversation belongs with an endocrinologist or urologist." },
-      { "q": "Why do women get testosterone tested?", "a": "Usually as part of a PCOS work-up alongside irregular periods, acne or excess hair growth, and occasionally to look into a rapid change. It's normally ordered with LH, FSH and sometimes DHEAS rather than on its own, because the pattern across those matters more than the single value." }
+      {
+        "q": "Why must testosterone be tested in the morning?",
+        "a": "Levels run highest between roughly 5 and 8 am and fall about 15 to 25% by evening, sometimes further in younger men. Reference ranges come from morning samples, so an afternoon draw can read low when nothing is actually wrong."
+      },
+      {
+        "q": "One low testosterone report, do I need treatment?",
+        "a": "No. Up to a third of men with a low early-morning value read normal when the test is repeated, so guidelines ask for at least two morning samples plus matching symptoms before treatment is even discussed. That conversation belongs with an endocrinologist or urologist."
+      },
+      {
+        "q": "Why do women get testosterone tested?",
+        "a": "Usually as part of a PCOS work-up alongside irregular periods, acne or excess hair growth, and occasionally to look into a rapid change. It's normally ordered with LH, FSH and sometimes DHEAS rather than on its own, because the pattern across those matters more than the single value."
+      }
     ],
     "sources": [
-      { "title": "Testosterone Levels Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/testosterone-levels-test/" }
+      {
+        "title": "Testosterone Levels Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/testosterone-levels-test/"
+      }
     ],
-    "panel_slugs": ["hormones"]
+    "panel_slugs": [
+      "hormones"
+    ]
   },
   {
     "slug": "prolactin",
     "name": "Prolactin",
     "short": "Prolactin",
-    "aka": ["PRL"],
+    "aka": [
+      "PRL"
+    ],
     "category": "Hormones",
-    "band": [350, 800],
+    "band": [
+      350,
+      800
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "Prolactin, the pituitary hormone behind milk production.",
     "why": "Part of the work-up for irregular or absent periods, infertility and milky nipple discharge, and in men for low libido. It's also checked when someone on antipsychotics or certain anti-nausea medicines develops those symptoms, because those drugs raise prolactin directly.",
-    "prep": "Give the sample three to four hours after you wake, and sit quietly for 10 to 15 minutes before the draw. Prolactin rises with stress, exercise, sex, nipple stimulation and even a difficult needle stick. Some labs also ask for a few hours of fasting — check when you book.",
+    "prep": "Give the sample three to four hours after you wake, and sit quietly for 10 to 15 minutes before the draw. Prolactin rises with stress, exercise, sex, nipple stimulation and even a difficult needle stick. Some labs also ask for a few hours of fasting, check when you book.",
     "faqs": [
-      { "q": "Why was I asked to sit calmly before the prolactin test?", "a": "Prolactin rises with stress, exercise and stimulation, so a rushed draw can push a perfectly normal person into the abnormal range. Ten quiet minutes beforehand avoids a false high and the repeat test that follows it." },
-      { "q": "Mildly high prolactin — what next?", "a": "Usually a repeat under proper conditions, because small rises are so easily caused by the draw itself. If it stays up, your doctor reviews your medicines and thyroid function first; imaging comes in only when those don't explain it." },
-      { "q": "Which common medicines raise prolactin?", "a": "Several antipsychotics, metoclopramide and domperidone — both widely used in India for nausea and reflux — plus some antidepressants and some BP drugs. List everything you take on the lab form, and don't stop anything on your own; your doctor decides what to pause and for how long." }
+      {
+        "q": "Why was I asked to sit calmly before the prolactin test?",
+        "a": "Prolactin rises with stress, exercise and stimulation, so a rushed draw can push a perfectly normal person into the abnormal range. Ten quiet minutes beforehand avoids a false high and the repeat test that follows it."
+      },
+      {
+        "q": "Mildly high prolactin, what next?",
+        "a": "Usually a repeat under proper conditions, because small rises are so easily caused by the draw itself. If it stays up, your doctor reviews your medicines and thyroid function first; imaging comes in only when those don't explain it."
+      },
+      {
+        "q": "Which common medicines raise prolactin?",
+        "a": "Several antipsychotics, metoclopramide and domperidone (both widely used in India for nausea and reflux) plus some antidepressants and some BP drugs. List everything you take on the lab form, and don't stop anything on your own; your doctor decides what to pause and for how long."
+      }
     ],
     "sources": [
-      { "title": "Prolactin Levels Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/prolactin-levels/" }
+      {
+        "title": "Prolactin Levels Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/prolactin-levels/"
+      }
     ],
-    "panel_slugs": ["hormones"]
+    "panel_slugs": [
+      "hormones"
+    ]
   },
   {
     "slug": "psa",
     "name": "PSA (Prostate-Specific Antigen)",
     "short": "PSA",
-    "aka": ["Total PSA"],
+    "aka": [
+      "Total PSA"
+    ],
     "category": "Men's health",
-    "band": [500, 1100],
+    "band": [
+      500,
+      1100
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "Prostate-specific antigen, a protein the prostate makes that leaks into blood in small amounts.",
-    "why": "It's the standard blood screen when prostate enlargement or prostate cancer is in question — typically men over 50, or from around 45 with a family history. Screening is a decision to make with a doctor rather than a box to tick, because a raised PSA leads on to further tests that carry their own trade-offs.",
-    "prep": "No fasting. Avoid sex or masturbation for at least 24 hours before, since releasing semen raises PSA; many labs extend that to 48 hours and also ask you to skip long cycling rides. Postpone the test if you have a urine infection, or have had a catheter, a prostate exam or any prostate procedure recently — all of them push the number up.",
+    "why": "It's the standard blood screen when prostate enlargement or prostate cancer is in question. Typically men over 50, or from around 45 with a family history. Screening is a decision to make with a doctor rather than a box to tick, because a raised PSA leads on to further tests that carry their own trade-offs.",
+    "prep": "No fasting. Avoid sex or masturbation for at least 24 hours before, since releasing semen raises PSA; many labs extend that to 48 hours and also ask you to skip long cycling rides. Postpone the test if you have a urine infection, or have had a catheter, a prostate exam or any prostate procedure recently, all of them push the number up.",
     "faqs": [
-      { "q": "What is a normal PSA?", "a": "There isn't a clean line. NCI puts it directly: no single threshold separates a normal from an abnormal PSA. 4 ng/mL is the value most Indian labs flag, but risk climbs gradually with the number, and age-specific ranges plus the trend across repeat reports carry more weight than any single result." },
-      { "q": "Does high PSA mean cancer?", "a": "No. An enlarged prostate, prostatitis, a urine infection, recent ejaculation and even a long cycle ride all raise it. A high PSA identifies who needs a urologist's assessment, not who has cancer." },
-      { "q": "Should every man over 50 get a PSA test?", "a": "Not automatically. Major bodies describe PSA screening as a shared decision: it can find cancers early, and it can also find slow-growing ones that would never have caused trouble, leading to biopsies and treatment with real side effects. Talk it through with your doctor rather than letting a package add it by default." }
+      {
+        "q": "What is a normal PSA?",
+        "a": "There isn't a clean line. NCI puts it directly: no single threshold separates a normal from an abnormal PSA. 4 ng/mL is the value most Indian labs flag, but risk climbs gradually with the number, and age-specific ranges plus the trend across repeat reports carry more weight than any single result."
+      },
+      {
+        "q": "Does high PSA mean cancer?",
+        "a": "No. An enlarged prostate, prostatitis, a urine infection, recent ejaculation and even a long cycle ride all raise it. A high PSA identifies who needs a urologist's assessment, not who has cancer."
+      },
+      {
+        "q": "Should every man over 50 get a PSA test?",
+        "a": "Not automatically. Major bodies describe PSA screening as a shared decision: it can find cancers early, and it can also find slow-growing ones that would never have caused trouble, leading to biopsies and treatment with real side effects. Talk it through with your doctor rather than letting a package add it by default."
+      }
     ],
     "sources": [
-      { "title": "Prostate-Specific Antigen (PSA) Test — National Cancer Institute", "url": "https://www.cancer.gov/types/prostate/psa-fact-sheet" },
-      { "title": "Prostate Specific Antigen (PSA) Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/prostate-specific-antigen-psa-test/" }
+      {
+        "title": "Prostate-Specific Antigen (PSA) Test, National Cancer Institute",
+        "url": "https://www.cancer.gov/types/prostate/psa-fact-sheet"
+      },
+      {
+        "title": "Prostate Specific Antigen (PSA) Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/prostate-specific-antigen-psa-test/"
+      }
     ],
-    "panel_slugs": ["hormones"]
+    "panel_slugs": [
+      "hormones"
+    ]
   },
   {
     "slug": "hiv",
     "name": "HIV Screening (1 & 2)",
     "short": "HIV",
-    "aka": ["HIV Antibody Test", "HIV Duo"],
+    "aka": [
+      "HIV Antibody Test",
+      "HIV Duo"
+    ],
     "category": "Infection",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "Antibodies to HIV-1 and HIV-2, plus the p24 antigen in fourth-generation duo tests.",
     "why": "Testing is the only way to know your status, because early HIV has no reliable symptoms. It's standard before surgery and during pregnancy, and it's what follows any possible exposure. Reports are confidential by law in India, and government ICTC centres offer testing free.",
-    "prep": "No fasting. Timing is what matters: a fourth-generation lab test on blood drawn from a vein detects most infections 18 to 45 days after exposure, so a test taken too early can return a negative that won't hold. If the possible exposure was within the last 72 hours, see a doctor the same day — there are time-limited preventive options they can discuss with you.",
+    "prep": "No fasting. Timing is what matters: a fourth-generation lab test on blood drawn from a vein detects most infections 18 to 45 days after exposure, so a test taken too early can return a negative that won't hold. If the possible exposure was within the last 72 hours, see a doctor the same day. There are time-limited preventive options they can discuss with you.",
     "faqs": [
-      { "q": "How soon after exposure can HIV be detected?", "a": "CDC puts the window for a lab antigen/antibody test on venous blood at 18 to 45 days after exposure. Antibody-only tests, which covers most rapid kits and self-tests, take 23 to 90 days. A negative taken inside the window needs a repeat once it closes." },
-      { "q": "Is my HIV report kept private?", "a": "Yes. The HIV and AIDS (Prevention and Control) Act, 2017 makes confidentiality a legal requirement in India, and accredited labs release results only to you or with your written consent." },
-      { "q": "What happens if the screening test comes back positive?", "a": "A reactive screening result is not a diagnosis. Screening tests are deliberately tuned to miss as few infections as possible, which means some false positives, so a fresh sample goes for confirmatory testing before anything is said definitively. Government ICTC centres do that confirmation free and link you to a doctor." }
+      {
+        "q": "How soon after exposure can HIV be detected?",
+        "a": "CDC puts the window for a lab antigen/antibody test on venous blood at 18 to 45 days after exposure. Antibody-only tests, which covers most rapid kits and self-tests, take 23 to 90 days. A negative taken inside the window needs a repeat once it closes."
+      },
+      {
+        "q": "Is my HIV report kept private?",
+        "a": "Yes. The HIV and AIDS (Prevention and Control) Act, 2017 makes confidentiality a legal requirement in India, and accredited labs release results only to you or with your written consent."
+      },
+      {
+        "q": "What happens if the screening test comes back positive?",
+        "a": "A reactive screening result is not a diagnosis. Screening tests are deliberately tuned to miss as few infections as possible, which means some false positives, so a fresh sample goes for confirmatory testing before anything is said definitively. Government ICTC centres do that confirmation free and link you to a doctor."
+      }
     ],
     "sources": [
-      { "title": "Getting Tested for HIV — CDC", "url": "https://www.cdc.gov/hiv/testing/index.html" },
-      { "title": "HIV Screening Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/hiv-screening-test/" }
+      {
+        "title": "Getting Tested for HIV, CDC",
+        "url": "https://www.cdc.gov/hiv/testing/index.html"
+      },
+      {
+        "title": "HIV Screening Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/hiv-screening-test/"
+      }
     ],
     "panel_slugs": []
   },
@@ -503,23 +1025,47 @@
     "slug": "hbsag",
     "name": "HBsAg (Hepatitis B Surface Antigen)",
     "short": "HBsAg",
-    "aka": ["Hepatitis B Test", "Australia Antigen"],
+    "aka": [
+      "Hepatitis B Test",
+      "Australia Antigen"
+    ],
     "category": "Infection",
-    "band": [300, 700],
+    "band": [
+      300,
+      700
+    ],
     "fasting_hours": 0,
-    "tat_hours": [24, 48],
+    "tat_hours": [
+      24,
+      48
+    ],
     "sample": "Blood",
     "measures": "The surface protein of the hepatitis B virus, which circulates in blood during active infection.",
     "why": "Hepatitis B can sit quietly for decades while it scars the liver, and India carries a large chronic-carrier population. HBsAg is standard before surgery, in pregnancy so the newborn can be protected at birth, for household and sexual contacts of carriers, and for healthcare workers.",
     "prep": "No fasting and no timing rules. Tell the lab if you've had a hepatitis B vaccine dose in the past two to three weeks, because vaccine antigen still circulating can read as a transient positive.",
     "faqs": [
-      { "q": "HBsAg positive — what does it mean?", "a": "Hepatitis B surface antigen is present, which points to current infection — either recent or long-standing. Follow-up tests such as anti-HBc IgM, HBeAg, viral load and an LFT sort out which, and many chronic carriers need monitoring rather than immediate treatment. Your doctor makes that call." },
-      { "q": "I'm vaccinated — will HBsAg show positive?", "a": "Not from a vaccination finished weeks or years ago: the vaccine produces antibodies (anti-HBs), not the antigen this test looks for. A sample drawn within roughly two to three weeks of a dose can pick up vaccine antigen and read transiently positive, so mention a recent shot and expect a repeat rather than a scare." },
-      { "q": "How do I know my hepatitis B vaccination worked?", "a": "That's a different test — anti-HBs, the surface antibody. HBsAg only answers whether the virus is present, so a negative HBsAg says nothing about whether you're protected. Healthcare workers and dialysis patients are the groups usually asked to check anti-HBs after finishing the course." }
+      {
+        "q": "HBsAg positive, what does it mean?",
+        "a": "Hepatitis B surface antigen is present, which points to current infection, either recent or long-standing. Follow-up tests such as anti-HBc IgM, HBeAg, viral load and an LFT sort out which, and many chronic carriers need monitoring rather than immediate treatment. Your doctor makes that call."
+      },
+      {
+        "q": "I'm vaccinated, will HBsAg show positive?",
+        "a": "Not from a vaccination finished weeks or years ago: the vaccine produces antibodies (anti-HBs), not the antigen this test looks for. A sample drawn within roughly two to three weeks of a dose can pick up vaccine antigen and read transiently positive, so mention a recent shot and expect a repeat rather than a scare."
+      },
+      {
+        "q": "How do I know my hepatitis B vaccination worked?",
+        "a": "That's a different test, anti-HBs, the surface antibody. HBsAg only answers whether the virus is present, so a negative HBsAg says nothing about whether you're protected. Healthcare workers and dialysis patients are the groups usually asked to check anti-HBs after finishing the course."
+      }
     ],
     "sources": [
-      { "title": "Hepatitis Testing — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/hepatitis-testing/" },
-      { "title": "Hepatitis B — World Health Organization", "url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-b" }
+      {
+        "title": "Hepatitis Testing, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/hepatitis-testing/"
+      },
+      {
+        "title": "Hepatitis B, World Health Organization",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-b"
+      }
     ],
     "panel_slugs": []
   },
@@ -527,23 +1073,47 @@
     "slug": "beta-hcg",
     "name": "Beta hCG (Pregnancy Hormone)",
     "short": "Beta hCG",
-    "aka": ["Serum Pregnancy Test", "Quantitative hCG"],
+    "aka": [
+      "Serum Pregnancy Test",
+      "Quantitative hCG"
+    ],
     "category": "Women's health",
-    "band": [400, 900],
+    "band": [
+      400,
+      900
+    ],
     "fasting_hours": 0,
-    "tat_hours": [12, 24],
+    "tat_hours": [
+      12,
+      24
+    ],
     "sample": "Blood",
-    "measures": "The exact amount of hCG, the pregnancy hormone, in blood — a number rather than a yes-or-no line.",
+    "measures": "The exact amount of hCG, the pregnancy hormone, in blood, a number rather than a yes-or-no line.",
     "why": "It turns positive days before a home urine kit does, and because it's quantitative, repeating it across 48 hours shows whether an early pregnancy is progressing as expected. Doctors also use it to follow up suspected ectopic pregnancy and miscarriage.",
     "prep": "No fasting, any time of day. Note the first day of your last period on the lab form, since the expected range depends heavily on how many weeks along you are. If your doctor wants a trend, book the repeat at roughly the same time of day about 48 hours later.",
     "faqs": [
-      { "q": "How early can beta hCG detect pregnancy?", "a": "hCG appears in blood as early as about 10 days after conception, usually a few days before a home urine kit turns positive. Testing earlier than that risks a negative in a pregnancy that does exist." },
-      { "q": "Why repeat beta hCG after 48 hours?", "a": "In a normally progressing early pregnancy the level roughly doubles every 48 hours. A rise that's much slower, flat or falling prompts an ultrasound and closer review, so the trend carries more information than any single value." },
-      { "q": "What does one beta hCG number actually tell me?", "a": "Less than most people expect. The normal range for any given week is extremely wide and overlaps heavily with neighbouring weeks, so a single value can't date a pregnancy accurately or confirm where it has implanted. An ultrasound and a second reading do that — don't try to read your number against a chart you found online." }
+      {
+        "q": "How early can beta hCG detect pregnancy?",
+        "a": "hCG appears in blood as early as about 10 days after conception, usually a few days before a home urine kit turns positive. Testing earlier than that risks a negative in a pregnancy that does exist."
+      },
+      {
+        "q": "Why repeat beta hCG after 48 hours?",
+        "a": "In a normally progressing early pregnancy the level roughly doubles every 48 hours. A rise that's much slower, flat or falling prompts an ultrasound and closer review, so the trend carries more information than any single value."
+      },
+      {
+        "q": "What does one beta hCG number actually tell me?",
+        "a": "Less than most people expect. The normal range for any given week is extremely wide and overlaps heavily with neighbouring weeks, so a single value can't date a pregnancy accurately or confirm where it has implanted. An ultrasound and a second reading do that. Don't try to read your number against a chart you found online."
+      }
     ],
     "sources": [
-      { "title": "HCG blood test — quantitative — MedlinePlus Medical Encyclopedia", "url": "https://medlineplus.gov/ency/article/003510.htm" },
-      { "title": "Pregnancy Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/pregnancy-test/" }
+      {
+        "title": "HCG blood test (quantitative) MedlinePlus Medical Encyclopedia",
+        "url": "https://medlineplus.gov/ency/article/003510.htm"
+      },
+      {
+        "title": "Pregnancy Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/pregnancy-test/"
+      }
     ],
     "panel_slugs": []
   },
@@ -551,22 +1121,42 @@
     "slug": "d-dimer",
     "name": "D-Dimer",
     "short": "D-Dimer",
-    "aka": ["Fibrin Degradation Fragment"],
+    "aka": [
+      "Fibrin Degradation Fragment"
+    ],
     "category": "Clotting",
-    "band": [900, 1800],
+    "band": [
+      900,
+      1800
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
     "measures": "A protein fragment released when a blood clot breaks down.",
-    "why": "It's ordered urgently when a doctor suspects a clot in a leg vein or in the lungs. Its strength is ruling out: in someone already judged low-risk, a normal D-dimer makes a clot very unlikely and can spare them a scan. A high value doesn't confirm a clot — it triggers imaging.",
+    "why": "It's ordered urgently when a doctor suspects a clot in a leg vein or in the lungs. Its strength is ruling out: in someone already judged low-risk, a normal D-dimer makes a clot very unlikely and can spare them a scan. A high value doesn't confirm a clot, it triggers imaging.",
     "prep": "No fasting and no preparation. This is a same-day, doctor-ordered test rather than something to add to a routine package. Mention any blood thinner you take, since it changes how the result is read.",
     "faqs": [
-      { "q": "What does a high D-Dimer mean?", "a": "A clot is possible, but the list of other causes is long: infection, recent surgery, injury, pregnancy, liver disease, cancer and simply being older. It rules clots out well and rules them in poorly, so a high value leads to a scan rather than a diagnosis." },
-      { "q": "Should I get a D-Dimer as a routine checkup?", "a": "No. In someone with no symptoms it produces far more false alarms than answers, and each one leads to scans, radiation and worry. It's a targeted test that belongs with a doctor who has a specific question in mind." },
-      { "q": "Why is my D-Dimer high when nothing seems wrong?", "a": "D-dimer climbs naturally with age, which is why many labs apply an age-adjusted cut-off above 50, and it also rises in pregnancy, after surgery and during any infection. A high value in one of those settings is expected rather than alarming — your doctor weighs it against how likely a clot was in the first place." }
+      {
+        "q": "What does a high D-Dimer mean?",
+        "a": "A clot is possible, but the list of other causes is long: infection, recent surgery, injury, pregnancy, liver disease, cancer and simply being older. It rules clots out well and rules them in poorly, so a high value leads to a scan rather than a diagnosis."
+      },
+      {
+        "q": "Should I get a D-Dimer as a routine checkup?",
+        "a": "No. In someone with no symptoms it produces far more false alarms than answers, and each one leads to scans, radiation and worry. It's a targeted test that belongs with a doctor who has a specific question in mind."
+      },
+      {
+        "q": "Why is my D-Dimer high when nothing seems wrong?",
+        "a": "D-dimer climbs naturally with age, which is why many labs apply an age-adjusted cut-off above 50, and it also rises in pregnancy, after surgery and during any infection. A high value in one of those settings is expected rather than alarming. Your doctor weighs it against how likely a clot was in the first place."
+      }
     ],
     "sources": [
-      { "title": "D-Dimer Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/d-dimer-test/" }
+      {
+        "title": "D-Dimer Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/d-dimer-test/"
+      }
     ],
     "panel_slugs": []
   },
@@ -574,23 +1164,46 @@
     "slug": "dengue-ns1",
     "name": "Dengue NS1 Antigen",
     "short": "Dengue NS1",
-    "aka": ["NS1 ELISA"],
+    "aka": [
+      "NS1 ELISA"
+    ],
     "category": "Infection",
-    "band": [500, 1200],
+    "band": [
+      500,
+      1200
+    ],
     "fasting_hours": 0,
-    "tat_hours": [6, 24],
+    "tat_hours": [
+      6,
+      24
+    ],
     "sample": "Blood",
     "measures": "The NS1 protein that dengue virus sheds into blood, detectable from the first day of fever.",
-    "why": "Through the monsoon and the weeks after it, this is the earliest reliable dengue test — NS1 shows up before antibodies do, so it answers the question on day one or two of fever when an antibody test still reads negative. It's almost always ordered with a CBC, because the platelet and haematocrit trend is what actually guides care.",
+    "why": "Through the monsoon and the weeks after it, this is the earliest reliable dengue test. NS1 shows up before antibodies do, so it answers the question on day one or two of fever when an antibody test still reads negative. It's almost always ordered with a CBC, because the platelet and haematocrit trend is what actually guides care.",
     "prep": "No fasting. Timing is everything: give the sample within the first 7 days of fever, ideally in the first two or three. Write the exact date your fever started on the lab form, because the doctor reading the report needs it to interpret a negative. If the fever has already run past a week, ask about the IgM antibody test instead.",
     "faqs": [
-      { "q": "When should I test NS1 after fever starts?", "a": "Within the first 7 days of symptoms. CDC rates NS1 as roughly as sensitive as molecular testing across that window; afterwards the antigen fades and IgM antibody testing takes over. IgM itself only becomes detectable around day 4 or 5, which is why the two are often run together." },
-      { "q": "NS1 positive — is hospital admission needed?", "a": "Most dengue is managed at home with fluids and repeat platelet counts. Warning signs — persistent vomiting, belly pain, bleeding gums, black stools, severe weakness or a drop in how much you're passing urine — mean same-day hospital review. Your doctor sets the monitoring schedule." },
-      { "q": "NS1 negative but the fever won't settle — now what?", "a": "A negative NS1 doesn't rule dengue out, particularly in a second infection or after day 5. Doctors usually repeat with dengue IgM and consider the other monsoon fevers common in India — malaria, typhoid, leptospirosis and chikungunya — which look almost identical in the first few days. Go back to the doctor rather than assuming it has passed." }
+      {
+        "q": "When should I test NS1 after fever starts?",
+        "a": "Within the first 7 days of symptoms. CDC rates NS1 as roughly as sensitive as molecular testing across that window; afterwards the antigen fades and IgM antibody testing takes over. IgM itself only becomes detectable around day 4 or 5, which is why the two are often run together."
+      },
+      {
+        "q": "NS1 positive, is hospital admission needed?",
+        "a": "Most dengue is managed at home with fluids and repeat platelet counts. Warning signs (persistent vomiting, belly pain, bleeding gums, black stools, severe weakness or a drop in how much you're passing urine) mean same-day hospital review. Your doctor sets the monitoring schedule."
+      },
+      {
+        "q": "NS1 negative but the fever won't settle, now what?",
+        "a": "A negative NS1 doesn't rule dengue out, particularly in a second infection or after day 5. Doctors usually repeat with dengue IgM and consider the other monsoon fevers common in India (malaria, typhoid, leptospirosis and chikungunya) which look almost identical in the first few days. Go back to the doctor rather than assuming it has passed."
+      }
     ],
     "sources": [
-      { "title": "NS1 Antigen Tests for Dengue Virus — CDC", "url": "https://www.cdc.gov/dengue/hcp/diagnosis-testing/dengue-virus-antigen-detection.html" },
-      { "title": "Dengue Fever Test — MedlinePlus", "url": "https://medlineplus.gov/lab-tests/dengue-fever-test/" }
+      {
+        "title": "NS1 Antigen Tests for Dengue Virus, CDC",
+        "url": "https://www.cdc.gov/dengue/hcp/diagnosis-testing/dengue-virus-antigen-detection.html"
+      },
+      {
+        "title": "Dengue Fever Test, MedlinePlus",
+        "url": "https://medlineplus.gov/lab-tests/dengue-fever-test/"
+      }
     ],
     "panel_slugs": []
   }

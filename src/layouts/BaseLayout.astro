@@ -76,16 +76,22 @@ document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.matches&&d
     {isFixture && (
       <div class="bg-amber-100 px-4 py-2 text-center text-sm text-ink">
         <strong>Sample data preview.</strong> Prices on this staging build are
-        placeholders while live lab feeds are wired up — don't book off these
+        placeholders while live lab feeds are wired up. Don't book off these
         numbers yet.
       </div>
     )}
 
-    <header class="border-b border-line bg-white">
+    <header class="sticky top-0 z-20 border-b border-line bg-paper/95 backdrop-blur">
       <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-        <a href="/" class="no-underline">
-          <span class="font-heading text-xl font-extrabold text-navy">My Lab Tests</span>
-          <span class="ml-2 hidden text-sm text-ink-soft sm:inline">Compare lab tests. Pay the right price.</span>
+        <a href="/" class="flex items-center gap-2 no-underline">
+          <span class="inline-flex h-[26px] w-[26px] items-center justify-center rounded-[7px] bg-navy">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <rect x="4" y="1" width="6" height="12" rx="3" fill="none" stroke="#F59E0B" stroke-width="1.4" />
+              <line x1="4" y1="7.5" x2="10" y2="7.5" stroke="#F59E0B" stroke-width="1.4" />
+            </svg>
+          </span>
+          <span class="font-heading text-base font-extrabold tracking-tight text-navy">My Lab Tests</span>
+          <span class="ml-1 hidden text-sm text-ink-soft sm:inline">Compare lab tests. Pay the right price.</span>
         </a>
         <nav class="flex items-center gap-4 text-sm font-medium">
           <a href="/#tests" class="text-navy no-underline hover:underline">Tests</a>
@@ -107,7 +113,7 @@ document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.matches&&d
         <p class="rounded-lg bg-navy-100 p-3 text-navy">
           My Lab Tests compares prices and service details; it does not give
           medical advice. Test results need a doctor's interpretation. If you're
-          unwell, see a doctor first — don't self-prescribe tests or treatment.
+          unwell, see a doctor first. Don't self-prescribe tests or treatment.
         </p>
         <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
           <a href="/about/" class="hover:underline">About</a>
@@ -117,12 +123,7 @@ document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.matches&&d
           <a href="/privacy/" class="hover:underline">Privacy</a>
           <a href="/terms/" class="hover:underline">Terms</a>
         </div>
-        <p class="mt-4">
-          Ratings shown come from Google, the Play Store or the App Store, with
-          attribution on each. Booking happens on the lab's own website — we
-          link out and never collect payment.
-        </p>
-        <p class="mt-2">© 2026 My Lab Tests · Data updated {meta.generated_at.slice(0, 10)}</p>
+        <p class="mt-4">© 2026 My Lab Tests · Data updated {meta.generated_at.slice(0, 10)}</p>
       </div>
     </footer>
 

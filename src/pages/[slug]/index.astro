@@ -1,6 +1,6 @@
 ---
 // One route, four templates: city hub, full-body-checkup comparison,
-// test×city comparison, national test explainer. allRoutes() applies the
+// test×city comparison, national test explainer. AllRoutes() applies the
 // ≥3-provider publish gate, and the sitemap reuses the same list.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PriceTable from '@components/PriceTable.astro';
@@ -8,6 +8,8 @@ import InsightBlock from '@components/InsightBlock.astro';
 import FaqList from '@components/FaqList.astro';
 import LinkGrid from '@components/LinkGrid.astro';
 import ComparisonMatrix from '@components/ComparisonMatrix';
+import PriceGap from '@components/PriceGap.astro';
+import Disclaimer from '@components/Disclaimer.astro';
 import {
   allRoutes,
   cities,
@@ -59,8 +61,8 @@ const tcFaqs =
     : [];
 if (kind === 'test-city' && test && city && tcInsights) {
   h1 = `${test.short} test in ${city.name}`;
-  title = `${test.short} test price in ${city.name} — compare ${tcInsights.n} labs | My Lab Tests`;
-  description = `${test.short} in ${city.name} costs ${formatINR(tcInsights.min)}–${formatINR(tcInsights.max)} across ${tcInsights.n} labs (verified ${formatDate(tcUpdated)}). All-in prices with collection fees, coupons, report times and ratings.`;
+  title = `${test.short} test price in ${city.name}. Compare ${tcInsights.n} labs | My Lab Tests`;
+  description = `${test.short} in ${city.name} costs ${formatINR(tcInsights.min)} to ${formatINR(tcInsights.max)} across ${tcInsights.n} labs (verified ${formatDate(tcUpdated)}). All-in prices with collection fees, coupons, report times and ratings.`;
   crumbs.push(
     { name: `Lab tests in ${city.name}`, path: `/${hubSlug(city.slug)}/` },
     { name: `${test.short} test`, path },
@@ -82,7 +84,7 @@ if (kind === 'fbc' && city && fbcCards.length) {
   const bestValue = [...fbcCards].sort((a, b) => a.pricePerParam - b.pricePerParam)[0];
   const updated = lastVerifiedOf(fbcCards.map((c) => c.enriched));
   h1 = `Full body checkup in ${city.name}`;
-  title = `Full body checkup in ${city.name} — ${fbcCards.length} packages compared | My Lab Tests`;
+  title = `Full body checkup in ${city.name}. ${fbcCards.length} packages compared | My Lab Tests`;
   description = `Full body checkup packages in ${city.name} from ${formatINR(cheap.enriched.total)}. ${fbcCards.length} packages de-constructed parameter by parameter: prices with fees, coverage, report times, ratings.`;
   crumbs.push(
     { name: `Lab tests in ${city.name}`, path: `/${hubSlug(city.slug)}/` },
@@ -95,7 +97,7 @@ if (kind === 'fbc' && city && fbcCards.length) {
     },
     {
       q: `Which is the cheapest full body checkup in ${city.name}?`,
-      a: `${cheap.enriched.provider.name} ${cheap.pkg.name} at ${formatINR(cheap.enriched.total)} — ${cheap.verifiedParams} parameters we could verify against its panel list.`,
+      a: `${cheap.enriched.provider.name} ${cheap.pkg.name} at ${formatINR(cheap.enriched.total)}. ${cheap.verifiedParams} parameters we could verify against its panel list.`,
     },
     {
       q: 'Which package gives the most value per parameter?',
@@ -103,7 +105,7 @@ if (kind === 'fbc' && city && fbcCards.length) {
     },
     {
       q: 'Why do labs claim different parameter counts for similar packages?',
-      a: 'Labs count sub-parameters differently — one lab counts a lipid profile as 8 results, another as 10. We de-construct every package into the same standard panels so you compare like with like.',
+      a: 'Labs count sub-parameters differently. One lab counts a lipid profile as 8 results, another as 10. We de-construct every package into the same standard panels so you compare like with like.',
     },
   );
   jsonLd.push(
@@ -154,7 +156,7 @@ const hubFbc = kind === 'city-hub' && city ? packageCards(city.slug).slice(0, 3)
 if (kind === 'city-hub' && city) {
   const cheapestTest = [...hubTests].sort((a, b) => a.min - b.min)[0];
   h1 = `Lab tests in ${city.name}`;
-  title = `Lab tests in ${city.name} — prices from ${hubTests.length} tests compared | My Lab Tests`;
+  title = `Lab tests in ${city.name}. Prices from ${hubTests.length} tests compared | My Lab Tests`;
   description = `Compare lab test prices in ${city.name}: ${hubTests.length} tests across India's big diagnostics brands, from ${formatINR(cheapestTest?.min ?? 0)}. All-in prices with home-collection fees and coupons.`;
   crumbs.push({ name: `Lab tests in ${city.name}`, path });
 }
@@ -175,7 +177,7 @@ const natFaqs =
 if (kind === 'test-national' && test && natRange) {
   h1 = test.name;
   title = `${test.name}: price, purpose and preparation | My Lab Tests`;
-  description = `${test.measures} Prices run ${formatINR(natRange.min)}–${formatINR(natRange.max)} across Indian labs. What it checks, how to prepare, and city-wise comparisons.`;
+  description = `${test.measures} Prices run ${formatINR(natRange.min)} to ${formatINR(natRange.max)} across Indian labs. What it checks, how to prepare, and city-wise comparisons.`;
   crumbs.push({ name: `${test.short} test`, path });
   jsonLd.push(medicalTestLd(test, path), faqLd(natFaqs));
 }
@@ -187,13 +189,24 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
   <h1 class="text-2xl font-extrabold sm:text-3xl">{h1}</h1>
 
   {kind === 'test-city' && test && city && tcInsights && (
-    <div class="mt-4 space-y-8">
+    <div class="mt-3 space-y-8">
+      <div class="flex flex-wrap gap-1.5">
+        <span class="meta-pill">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-good"></span>
+          Last verified {formatDate(tcUpdated)}
+        </span>
+        <span class="meta-pill">{tcInsights.n} labs collect in {city.name}</span>
+        <span class="meta-pill">
+          {test.fasting_hours > 0 ? `Fasting: ${test.fasting_hours} hours` : 'No fasting needed'}
+        </span>
+      </div>
+      <PriceGap min={tcInsights.min} max={tcInsights.max} what={`${test.short} test in ${city.name}`} />
       <InsightBlock insights={tcInsights} label={`A ${test.short} test`} cityName={city.name} />
       <section>
         <div class="mb-2 flex flex-wrap items-baseline justify-between gap-2">
           <h2 class="text-xl font-bold">Compare {tcInsights.n} labs</h2>
           <span class="text-xs text-ink-soft">
-            Totals include collection fees and live coupons · verified {formatDate(tcUpdated)}
+            Totals include collection fees and live coupons
           </span>
         </div>
         <PriceTable rows={tcRows} testSlug={test.slug} citySlug={city.slug} />
@@ -223,16 +236,32 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
           .slice(0, 10)
           .map((t) => ({ href: `/${testCitySlug(t.slug, city.slug)}/`, label: `${t.short} test` }))}
       />
+      <Disclaimer
+        text="My Lab Tests is a price-comparison service, not a diagnostic lab, and we do not give medical advice. Prices change without notice, so confirm the final amount on the lab's own site before you pay."
+      />
     </div>
   )}
 
   {kind === 'fbc' && city && fbcCards.length > 0 && (
-    <div class="mt-4 space-y-8">
+    <div class="mt-3 space-y-8">
       <p class="max-w-3xl text-ink-soft">
-        Every package below is de-constructed into the same standard panels, so
-        the "90 parameters" claims finally mean something. Totals include home
-        collection and current coupon codes.
+        The parameter count on the box is not the parameter count in the report.
+        We map every package onto the same standard panels, count once, and show
+        both numbers. Totals include home collection and current coupon codes.
       </p>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="meta-pill">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-good"></span>
+          Last verified {formatDate(lastVerifiedOf(fbcCards.map((c) => c.enriched)))}
+        </span>
+        <span class="meta-pill">{fbcCards.length} packages in {city.name}</span>
+        <span class="meta-pill">Fasting: 10 to 12 hours</span>
+      </div>
+      <PriceGap
+        min={fbcCards[0].enriched.total}
+        max={fbcCards[fbcCards.length - 1].enriched.total}
+        what={`full body checkup in ${city.name}`}
+      />
       <ComparisonMatrix client:load pkgs={fbcPkgProps} rows={fbcRowProps} />
       <FaqList faqs={fbcFaqs} heading={`Full body checkup in ${city.name}: quick answers`} />
       <LinkGrid
@@ -250,6 +279,9 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
             label: `${t.short} test`,
           }))}
       />
+      <Disclaimer
+        text="A full body checkup is a screening tool, not a diagnosis. More parameters is not automatically better care. Talk to a doctor about which panels you actually need."
+      />
     </div>
   )}
 
@@ -257,8 +289,8 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
     <div class="mt-4 space-y-8">
       <p class="max-w-3xl text-ink-soft">
         {hubTests.length} tests compared across India's big diagnostics brands
-        in {city.name}. Prices are all-in — home-collection fees and live
-        coupons included — and re-checked on a nightly schedule.
+        in {city.name}. Prices are all-in, home-collection fees and live
+        coupons included, and re-checked on a nightly schedule.
       </p>
       {hubFbc.length > 0 && (
         <section class="card bg-navy-100/50">
@@ -291,7 +323,7 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
     <div class="mt-4 space-y-8">
       <p class="max-w-3xl">
         {test.measures} Across Indian labs it costs
-        <strong class="num"> {formatINR(natRange.min)}–{formatINR(natRange.max)}</strong>;
+        <strong class="num"> {formatINR(natRange.min)}, {formatINR(natRange.max)}</strong>;
         pick your city below for a live comparison.
       </p>
       <section class="card">
@@ -300,7 +332,7 @@ const otherCities = city ? cities.filter((c) => c.slug !== city.slug) : [];
         <h2 class="mt-4 text-xl font-bold">How to prepare</h2>
         <p class="mt-2">{test.prep}</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Sample: {test.sample} · Report typically in {test.tat_hours[0]}–{test.tat_hours[1]} hours
+          Sample: {test.sample} · Report typically in {test.tat_hours[0]}, {test.tat_hours[1]} hours
           {test.fasting_hours > 0 ? ` · Fasting: ${test.fasting_hours} hours` : ' · No fasting'}
         </p>
       </section>

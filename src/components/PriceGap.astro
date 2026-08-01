@@ -1,0 +1,25 @@
+---
+// The single most persuasive number on a comparison page: what the identical
+// test costs at the dearest lab versus the cheapest. Computed, never written.
+import { formatINR } from '@lib/format';
+
+interface Props {
+  min: number;
+  max: number;
+  what: string;
+}
+const { min, max, what } = Astro.props;
+const gap = max - min;
+---
+
+{gap > 0 && (
+  <div class="flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-100 p-3">
+    <div class="num shrink-0 font-heading text-xl font-extrabold tracking-tight text-amber-700">
+      {formatINR(gap)}
+    </div>
+    <p class="m-0 text-[12.5px] leading-snug text-amber-700">
+      separates the cheapest and dearest {what}. Same sample, same accredited lab
+      standard, different pricing.
+    </p>
+  </div>
+)}

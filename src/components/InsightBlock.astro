@@ -15,7 +15,7 @@ const { insights: s, label, cityName } = Astro.props;
 <div class="card bg-navy-100/50">
   <p class="leading-relaxed">
     {label} in {cityName} costs
-    <strong class="num">{formatINR(s.min)}–{formatINR(s.max)}</strong> across
+    <strong class="num">{formatINR(s.min)}, {formatINR(s.max)}</strong> across
     {s.n} labs right now. Cheapest all-in: <strong>{s.cheapest.provider.name}</strong>
     at <strong class="num">{formatINR(s.cheapest.total)}</strong>{s.cheapest.appliedCollectionFee === 0 && ', with a free home visit'}.
     {s.cheapestNabl && s.cheapestNabl.offer.id !== s.cheapest.offer.id && (

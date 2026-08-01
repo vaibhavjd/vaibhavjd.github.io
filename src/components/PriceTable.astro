@@ -1,6 +1,8 @@
 ---
-// The core comparison table for a test in a city. Server-rendered, zero JS —
-// the fee breakdown uses native <details>. Sorted by total payable upstream.
+// Provider comparison for one test in one city. Cards rather than table rows,
+// because a lab is a bundle of price, speed and trust signals and a single
+// row forces all of that onto one line. Server-rendered with zero JS; the fee
+// breakdown uses native <details>.
 import type { EnrichedOffer } from '@lib/types';
 import { formatINR, formatTat, formatDate, slotLabel } from '@lib/format';
 import RatingLine from './RatingLine.astro';
@@ -11,93 +13,129 @@ interface Props {
   citySlug: string;
 }
 const { rows, testSlug, citySlug } = Astro.props;
+
+const fastestTat = Math.min(...rows.map((r) => r.offer.tat_hours));
+// "Best value" means the cheapest NABL-accredited option when that is not
+// already the cheapest overall. Otherwise the badge would say nothing.
+const cheapestId = rows[0]?.offer.id;
+const bestValue = rows.find((r) => r.provider.nabl && r.offer.id !== cheapestId);
 ---
 
-<div class="table-wrap">
-  <table class="w-full min-w-[720px] border-collapse text-sm">
-    <thead>
-      <tr class="border-b border-line bg-navy-100 text-left text-navy">
-        <th class="p-3">Lab</th>
-        <th class="p-3">Total payable</th>
-        <th class="p-3">Report in</th>
-        <th class="p-3">Home collection</th>
-        <th class="p-3">Rating</th>
-        <th class="p-3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      {rows.map((r, i) => (
-        <tr class="border-b border-line align-top last:border-0">
-          <td class="p-3">
-            <div class="font-semibold">{r.provider.name}</div>
-            <div class="mt-1 flex flex-wrap gap-1">
-              {i === 0 && <span class="chip-good">Cheapest</span>}
-              {r.provider.nabl && <span class="chip-trust">NABL</span>}
-              {!r.provider.in_house_lab && <span class="chip-muted">Partner labs</span>}
-              {r.offer.coupon && (
-                <span class="chip-amber">Code {r.offer.coupon.code}</span>
+<div class="space-y-2">
+  {rows.map((r, i) => (
+    <article
+      class={`overflow-hidden rounded-xl bg-white ${
+        i === 0 ? 'border-[1.5px] border-good' : 'border border-line'
+      }`}
+    >
+      <div class="flex flex-wrap gap-4 p-4">
+        <div class="min-w-0 flex-1 basis-64">
+          <div class="mb-1.5 flex flex-wrap items-center gap-2">
+            <span class="font-heading text-[17px] font-extrabold tracking-tight text-ink">
+              {r.provider.name}
+            </span>
+            {i === 0 && <span class="badge-cheapest">CHEAPEST</span>}
+            {bestValue?.offer.id === r.offer.id && <span class="badge-neutral">BEST VALUE</span>}
+            {r.offer.tat_hours === fastestTat && i !== 0 && (
+              <span class="badge-neutral">FASTEST REPORT</span>
+            )}
+          </div>
+          <div class="mb-2 flex flex-wrap items-center gap-2 text-[12.5px] text-ink-soft">
+            <RatingLine rating={r.rating} />
+            {r.provider.nabl && (
+              <span class="rounded-md border border-navy-200 px-1.5 py-0.5 text-[11px] font-bold text-navy">
+                NABL
+              </span>
+            )}
+            {!r.provider.in_house_lab && <span class="usp-chip">Partner labs</span>}
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            {r.appliedCollectionFee === 0 && <span class="usp-chip">Free home collection</span>}
+            {r.provider.usps.slice(0, 2).map((u) => (
+              <span class="usp-chip">{u.title}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex min-w-0 flex-1 basis-40 flex-col gap-1.5 text-[12.5px] text-ink-soft">
+          <div>
+            Report in <strong class="num font-semibold text-ink">{formatTat(r.offer.tat_hours)}</strong>
+          </div>
+          <div>
+            Collection <strong class="font-semibold text-ink">{slotLabel(r.offer.earliest_slot)}</strong>
+          </div>
+          <div class="text-xs">verified {formatDate(r.offer.last_verified)}</div>
+        </div>
+
+        <div class="flex min-w-0 flex-1 basis-48 flex-col items-start gap-2">
+          <div>
+            <div class="flex items-baseline gap-2">
+              <span class="num font-heading text-[27px] font-extrabold tracking-tight text-navy">
+                {formatINR(r.total)}
+              </span>
+              {r.savingsVsMrp > 0 && (
+                <span class="num text-[13px] text-gray-500 line-through">{formatINR(r.offer.mrp)}</span>
               )}
             </div>
-            <div class="mt-1 text-xs text-ink-soft">
-              verified {formatDate(r.offer.last_verified)}
+            <div class="text-[11.5px] text-ink-soft">
+              total payable · {r.appliedCollectionFee === 0 ? 'all fees in' : 'includes collection fee'}
             </div>
-          </td>
-          <td class="p-3">
-            <details data-track="compare_expand" data-provider={r.provider.slug}>
-              <summary class="cursor-pointer list-none">
-                <span class="num text-lg font-bold text-amber-700">{formatINR(r.total)}</span>
-                {r.savingsVsMrp > 0 && (
-                  <span class="num ml-1 text-xs text-ink-soft line-through">{formatINR(r.offer.mrp)}</span>
-                )}
-                <span class="ml-1 text-xs text-navy underline">breakup</span>
-              </summary>
-              <dl class="num mt-2 space-y-1 text-xs text-ink-soft">
-                <div class="flex justify-between gap-4"><dt>Test price</dt><dd>{formatINR(r.offer.price)}</dd></div>
-                <div class="flex justify-between gap-4">
-                  <dt>Collection fee</dt>
-                  <dd>{r.appliedCollectionFee === 0 ? 'Free' : formatINR(r.appliedCollectionFee)}</dd>
+          </div>
+
+          <details class="w-full" data-track="compare_expand" data-provider={r.provider.slug}>
+            <summary class="cursor-pointer list-none text-[12.5px] font-semibold text-navy underline underline-offset-2">
+              Fee breakdown
+            </summary>
+            <dl class="num mt-2 space-y-1.5 text-[13px]">
+              <div class="flex justify-between gap-3">
+                <dt class="text-ink-soft">Test price</dt>
+                <dd class="font-semibold">{formatINR(r.offer.price)}</dd>
+              </div>
+              <div class="flex justify-between gap-3">
+                <dt class="text-ink-soft">Home collection</dt>
+                <dd class={r.appliedCollectionFee === 0 ? 'font-semibold text-good-700' : 'font-semibold text-amber-700'}>
+                  {r.appliedCollectionFee === 0 ? 'Free' : `+ ${formatINR(r.appliedCollectionFee)}`}
+                </dd>
+              </div>
+              {r.offer.other_fees.map((f) => (
+                <div class="flex justify-between gap-3">
+                  <dt class="text-ink-soft">{f.label}</dt>
+                  <dd class="font-semibold text-amber-700">+ {formatINR(f.amount)}</dd>
                 </div>
-                {r.offer.other_fees.map((f) => (
-                  <div class="flex justify-between gap-4"><dt>{f.label}</dt><dd>{formatINR(f.amount)}</dd></div>
-                ))}
-                {r.couponOff > 0 && (
-                  <div class="flex justify-between gap-4 text-good">
-                    <dt>Coupon {r.offer.coupon?.code}</dt><dd>−{formatINR(r.couponOff)}</dd>
-                  </div>
-                )}
-                <div class="flex justify-between gap-4 border-t border-line pt-1 font-semibold text-ink">
-                  <dt>You pay</dt><dd>{formatINR(r.total)}</dd>
+              ))}
+              {r.couponOff > 0 && (
+                <div class="flex justify-between gap-3">
+                  <dt class="text-ink-soft">
+                    Coupon
+                    <span class="ml-1 rounded border border-dashed border-amber px-1.5 py-0.5 text-[11px] font-bold text-amber-700">
+                      {r.offer.coupon?.code}
+                    </span>
+                  </dt>
+                  <dd class="font-semibold text-good-700">less {formatINR(r.couponOff)}</dd>
                 </div>
-              </dl>
-            </details>
-          </td>
-          <td class="num p-3">{formatTat(r.offer.tat_hours)}</td>
-          <td class="p-3">
-            <div>{slotLabel(r.offer.earliest_slot)}</div>
-            <div class="text-xs text-ink-soft">
-              {r.appliedCollectionFee === 0
-                ? 'Free home visit'
-                : `Home visit ${formatINR(r.appliedCollectionFee)}`}
-            </div>
-          </td>
-          <td class="p-3"><RatingLine rating={r.rating} /></td>
-          <td class="p-3">
-            <a
-              href={r.offer.source_url}
-              rel="nofollow noopener"
-              target="_blank"
-              class="btn-primary whitespace-nowrap"
-              data-outbound
-              data-provider={r.provider.slug}
-              data-test={testSlug}
-              data-city={citySlug}
-              data-position={String(i + 1)}
-            >
-              Book on {r.provider.name.split(' ')[0]}
-            </a>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+              )}
+              <div class="flex justify-between gap-3 border-t border-line pt-1.5">
+                <dt class="font-bold">You pay</dt>
+                <dd class="font-heading font-extrabold text-navy">{formatINR(r.total)}</dd>
+              </div>
+            </dl>
+          </details>
+
+          <a
+            href={r.offer.source_url}
+            rel="nofollow noopener"
+            target="_blank"
+            class="btn-primary w-full"
+            data-outbound
+            data-provider={r.provider.slug}
+            data-test={testSlug}
+            data-city={citySlug}
+            data-position={String(i + 1)}
+          >
+            Book on {r.provider.name} ↗
+          </a>
+        </div>
+      </div>
+    </article>
+  ))}
 </div>

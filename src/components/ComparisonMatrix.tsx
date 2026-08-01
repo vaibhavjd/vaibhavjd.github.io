@@ -1,6 +1,11 @@
-// The de-constructed full-body-checkup comparison: package cards + a
-// like-to-like panel coverage matrix. Server-rendered first (crawlers and
-// JS-off users see the full table); hydration adds filtering and sorting.
+// The de-constructed full-body-checkup comparison. Server-rendered first, so
+// crawlers and JS-off users get the whole table; hydration adds filtering and
+// sorting.
+//
+// The coverage matrix splits panels into "identical across every package" and
+// "where they differ". Everything a buyer is actually choosing between lives
+// in the second group, and burying that inside forty identical ticks is how
+// these comparisons normally fail.
 import { useMemo, useState } from 'preact/hooks';
 
 export interface MatrixPkg {
@@ -36,6 +41,7 @@ interface Props {
 }
 
 const inr = (n: number) => `₹${new Intl.NumberFormat('en-IN').format(Math.round(n))}`;
+const inr1 = (n: number) => `₹${n.toFixed(1)}`;
 
 function track(event: string, extra: Record<string, unknown> = {}) {
   const w = window as unknown as { dataLayer?: Array<Record<string, unknown>> };
@@ -65,6 +71,23 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
     return idx;
   }, [pkgs, free, fast, nabl, consult, sort]);
 
+  // Split panels by whether every visible package includes them.
+  const { shared, differing } = useMemo(() => {
+    const cols = visible.map(({ i }) => i);
+    const shared: MatrixRow[] = [];
+    const differing: MatrixRow[] = [];
+    for (const row of rows) {
+      const vals = cols.map((i) => row.included[i]);
+      if (vals.length > 1 && vals.every(Boolean)) shared.push(row);
+      else if (vals.some(Boolean)) differing.push(row);
+    }
+    return { shared, differing };
+  }, [rows, visible]);
+
+  const cheapestPerParam = visible.length
+    ? visible.reduce((a, b) => (a.p.perParam <= b.p.perParam ? a : b)).p
+    : null;
+
   const toggle = (name: string, value: boolean, set: (v: boolean) => void) => {
     set(!value);
     track('filter_use', { filter: name, on: !value });
@@ -79,11 +102,16 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
 
   return (
     <div>
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm">
+      <div class="mb-4 flex flex-wrap items-center gap-2 rounded-xl border border-line bg-white p-3 text-sm">
+        <span class="mr-1 text-[11px] font-bold uppercase tracking-wider text-ink-soft">Filter</span>
         {filters.map(([label, value, set]) => (
           <label
             key={label}
-            class={`chip cursor-pointer border ${value ? 'border-navy bg-navy-100 text-navy' : 'border-line bg-white text-ink-soft'}`}
+            class={`cursor-pointer rounded-full border px-3 py-1.5 text-[12.5px] font-semibold ${
+              value
+                ? 'border-navy bg-navy text-white'
+                : 'border-line bg-paper text-ink hover:border-navy'
+            }`}
           >
             <input
               type="checkbox"
@@ -91,6 +119,7 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
               checked={value}
               onChange={() => toggle(label, value, set)}
             />
+            {value ? '✓ ' : ''}
             {label}
           </label>
         ))}
@@ -116,97 +145,205 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
 
       <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map(({ p }, pos) => (
-          <div key={p.id} class="card flex flex-col gap-1">
-            <div class="text-xs font-semibold uppercase tracking-wide text-ink-soft">
-              {p.providerName}
-            </div>
-            <div class="font-heading font-bold text-navy">{p.pkgName}</div>
+          <article
+            key={p.id}
+            class={`flex flex-col gap-2.5 rounded-xl bg-white p-4 ${
+              pos === 0 && sort === 'total' ? 'border-[1.5px] border-good' : 'border border-line'
+            }`}
+          >
             <div>
-              <span class="num text-2xl font-extrabold text-amber-700">{inr(p.total)}</span>
+              <div class="mb-1.5 flex flex-wrap gap-1.5">
+                {pos === 0 && sort === 'total' && <span class="badge-cheapest">CHEAPEST</span>}
+                {cheapestPerParam?.id === p.id && <span class="badge-neutral">BEST VALUE</span>}
+              </div>
+              <div class="font-heading text-base font-extrabold tracking-tight text-ink">
+                {p.pkgName}
+              </div>
+              <div class="text-[12.5px] text-ink-soft">
+                {p.providerName}
+                {p.rating && (
+                  <span title={`Ratings from ${p.rating.source}`}>
+                    {' '}
+                    · {p.rating.rating.toFixed(1)} ★ from {p.rating.source}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div class="flex items-baseline gap-2">
+              <span class="num font-heading text-[26px] font-extrabold tracking-tight text-navy">
+                {inr(p.total)}
+              </span>
               {p.mrp > p.total && (
-                <span class="num ml-2 text-xs text-ink-soft line-through">{inr(p.mrp)}</span>
-              )}
-              {p.couponCode && <span class="chip-amber ml-2">Code {p.couponCode}</span>}
-            </div>
-            <div class="num text-sm text-ink-soft">
-              {p.verified} parameters verified (lab claims {p.claimed}) ·{' '}
-              {inr(p.perParam)}/parameter
-            </div>
-            <div class="flex flex-wrap gap-1 py-1">
-              {pos === 0 && sort === 'total' && <span class="chip-good">Cheapest</span>}
-              {p.nabl && <span class="chip-trust">NABL</span>}
-              {p.consult && <span class="chip-muted">Free doctor consult</span>}
-              {p.smart && <span class="chip-muted">Smart report</span>}
-              {p.freeCollection && <span class="chip-muted">Free home visit</span>}
-            </div>
-            <div class="text-sm text-ink-soft">
-              Report in {p.tat <= 24 ? `${p.tat} hrs` : `${Math.round(p.tat / 24)} days`}
-              {p.rating && (
-                <span title={`Ratings from ${p.rating.source}`}>
-                  {' '}· ★ {p.rating.rating.toFixed(1)} via {p.rating.source}
-                </span>
+                <span class="num text-[13px] text-gray-500 line-through">{inr(p.mrp)}</span>
               )}
             </div>
+
+            {/* Claimed against verified, side by side. The gap is the point. */}
+            <div class="grid grid-cols-2 gap-2 rounded-lg bg-paper p-2.5">
+              <div>
+                <div class="text-[11px] text-ink-soft">Lab claims</div>
+                <div class="num font-heading text-base font-bold text-gray-500 line-through">
+                  {p.claimed}
+                </div>
+              </div>
+              <div>
+                <div class="text-[11px] text-ink-soft">Verified by us</div>
+                <div class="num font-heading text-base font-extrabold text-ink">{p.verified}</div>
+              </div>
+            </div>
+
+            <div class="flex items-baseline justify-between gap-2 rounded-lg bg-amber-100 px-2.5 py-2">
+              <span class="text-xs font-semibold text-amber-700">Price per parameter</span>
+              <span class="num font-heading text-[15px] font-extrabold text-amber-700">
+                {inr1(p.perParam)}
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-1 text-[12.5px] text-ink-soft">
+              <div>
+                Report in{' '}
+                <strong class="font-semibold text-ink">
+                  {p.tat <= 24 ? `${p.tat} hours` : `${Math.round(p.tat / 24)} days`}
+                </strong>
+                {p.nabl && ' · NABL'}
+              </div>
+              <div>
+                {[
+                  p.freeCollection && 'Free home collection',
+                  p.consult && 'Free doctor consult',
+                  p.smart && 'Smart report',
+                ]
+                  .filter(Boolean)
+                  .join(' · ') || 'Standard report'}
+              </div>
+            </div>
+
             <a
               href={p.bookUrl}
               rel="nofollow noopener"
               target="_blank"
-              class="btn-primary mt-auto text-center"
+              class={`mt-auto w-full ${
+                pos === 0 && sort === 'total' ? 'btn-primary' : 'btn-secondary'
+              }`}
               data-outbound
               data-provider={p.providerSlug}
               data-city={p.city}
               data-position={String(pos + 1)}
             >
-              Book on lab site
+              Book on {p.providerName} ↗
             </a>
-          </div>
+          </article>
         ))}
       </div>
 
       {visible.length > 0 && (
-        <div class="table-wrap mt-6">
-          <table class="w-full min-w-[640px] border-collapse text-sm">
-            <thead>
-              <tr class="border-b border-line bg-navy-100 text-left text-navy">
-                <th class="sticky left-0 bg-navy-100 p-3">What's covered</th>
-                {visible.map(({ p }) => (
-                  <th key={p.id} class="p-3 font-semibold">
-                    {p.providerName}
-                    <span class="block text-xs font-normal text-ink-soft">{p.pkgName}</span>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row) => (
-                <tr key={row.name} class="border-b border-line last:border-0">
-                  <th scope="row" class="sticky left-0 bg-white p-3 text-left font-medium">
-                    {row.name}
-                    <span class="num block text-xs font-normal text-ink-soft">
-                      {row.params} {row.params === 1 ? 'parameter' : 'parameters'}
-                    </span>
-                  </th>
-                  {visible.map(({ p, i }) => (
-                    <td key={p.id} class="p-3">
-                      {row.included[i] ? (
-                        <span class="font-bold text-good">✓</span>
-                      ) : (
-                        <span class="text-ink-soft">—</span>
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+        <section class="mt-6">
+          <h2 class="mb-1 font-heading text-xl font-extrabold tracking-tight text-navy">
+            Parameter coverage
+          </h2>
+          <p class="mb-2.5 max-w-[64ch] text-[13px] text-ink-soft">
+            Panels every package shares are collapsed. The ones below them are where
+            these packages actually differ, and where your money goes.
+          </p>
 
-      <p class="mt-3 text-xs text-ink-soft">
-        Verified counts come from de-constructing each package into standard
-        panels. Labs count sub-parameters differently, so a lab's claimed number
-        and our verified number can differ — both are shown.
-      </p>
+          <div class="overflow-hidden rounded-xl border border-line bg-white">
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[520px] border-collapse text-sm">
+                <thead>
+                  <tr class="border-b border-line bg-paper text-left">
+                    <th class="p-3 text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+                      Panel
+                    </th>
+                    {visible.map(({ p }) => (
+                      <th
+                        key={p.id}
+                        class="w-[86px] p-3 text-center text-[11.5px] font-bold leading-tight text-ink"
+                      >
+                        {p.providerName}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {shared.length > 0 && (
+                    <tr class="border-b border-line-soft">
+                      <td colSpan={visible.length + 1} class="p-3">
+                        <details onToggle={() => track('compare_expand', { section: 'shared_panels' })}>
+                          <summary class="cursor-pointer text-[13px] font-semibold text-ink">
+                            {shared.length} panel{shared.length === 1 ? '' : 's'} identical in all{' '}
+                            {visible.length} packages
+                            <span class="ml-1 font-normal text-ink-soft">
+                              ({shared.reduce((s, r) => s + r.params, 0)} parameters)
+                            </span>
+                          </summary>
+                          <ul class="mt-2 space-y-1 pl-4 text-[13px] text-ink-soft">
+                            {shared.map((r) => (
+                              <li key={r.name}>
+                                {r.name}{' '}
+                                <span class="num">
+                                  · {r.params} param{r.params === 1 ? '' : 's'}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      </td>
+                    </tr>
+                  )}
+
+                  {differing.length > 0 && (
+                    <tr class="border-y border-line bg-paper">
+                      <td
+                        colSpan={visible.length + 1}
+                        class="px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-amber-700"
+                      >
+                        Where they differ
+                      </td>
+                    </tr>
+                  )}
+
+                  {differing.map((row) => (
+                    <tr key={row.name} class="border-b border-line-soft last:border-0">
+                      <th scope="row" class="p-3 text-left font-medium">
+                        {row.name}
+                        <span class="num block text-xs font-normal text-ink-soft">
+                          {row.params} {row.params === 1 ? 'parameter' : 'parameters'}
+                        </span>
+                      </th>
+                      {visible.map(({ p, i }) => (
+                        <td key={p.id} class="p-3 text-center">
+                          {row.included[i] ? (
+                            <span class="font-bold text-good-700">✓</span>
+                          ) : (
+                            <span class="text-gray-500">not included</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="border-t border-line bg-paper px-3 py-2.5 text-xs text-ink-soft">
+              Swipe the table sideways to see every package.
+            </div>
+          </div>
+
+          <div class="card mt-2.5">
+            <div class="mb-1.5 font-heading text-[15px] font-bold text-ink">
+              Why claimed and verified counts differ
+            </div>
+            <p class="m-0 max-w-[70ch] text-[13.5px] leading-relaxed text-ink-soft">
+              Packages often count a calculated ratio as its own parameter, or list the
+              same marker under two panels. We map each package onto standard panels and
+              count once, so the verified number is usually lower. Nobody is lying about
+              it; labs simply count generously. Both numbers are shown so you can judge
+              for yourself.
+            </p>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

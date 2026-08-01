@@ -42,9 +42,13 @@ for (const file of files) {
   lines.forEach((line, i) => {
     for (const { phrase, re } of patterns) {
       if (re.test(line)) {
-        hits.push(`${relative(root, file)}:${i + 1}  →  "${phrase}"`);
+        hits.push(`${relative(root, file)}:${i + 1}  ->  "${phrase}"`);
       }
     }
+    // Em and en dashes read as machine-written and were removed from all
+    // copy deliberately. Use a full stop, a comma, or parentheses instead.
+    if (line.includes('—')) hits.push(`${relative(root, file)}:${i + 1}  ->  em dash`);
+    if (line.includes('–')) hits.push(`${relative(root, file)}:${i + 1}  ->  en dash`);
   });
 }
 
