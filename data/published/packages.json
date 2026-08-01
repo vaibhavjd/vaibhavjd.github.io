@@ -1,5 +1,31 @@
 [
   {
+    "id": "max-lab-46399",
+    "provider": "max-lab",
+    "name": "Wellwise Essential Profile",
+    "claimed_params": 50,
+    "panels": [],
+    "biomarkers": [],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "max-lab-45036",
+    "provider": "max-lab",
+    "name": "Wellwise Total Profile",
+    "claimed_params": 84,
+    "panels": [],
+    "biomarkers": [],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
     "id": "redcliffe-PL11",
     "provider": "redcliffe",
     "name": "Smart Full Body Checkup",
