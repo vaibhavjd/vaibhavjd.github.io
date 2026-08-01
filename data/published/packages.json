@@ -1,53 +1,5 @@
 [
   {
-    "id": "max-lab-46399",
-    "provider": "max-lab",
-    "name": "Wellwise Essential Profile",
-    "claimed_params": 50,
-    "panels": [],
-    "biomarkers": [],
-    "consult_included": false,
-    "smart_report": false,
-    "fasting_required": true,
-    "gender": "any",
-    "tat_hours": 24
-  },
-  {
-    "id": "max-lab-45036",
-    "provider": "max-lab",
-    "name": "Wellwise Total Profile",
-    "claimed_params": 84,
-    "panels": [],
-    "biomarkers": [],
-    "consult_included": false,
-    "smart_report": false,
-    "fasting_required": true,
-    "gender": "any",
-    "tat_hours": 24
-  },
-  {
-    "id": "redcliffe-PL11",
-    "provider": "redcliffe",
-    "name": "Smart Full Body Checkup",
-    "claimed_params": 89,
-    "panels": [
-      "urine",
-      "thyroid",
-      "lft",
-      "lipid",
-      "kft",
-      "diabetes",
-      "inflammation",
-      "cbc"
-    ],
-    "biomarkers": [],
-    "consult_included": false,
-    "smart_report": false,
-    "fasting_required": true,
-    "gender": "any",
-    "tat_hours": 11
-  },
-  {
     "id": "redcliffe-PL293",
     "provider": "redcliffe",
     "name": "Advance Full Body Checkup (Non Fasting)",
@@ -100,6 +52,41 @@
     "tat_hours": 12
   },
   {
+    "id": "max-lab-45036",
+    "provider": "max-lab",
+    "name": "Wellwise Total Profile",
+    "claimed_params": 84,
+    "panels": [],
+    "biomarkers": [],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
+  },
+  {
+    "id": "redcliffe-PL11",
+    "provider": "redcliffe",
+    "name": "Smart Full Body Checkup",
+    "claimed_params": 89,
+    "panels": [
+      "urine",
+      "thyroid",
+      "lft",
+      "lipid",
+      "kft",
+      "diabetes",
+      "inflammation",
+      "cbc"
+    ],
+    "biomarkers": [],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 11
+  },
+  {
     "id": "redcliffe-PL124I",
     "provider": "redcliffe",
     "name": "Fit India Full Body Checkup with Free HbA1c",
@@ -122,5 +109,18 @@
     "fasting_required": true,
     "gender": "any",
     "tat_hours": 11
+  },
+  {
+    "id": "max-lab-46399",
+    "provider": "max-lab",
+    "name": "Wellwise Essential Profile",
+    "claimed_params": 50,
+    "panels": [],
+    "biomarkers": [],
+    "consult_included": false,
+    "smart_report": false,
+    "fasting_required": true,
+    "gender": "any",
+    "tat_hours": 24
   }
 ]
