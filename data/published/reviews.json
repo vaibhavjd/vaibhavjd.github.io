@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "provider": "agilus",
+    "city": null,
+    "source": "appstore",
+    "rating": 2.7,
+    "count": 713,
+    "fetched_at": "2026-08-01",
+    "ref": "840710041"
+  },
+  {
+    "provider": "agilus",
+    "city": null,
+    "source": "play",
+    "rating": 3.3,
+    "count": 15003,
+    "fetched_at": "2026-08-01",
+    "ref": "com.srllimited.srl"
+  },
+  {
+    "provider": "apollo-247",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.7,
+    "count": 202717,
+    "fetched_at": "2026-08-01",
+    "ref": "1496740273"
+  },
+  {
+    "provider": "apollo-247",
+    "city": null,
+    "source": "play",
+    "rating": 4.6,
+    "count": 680674,
+    "fetched_at": "2026-08-01",
+    "ref": "com.apollo.patientapp"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": null,
+    "source": "appstore",
+    "rating": 3.6,
+    "count": 4102,
+    "fetched_at": "2026-08-01",
+    "ref": "1111250276"
+  },
+  {
+    "provider": "dr-lal-pathlabs",
+    "city": null,
+    "source": "play",
+    "rating": 4.4,
+    "count": 35446,
+    "fetched_at": "2026-08-01",
+    "ref": "pathlabs.com.pathlabs"
+  },
+  {
+    "provider": "healthians",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.6,
+    "count": 17931,
+    "fetched_at": "2026-08-01",
+    "ref": "1453011241"
+  },
+  {
+    "provider": "healthians",
+    "city": null,
+    "source": "play",
+    "rating": 4.2,
+    "count": 67515,
+    "fetched_at": "2026-08-01",
+    "ref": "com.healthians.main.healthians"
+  },
+  {
+    "provider": "max-lab",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.5,
+    "count": 508,
+    "fetched_at": "2026-08-01",
+    "ref": "6742869696"
+  },
+  {
+    "provider": "max-lab",
+    "city": null,
+    "source": "play",
+    "rating": 4.2,
+    "count": 2107,
+    "fetched_at": "2026-08-01",
+    "ref": "com.app.maxlab"
+  },
+  {
+    "provider": "medibuddy",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.3,
+    "count": 29476,
+    "fetched_at": "2026-08-01",
+    "ref": "946666981"
+  },
+  {
+    "provider": "medibuddy",
+    "city": null,
+    "source": "play",
+    "rating": 4.6,
+    "count": 257146,
+    "fetched_at": "2026-08-01",
+    "ref": "in.medibuddy"
+  },
+  {
+    "provider": "metropolis",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.2,
+    "count": 413,
+    "fetched_at": "2026-08-01",
+    "ref": "1609222176"
+  },
+  {
+    "provider": "metropolis",
+    "city": null,
+    "source": "play",
+    "rating": 4.5,
+    "count": 1838,
+    "fetched_at": "2026-08-01",
+    "ref": "com.mhl"
+  },
+  {
+    "provider": "orange-health",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.8,
+    "count": 4592,
+    "fetched_at": "2026-08-01",
+    "ref": "1534689588"
+  },
+  {
+    "provider": "orange-health",
+    "city": null,
+    "source": "play",
+    "rating": 4.7,
+    "count": 9326,
+    "fetched_at": "2026-08-01",
+    "ref": "in.orangehealth.patient"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": null,
+    "source": "appstore",
+    "rating": 3.9,
+    "count": 18275,
+    "fetched_at": "2026-08-01",
+    "ref": "982432643"
+  },
+  {
+    "provider": "pharmeasy-labs",
+    "city": null,
+    "source": "play",
+    "rating": 4.5,
+    "count": 836857,
+    "fetched_at": "2026-08-01",
+    "ref": "com.phonegap.rxpal"
+  },
+  {
+    "provider": "redcliffe",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.7,
+    "count": 2015,
+    "fetched_at": "2026-08-01",
+    "ref": "1602990503"
+  },
+  {
+    "provider": "redcliffe",
+    "city": null,
+    "source": "play",
+    "rating": 4.8,
+    "count": 27098,
+    "fetched_at": "2026-08-01",
+    "ref": "com.redcliffelabs"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": null,
+    "source": "appstore",
+    "rating": 4.7,
+    "count": 166710,
+    "fetched_at": "2026-08-01",
+    "ref": "554578419"
+  },
+  {
+    "provider": "tata-1mg",
+    "city": null,
+    "source": "play",
+    "rating": 4.6,
+    "count": 861752,
+    "fetched_at": "2026-08-01",
+    "ref": "com.aranoah.healthkart.plus"
+  },
+  {
+    "provider": "thyrocare",
+    "city": null,
+    "source": "appstore",
+    "rating": 1.8,
+    "count": 250,
+    "fetched_at": "2026-08-01",
+    "ref": "1117762349"
+  },
+  {
+    "provider": "thyrocare",
+    "city": null,
+    "source": "play",
+    "rating": 2.8,
+    "count": 7885,
+    "fetched_at": "2026-08-01",
+    "ref": "com.illionsoft.thyrocare"
+  }
+]
