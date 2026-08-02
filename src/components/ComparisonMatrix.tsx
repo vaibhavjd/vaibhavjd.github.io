@@ -6,6 +6,7 @@
 // "where they differ". Everything a buyer is actually choosing between lives
 // in the second group, and burying that inside forty identical ticks is how
 // these comparisons normally fail.
+import { Fragment } from 'preact';
 import { useMemo, useState } from 'preact/hooks';
 
 export interface MatrixPkg {
@@ -27,6 +28,10 @@ export interface MatrixPkg {
   rating: { rating: number; count: number; source: string } | null;
   bookUrl: string;
   city: string;
+  /** Biomarker slugs this package covers. Drives the per-parameter drill-down. */
+  coveredSlugs: string[];
+  /** Tests it includes that we couldn't map to a panel (non-comparable extras). */
+  extras: string[];
 }
 
 export interface MatrixRow {
@@ -35,6 +40,9 @@ export interface MatrixRow {
   included: boolean[];
   /** Parameters of this panel each package actually covers. */
   covered: number[];
+  /** The panel's parameter names and slugs, parallel, for the drill-down. */
+  paramNames: string[];
+  paramSlugs: string[];
 }
 
 interface Props {
@@ -57,6 +65,11 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
   const [nabl, setNabl] = useState(false);
   const [consult, setConsult] = useState(false);
   const [sort, setSort] = useState<'total' | 'coverage' | 'perParam'>('total');
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const toggleRow = (name: string) => {
+    setOpen((o) => ({ ...o, [name]: !o[name] }));
+    track('compare_expand', { section: 'panel_params', panel: name });
+  };
 
   const visible = useMemo(() => {
     const idx = pkgs
@@ -251,7 +264,8 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
             Panels that every package covers in full are collapsed. Below them is
             where the packages actually differ. Labs group their panels differently
             to us, so a package often carries part of one: "5 of 11" means five of
-            that panel's eleven parameters are in the report.
+            that panel's eleven parameters are in the report. Tap any panel to see
+            which parameters each package includes and which it leaves out.
           </p>
 
           <div class="overflow-hidden rounded-xl border border-line bg-white">
@@ -265,9 +279,12 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
                     {visible.map(({ p }) => (
                       <th
                         key={p.id}
-                        class="w-[86px] p-3 text-center text-[11.5px] font-bold leading-tight text-ink"
+                        class="w-[112px] p-3 text-center align-bottom text-[11.5px] font-bold leading-tight text-ink"
                       >
-                        {p.providerName}
+                        {p.pkgName}
+                        <span class="mt-0.5 block text-[10px] font-normal text-ink-soft">
+                          {p.providerName}
+                        </span>
                       </th>
                     ))}
                   </tr>
@@ -310,51 +327,132 @@ export default function ComparisonMatrix({ pkgs, rows }: Props) {
                     </tr>
                   )}
 
-                  {differing.map((row) => (
-                    <tr key={row.name} class="border-b border-line-soft last:border-0">
-                      <th scope="row" class="p-3 text-left font-medium">
+                  {differing.map((row) => {
+                    const isOpen = open[row.name] ?? false;
+                    const canExpand =
+                      row.paramNames.length > 0 &&
+                      row.paramSlugs.length === row.paramNames.length;
+                    const label = (
+                      <>
                         {row.name}
                         <span class="num block text-xs font-normal text-ink-soft">
                           {row.params} {row.params === 1 ? 'parameter' : 'parameters'}
                         </span>
-                      </th>
-                      {visible.map(({ p, i }) => {
-                        const n = row.covered[i] ?? 0;
-                        if (n === 0) {
-                          return (
-                            <td key={p.id} class="p-3 text-center text-[12px] text-gray-500">
-                              not included
-                            </td>
-                          );
-                        }
-                        if (n === row.params) {
-                          return (
-                            <td key={p.id} class="p-3 text-center">
-                              <span class="font-bold text-good-700">✓</span>
-                              {row.params > 1 && (
-                                <span class="num block text-[11px] text-ink-soft">
-                                  all {row.params}
+                      </>
+                    );
+                    return (
+                      <Fragment key={row.name}>
+                        <tr class="border-b border-line-soft last:border-0">
+                          <th scope="row" class="p-3 text-left font-medium">
+                            {canExpand ? (
+                              <button
+                                type="button"
+                                class="flex items-start gap-1.5 text-left"
+                                aria-expanded={isOpen}
+                                onClick={() => toggleRow(row.name)}
+                              >
+                                <span class="mt-0.5 text-ink-soft">{isOpen ? '▾' : '▸'}</span>
+                                <span>{label}</span>
+                              </button>
+                            ) : (
+                              label
+                            )}
+                          </th>
+                          {visible.map(({ p, i }) => {
+                            const n = row.covered[i] ?? 0;
+                            if (n === 0) {
+                              return (
+                                <td key={p.id} class="p-3 text-center text-[12px] text-gray-500">
+                                  not included
+                                </td>
+                              );
+                            }
+                            if (n === row.params) {
+                              return (
+                                <td key={p.id} class="p-3 text-center">
+                                  <span class="font-bold text-good-700">✓</span>
+                                  {row.params > 1 && (
+                                    <span class="num block text-[11px] text-ink-soft">
+                                      all {row.params}
+                                    </span>
+                                  )}
+                                </td>
+                              );
+                            }
+                            return (
+                              <td key={p.id} class="p-3 text-center">
+                                <span class="num text-[13px] font-bold text-amber-700">
+                                  {n} of {row.params}
                                 </span>
-                              )}
-                            </td>
-                          );
-                        }
-                        return (
-                          <td key={p.id} class="p-3 text-center">
-                            <span class="num text-[13px] font-bold text-amber-700">
-                              {n} of {row.params}
-                            </span>
-                            <span class="mx-auto mt-1 block h-1 w-10 overflow-hidden rounded-full bg-line">
-                              <span
-                                class="block h-full rounded-full bg-amber"
-                                style={`width:${Math.round((n / row.params) * 100)}%`}
-                              />
-                            </span>
-                          </td>
-                        );
-                      })}
+                                <span class="mx-auto mt-1 block h-1 w-10 overflow-hidden rounded-full bg-line">
+                                  <span
+                                    class="block h-full rounded-full bg-amber"
+                                    style={`width:${Math.round((n / row.params) * 100)}%`}
+                                  />
+                                </span>
+                              </td>
+                            );
+                          })}
+                        </tr>
+                        {isOpen &&
+                          canExpand &&
+                          row.paramNames.map((pname, k) => (
+                            <tr key={`${row.name}:${pname}`} class="border-b border-line-soft bg-paper">
+                              <td class="py-1.5 pl-9 pr-3 text-[12.5px] text-ink-soft">{pname}</td>
+                              {visible.map(({ p }) => {
+                                const has = p.coveredSlugs.includes(row.paramSlugs[k]);
+                                return (
+                                  <td key={p.id} class="py-1.5 text-center">
+                                    {has ? (
+                                      <span class="font-semibold text-good-700" title="Included">
+                                        ✓
+                                      </span>
+                                    ) : (
+                                      <span class="text-gray-300" title="Not in this package">
+                                        ✕
+                                      </span>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          ))}
+                      </Fragment>
+                    );
+                  })}
+
+                  {visible.some(({ p }) => p.extras.length > 0) && (
+                    <tr class="border-t border-line bg-paper">
+                      <th scope="row" class="p-3 text-left align-top font-medium">
+                        Other tests included
+                        <span class="block text-xs font-normal text-ink-soft">
+                          not mapped to a standard panel, so left out of the counts above
+                        </span>
+                      </th>
+                      {visible.map(({ p }) => (
+                        <td key={p.id} class="p-3 text-center align-top text-[12px]">
+                          {p.extras.length > 0 ? (
+                            <details
+                              onToggle={() =>
+                                track('compare_expand', { section: 'extras', provider: p.providerSlug })
+                              }
+                            >
+                              <summary class="num cursor-pointer font-bold text-ink">
+                                +{p.extras.length}
+                              </summary>
+                              <ul class="mt-1 space-y-0.5 text-left text-[11.5px] text-ink-soft">
+                                {p.extras.map((x) => (
+                                  <li key={x}>{x}</li>
+                                ))}
+                              </ul>
+                            </details>
+                          ) : (
+                            <span class="text-gray-300">✕</span>
+                          )}
+                        </td>
+                      ))}
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>

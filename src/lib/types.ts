@@ -100,6 +100,18 @@ export interface PackageDef {
   biomarkers?: string[];
   /** Every biomarker slug this package covers, from panels and singles alike. */
   covered?: string[];
+  /** Distinct leaf parameters decomposed from the source page (§3b rebuild). */
+  extracted_params?: number;
+  /** Named leaf detail — each parameter, its provider group, and what it mapped
+   *  to. `biomarker`/`panel` null together means we couldn't map it. */
+  parameters?: Array<{
+    name: string;
+    group: string | null;
+    biomarker: string | null;
+    panel: string | null;
+  }>;
+  /** Leaves with no taxonomy match — real tests shown as non-comparable extras. */
+  unmapped_params?: string[];
   consult_included: boolean;
   smart_report: boolean;
   fasting_required: boolean;

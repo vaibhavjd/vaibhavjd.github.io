@@ -20,6 +20,7 @@ import {
   insightsFor,
   packageCards,
   coverageRows,
+  coveredSlugsOf,
   cityRangesFor,
   nationalRange,
   publishedTestsIn,
@@ -133,12 +134,20 @@ const fbcPkgProps = fbcCards.map((c) => ({
   rating: c.enriched.rating,
   bookUrl: c.enriched.offer.source_url,
   city: city?.slug ?? '',
+  // Which biomarker slugs this package covers, and the tests it includes that
+  // we couldn't map onto a standard panel (shown as non-comparable extras).
+  coveredSlugs: coveredSlugsOf(c.pkg),
+  extras: c.pkg.unmapped_params ?? [],
 }));
 const fbcRowProps = fbcCov.map((r) => ({
   name: r.panel.name,
   params: r.total,
   included: r.included,
   covered: r.covered,
+  // Parallel arrays: the panel's parameter display names and their slugs, so
+  // the matrix can name each one and mark it present or absent per package.
+  paramNames: r.panel.params,
+  paramSlugs: r.panel.param_slugs ?? [],
 }));
 
 // ---------- city hub ----------

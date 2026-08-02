@@ -164,17 +164,21 @@ export function packageCards(citySlug: string): PackageCard[] {
  *  (because no whole-panel match exists) understated it badly, and showing it
  *  as a full tick would overstate it. Both are wrong on a health page, so each
  *  cell reports how many of the panel's parameters the package actually has. */
+/** The biomarker slugs a package covers, with a fallback for older bundles
+ *  that predate the `covered` field. Shared by the coverage counts and the
+ *  per-parameter drill-down so the two can never disagree. */
+export function coveredSlugsOf(pkg: PackageDef): string[] {
+  if (pkg.covered?.length) return pkg.covered;
+  const s = new Set<string>();
+  for (const slug of pkg.panels) {
+    for (const b of panelsBySlug[slug]?.param_slugs ?? []) s.add(b);
+  }
+  for (const entry of pkg.biomarkers ?? []) s.add(entry.split('|')[0]);
+  return [...s];
+}
+
 export function coverageRows(cards: PackageCard[]): CoverageRow[] {
-  const coveredSets = cards.map((c) => {
-    if (c.pkg.covered?.length) return new Set(c.pkg.covered);
-    // Fallback for older bundles without `covered`: expand whole panels.
-    const s = new Set<string>();
-    for (const slug of c.pkg.panels) {
-      for (const b of panelsBySlug[slug]?.param_slugs ?? []) s.add(b);
-    }
-    for (const entry of c.pkg.biomarkers ?? []) s.add(entry.split('|')[0]);
-    return s;
-  });
+  const coveredSets = cards.map((c) => new Set(coveredSlugsOf(c.pkg)));
 
   const rows: CoverageRow[] = [];
   for (const panel of panels) {
