@@ -4,21 +4,32 @@
     "provider": "redcliffe",
     "name": "Advance Full Body Checkup (Non Fasting)",
     "claimed_params": 95,
+    "extracted_params": 11,
     "panels": [
+      "lipid",
       "urine",
-      "thyroid",
       "lft",
       "kft",
       "diabetes",
       "inflammation",
-      "cbc",
-      "lipid"
+      "cbc"
     ],
     "biomarkers": [
       "vitamin-d-25-oh|Vitamin D (25-OH)",
+      "total-t3|Total T3",
+      "total-t4|Total T4",
+      "tsh|TSH",
       "vitamin-b12|Vitamin B12"
     ],
     "covered": [
+      "total-cholesterol",
+      "hdl-cholesterol",
+      "ldl-cholesterol",
+      "vldl-cholesterol",
+      "triglycerides",
+      "tc-hdl-ratio",
+      "ldl-hdl-ratio",
+      "non-hdl-cholesterol",
       "colour",
       "appearance",
       "ph",
@@ -29,9 +40,6 @@
       "blood",
       "leukocyte-esterase",
       "microscopic-examination",
-      "total-t3",
-      "total-t4",
-      "tsh",
       "total-bilirubin",
       "direct-bilirubin",
       "indirect-bilirubin",
@@ -66,8 +74,7 @@
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -79,16 +86,82 @@
       "absolute-eosinophils",
       "absolute-basophils",
       "mpv",
-      "total-cholesterol",
-      "hdl-cholesterol",
-      "ldl-cholesterol",
-      "vldl-cholesterol",
-      "triglycerides",
-      "tc-hdl-ratio",
-      "ldl-hdl-ratio",
-      "non-hdl-cholesterol",
       "vitamin-d-25-oh",
+      "total-t3",
+      "total-t4",
+      "tsh",
       "vitamin-b12"
+    ],
+    "parameters": [
+      {
+        "name": "Cholesterol Profile",
+        "group": null,
+        "biomarker": null,
+        "panel": "lipid"
+      },
+      {
+        "name": "Vitamin D Test (25-Hydroxy)",
+        "group": null,
+        "biomarker": "vitamin-d-25-oh",
+        "panel": null
+      },
+      {
+        "name": "Urine Routine & Microscopic Examination Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "urine"
+      },
+      {
+        "name": "Thyroid Profile Total",
+        "group": null,
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Liver Function Test (LFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "lft"
+      },
+      {
+        "name": "Kidney Function Test (KFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "kft"
+      },
+      {
+        "name": "HBA1C Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "Blood Sugar Random",
+        "group": null,
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "ESR Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "inflammation"
+      },
+      {
+        "name": "Complete Blood Count (CBC) Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "cbc"
+      },
+      {
+        "name": "Vitamin B12 Test",
+        "group": null,
+        "biomarker": "vitamin-b12",
+        "panel": null
+      }
+    ],
+    "unmapped_params": [
+      "Blood Sugar Random"
     ],
     "consult_included": false,
     "smart_report": false,
@@ -101,20 +174,23 @@
     "provider": "redcliffe",
     "name": "Annual Full Body Checkup - Advance",
     "claimed_params": 96,
+    "extracted_params": 13,
     "panels": [
       "urine",
-      "thyroid",
       "lft",
       "lipid",
       "kft",
+      "iron",
       "diabetes",
       "inflammation",
-      "cbc",
-      "iron"
+      "cbc"
     ],
     "biomarkers": [
       "hs-crp|hs-CRP",
       "vitamin-d-25-oh|Vitamin D (25-OH)",
+      "total-t3|Total T3",
+      "total-t4|Total T4",
+      "tsh|TSH",
       "vitamin-b12|Vitamin B12"
     ],
     "covered": [
@@ -128,9 +204,6 @@
       "blood",
       "leukocyte-esterase",
       "microscopic-examination",
-      "total-t3",
-      "total-t4",
-      "tsh",
       "total-bilirubin",
       "direct-bilirubin",
       "indirect-bilirubin",
@@ -160,6 +233,10 @@
       "sodium",
       "potassium",
       "chloride",
+      "serum-iron",
+      "tibc",
+      "transferrin-saturation",
+      "ferritin",
       "fasting-glucose",
       "hba1c",
       "estimated-average-glucose",
@@ -173,8 +250,7 @@
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -186,54 +262,190 @@
       "absolute-eosinophils",
       "absolute-basophils",
       "mpv",
-      "serum-iron",
-      "tibc",
-      "transferrin-saturation",
-      "ferritin",
       "hs-crp",
       "vitamin-d-25-oh",
+      "total-t3",
+      "total-t4",
+      "tsh",
       "vitamin-b12"
     ],
+    "parameters": [
+      {
+        "name": "High-Sensitivity C-Reactive Protein (hsCRP ) Test",
+        "group": null,
+        "biomarker": "hs-crp",
+        "panel": null
+      },
+      {
+        "name": "Vitamin D Test (25-Hydroxy)",
+        "group": null,
+        "biomarker": "vitamin-d-25-oh",
+        "panel": null
+      },
+      {
+        "name": "Urine Routine & Microscopic Examination Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "urine"
+      },
+      {
+        "name": "Thyroid Profile Total",
+        "group": null,
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Liver Function Test (LFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "lft"
+      },
+      {
+        "name": "Lipid Profile Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "lipid"
+      },
+      {
+        "name": "Kidney Function Test (KFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "kft"
+      },
+      {
+        "name": "Iron Studies Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "iron"
+      },
+      {
+        "name": "HBA1C Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "Blood Sugar Fasting",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "ESR Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "inflammation"
+      },
+      {
+        "name": "Complete Blood Count (CBC) Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "cbc"
+      },
+      {
+        "name": "Vitamin B12 Test",
+        "group": null,
+        "biomarker": "vitamin-b12",
+        "panel": null
+      }
+    ],
+    "unmapped_params": [],
     "consult_included": false,
     "smart_report": false,
     "fasting_required": false,
     "gender": "any",
-    "tat_hours": 12
+    "tat_hours": 15
   },
   {
     "id": "max-lab-45036",
     "provider": "max-lab",
     "name": "Wellwise Total Profile",
     "claimed_params": 84,
-    "panels": [
-      "cbc",
-      "diabetes",
-      "urine"
-    ],
+    "extracted_params": 93,
+    "panels": [],
     "biomarkers": [
+      "hemoglobin|Hemoglobin",
+      "hematocrit-pcv|Hematocrit (PCV)",
+      "wbc-count|WBC Count",
+      "rbc-count|RBC Count",
+      "mcv|MCV",
+      "mch|MCH",
+      "mchc|MCHC",
+      "platelet-count|Platelet Count",
+      "mpv|MPV",
+      "rdw|RDW",
+      "neutrophils|Neutrophils %",
+      "lymphocytes|Lymphocytes %",
+      "monocytes|Monocytes %",
+      "eosinophils|Eosinophils %",
+      "basophils|Basophils %",
+      "absolute-neutrophils|Absolute Neutrophils",
+      "absolute-lymphocytes|Absolute Lymphocytes",
+      "absolute-monocytes|Absolute Monocytes",
+      "absolute-eosinophils|Absolute Eosinophils",
+      "absolute-basophils|Absolute Basophils",
+      "esr|ESR",
+      "hba1c|HbA1c",
+      "estimated-average-glucose|Estimated Average Glucose",
+      "fasting-glucose|Fasting Glucose",
+      "total-cholesterol|Total Cholesterol",
+      "hdl-cholesterol|HDL Cholesterol",
+      "ldl-cholesterol|LDL Cholesterol",
+      "triglycerides|Triglycerides",
+      "vldl-cholesterol|VLDL Cholesterol",
+      "tc-hdl-ratio|TC/HDL Ratio",
+      "non-hdl-cholesterol|Non-HDL Cholesterol",
+      "ldl-hdl-ratio|LDL/HDL Ratio",
+      "free-t3|Free T3",
+      "free-t4|Free T4",
       "tsh|TSH",
       "urea|Urea",
-      "total-bilirubin|Total Bilirubin",
-      "total-cholesterol|Total Cholesterol",
-      "triglycerides|Triglycerides",
       "creatinine|Creatinine",
       "uric-acid|Uric Acid",
+      "sodium|Sodium",
+      "potassium|Potassium",
+      "chloride|Chloride",
+      "blood-urea-nitrogen|Blood Urea Nitrogen",
+      "bun-creatinine-ratio|BUN/Creatinine Ratio",
+      "total-bilirubin|Total Bilirubin",
       "direct-bilirubin|Direct Bilirubin",
       "indirect-bilirubin|Indirect Bilirubin",
       "sgot-ast|SGOT (AST)",
-      "sgpt-alt|SGPT (ALT)"
+      "sgpt-alt|SGPT (ALT)",
+      "alkaline-phosphatase|Alkaline Phosphatase",
+      "ggt|GGT",
+      "total-protein|Total Protein",
+      "albumin|Albumin",
+      "globulin|Globulin",
+      "a-g-ratio|A/G Ratio",
+      "phosphorus|Phosphorus",
+      "calcium|Calcium",
+      "vitamin-b12|Vitamin B12",
+      "vitamin-d-25-oh|Vitamin D (25-OH)",
+      "colour|Colour",
+      "ph|pH",
+      "specific-gravity|Specific Gravity",
+      "protein|Protein",
+      "glucose|Glucose",
+      "ketones|Ketones",
+      "blood|Blood",
+      "serum-iron|Serum Iron",
+      "tibc|TIBC",
+      "transferrin-saturation|Transferrin Saturation",
+      "ferritin|Ferritin",
+      "crp|CRP"
     ],
     "covered": [
       "hemoglobin",
-      "rbc-count",
-      "wbc-count",
-      "platelet-count",
       "hematocrit-pcv",
+      "wbc-count",
+      "rbc-count",
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "platelet-count",
+      "mpv",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -244,31 +456,635 @@
       "absolute-monocytes",
       "absolute-eosinophils",
       "absolute-basophils",
-      "mpv",
-      "fasting-glucose",
+      "esr",
       "hba1c",
       "estimated-average-glucose",
+      "fasting-glucose",
+      "total-cholesterol",
+      "hdl-cholesterol",
+      "ldl-cholesterol",
+      "triglycerides",
+      "vldl-cholesterol",
+      "tc-hdl-ratio",
+      "non-hdl-cholesterol",
+      "ldl-hdl-ratio",
+      "free-t3",
+      "free-t4",
+      "tsh",
+      "urea",
+      "creatinine",
+      "uric-acid",
+      "sodium",
+      "potassium",
+      "chloride",
+      "blood-urea-nitrogen",
+      "bun-creatinine-ratio",
+      "total-bilirubin",
+      "direct-bilirubin",
+      "indirect-bilirubin",
+      "sgot-ast",
+      "sgpt-alt",
+      "alkaline-phosphatase",
+      "ggt",
+      "total-protein",
+      "albumin",
+      "globulin",
+      "a-g-ratio",
+      "phosphorus",
+      "calcium",
+      "vitamin-b12",
+      "vitamin-d-25-oh",
       "colour",
-      "appearance",
       "ph",
       "specific-gravity",
       "protein",
       "glucose",
       "ketones",
       "blood",
-      "leukocyte-esterase",
-      "microscopic-examination",
-      "tsh",
-      "urea",
-      "total-bilirubin",
-      "total-cholesterol",
-      "triglycerides",
-      "creatinine",
-      "uric-acid",
-      "direct-bilirubin",
-      "indirect-bilirubin",
-      "sgot-ast",
-      "sgpt-alt"
+      "serum-iron",
+      "tibc",
+      "transferrin-saturation",
+      "ferritin",
+      "crp"
+    ],
+    "parameters": [
+      {
+        "name": "Haemoglobin",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "hemoglobin",
+        "panel": null
+      },
+      {
+        "name": "Packed Cell Volume",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "hematocrit-pcv",
+        "panel": null
+      },
+      {
+        "name": "Total Leucocyte Count (TLC)",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "wbc-count",
+        "panel": null
+      },
+      {
+        "name": "RBC Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "rbc-count",
+        "panel": null
+      },
+      {
+        "name": "MCV",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mcv",
+        "panel": null
+      },
+      {
+        "name": "MCH",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mch",
+        "panel": null
+      },
+      {
+        "name": "MCHC",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mchc",
+        "panel": null
+      },
+      {
+        "name": "Platelet Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "platelet-count",
+        "panel": null
+      },
+      {
+        "name": "MPV",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mpv",
+        "panel": null
+      },
+      {
+        "name": "RDW",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "rdw",
+        "panel": null
+      },
+      {
+        "name": "Neutrophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "neutrophils",
+        "panel": null
+      },
+      {
+        "name": "Lymphocytes",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "lymphocytes",
+        "panel": null
+      },
+      {
+        "name": "Monocytes",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "monocytes",
+        "panel": null
+      },
+      {
+        "name": "Eosinophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "eosinophils",
+        "panel": null
+      },
+      {
+        "name": "Basophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "basophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute Neutrophil Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-neutrophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute Lymphocyte Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-lymphocytes",
+        "panel": null
+      },
+      {
+        "name": "Absolute Monocyte Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-monocytes",
+        "panel": null
+      },
+      {
+        "name": "Absolute Eosinophil Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-eosinophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute basophil count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-basophils",
+        "panel": null
+      },
+      {
+        "name": "ESR",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "esr",
+        "panel": null
+      },
+      {
+        "name": "RBC",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "rbc-count",
+        "panel": null
+      },
+      {
+        "name": "WBC",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "wbc-count",
+        "panel": null
+      },
+      {
+        "name": "Platelet",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Peripheral Smear",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Glycosylated Haemoglobin(HbA1c)",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "hba1c",
+        "panel": null
+      },
+      {
+        "name": "Glycosylated Haemoglobin(HbA1c) IFCC",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "hba1c",
+        "panel": null
+      },
+      {
+        "name": "Average Glucose Value For the Last 3 Months",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "estimated-average-glucose",
+        "panel": null
+      },
+      {
+        "name": "Average Glucose Value For the Last 3 Months IFCC",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "estimated-average-glucose",
+        "panel": null
+      },
+      {
+        "name": "Glucose-Fasting",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "fasting-glucose",
+        "panel": null
+      },
+      {
+        "name": "Cholesterol",
+        "group": "Heart Detailed Profile",
+        "biomarker": "total-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "HDL Cholesterol",
+        "group": "Heart Detailed Profile",
+        "biomarker": "hdl-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "LDL Cholesterol",
+        "group": "Heart Detailed Profile",
+        "biomarker": "ldl-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "Triglyceride",
+        "group": "Heart Detailed Profile",
+        "biomarker": "triglycerides",
+        "panel": null
+      },
+      {
+        "name": "VLDL Cholesterol",
+        "group": "Heart Detailed Profile",
+        "biomarker": "vldl-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "Total Cholesterol/HDL Ratio",
+        "group": "Heart Detailed Profile",
+        "biomarker": "tc-hdl-ratio",
+        "panel": null
+      },
+      {
+        "name": "Non-HDL Cholestero",
+        "group": "Heart Detailed Profile",
+        "biomarker": "non-hdl-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "HDL/LDL",
+        "group": "Heart Detailed Profile",
+        "biomarker": "ldl-hdl-ratio",
+        "panel": null
+      },
+      {
+        "name": "Triiodothyronine (FT3)",
+        "group": "Thyroid Detailed Profile",
+        "biomarker": "free-t3",
+        "panel": null
+      },
+      {
+        "name": "Thyroxine (FT4)",
+        "group": "Thyroid Detailed Profile",
+        "biomarker": "free-t4",
+        "panel": null
+      },
+      {
+        "name": "Thyroid Stimulating Hormone",
+        "group": "Thyroid Detailed Profile",
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Urea",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "urea",
+        "panel": null
+      },
+      {
+        "name": "Creatinine",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "creatinine",
+        "panel": null
+      },
+      {
+        "name": "eGFR by MDRD",
+        "group": "Kidney Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "eGFR by CKD EPI 2021",
+        "group": "Kidney Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Uric acid",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "uric-acid",
+        "panel": null
+      },
+      {
+        "name": "Sodium",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "sodium",
+        "panel": null
+      },
+      {
+        "name": "Potassium",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "potassium",
+        "panel": null
+      },
+      {
+        "name": "Chloride",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "chloride",
+        "panel": null
+      },
+      {
+        "name": "BUN",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "blood-urea-nitrogen",
+        "panel": null
+      },
+      {
+        "name": "BUN/Creatinine ratio",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "bun-creatinine-ratio",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin - Total",
+        "group": "Liver Detailed Profile",
+        "biomarker": "total-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin - (Direct)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "direct-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin (Indirect)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "indirect-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "SGOT- Aspartate Transaminase (AST)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "sgot-ast",
+        "panel": null
+      },
+      {
+        "name": "SGPT- Alanine Transaminase (ALT)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "sgpt-alt",
+        "panel": null
+      },
+      {
+        "name": "AST/ALT",
+        "group": "Liver Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Alkaline Phosphatase",
+        "group": "Liver Detailed Profile",
+        "biomarker": "alkaline-phosphatase",
+        "panel": null
+      },
+      {
+        "name": "GGTP (Gamma GT)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "ggt",
+        "panel": null
+      },
+      {
+        "name": "Serum/li>",
+        "group": "Liver Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Total Protein",
+        "group": "Liver Detailed Profile",
+        "biomarker": "total-protein",
+        "panel": null
+      },
+      {
+        "name": "Albumin",
+        "group": "Liver Detailed Profile",
+        "biomarker": "albumin",
+        "panel": null
+      },
+      {
+        "name": "Globulin",
+        "group": "Liver Detailed Profile",
+        "biomarker": "globulin",
+        "panel": null
+      },
+      {
+        "name": "A/G Ratio",
+        "group": "Liver Detailed Profile",
+        "biomarker": "a-g-ratio",
+        "panel": null
+      },
+      {
+        "name": "Phosphorus(inorg)",
+        "group": "Bone Health",
+        "biomarker": "phosphorus",
+        "panel": null
+      },
+      {
+        "name": "Calcium Total",
+        "group": "Bone Health",
+        "biomarker": "calcium",
+        "panel": null
+      },
+      {
+        "name": "Vitamin B12",
+        "group": "Vitamins",
+        "biomarker": "vitamin-b12",
+        "panel": null
+      },
+      {
+        "name": "25 Hydroxy Vitamin D",
+        "group": "Vitamins",
+        "biomarker": "vitamin-d-25-oh",
+        "panel": null
+      },
+      {
+        "name": "Color",
+        "group": "Complete Urine Analysis",
+        "biomarker": "colour",
+        "panel": null
+      },
+      {
+        "name": "PH",
+        "group": "Complete Urine Analysis",
+        "biomarker": "ph",
+        "panel": null
+      },
+      {
+        "name": "Specific Gravity",
+        "group": "Complete Urine Analysis",
+        "biomarker": "specific-gravity",
+        "panel": null
+      },
+      {
+        "name": "Protein",
+        "group": "Complete Urine Analysis",
+        "biomarker": "protein",
+        "panel": null
+      },
+      {
+        "name": "Glucose",
+        "group": "Complete Urine Analysis",
+        "biomarker": "glucose",
+        "panel": null
+      },
+      {
+        "name": "Ketones",
+        "group": "Complete Urine Analysis",
+        "biomarker": "ketones",
+        "panel": null
+      },
+      {
+        "name": "Blood",
+        "group": "Complete Urine Analysis",
+        "biomarker": "blood",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Urobilinogen",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "RBC",
+        "group": "Complete Urine Analysis",
+        "biomarker": "rbc-count",
+        "panel": null
+      },
+      {
+        "name": "WBC",
+        "group": "Complete Urine Analysis",
+        "biomarker": "wbc-count",
+        "panel": null
+      },
+      {
+        "name": "Sq Epithelial cells",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Cast",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Crystals",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Bacteria",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Nitrite",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Urine Albumin / Microalbuminuria",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Urine Creatinine",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Urine Albumin / Creatinine Ratio",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Iron",
+        "group": "Iron Studies",
+        "biomarker": "serum-iron",
+        "panel": null
+      },
+      {
+        "name": "UIBC",
+        "group": "Iron Studies",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Total Iron Binding Capacity",
+        "group": "Iron Studies",
+        "biomarker": "tibc",
+        "panel": null
+      },
+      {
+        "name": "Transferrin Saturation",
+        "group": "Iron Studies",
+        "biomarker": "transferrin-saturation",
+        "panel": null
+      },
+      {
+        "name": "Ferritin",
+        "group": "Iron Studies",
+        "biomarker": "ferritin",
+        "panel": null
+      },
+      {
+        "name": "C-Reactive Protein (CRP)",
+        "group": "Hepatitis/ Infection",
+        "biomarker": "crp",
+        "panel": null
+      }
+    ],
+    "unmapped_params": [
+      "Platelet",
+      "Peripheral Smear",
+      "eGFR by MDRD",
+      "eGFR by CKD EPI 2021",
+      "AST/ALT",
+      "Serum/li>",
+      "Bilirubin",
+      "Urobilinogen",
+      "Sq Epithelial cells",
+      "Cast",
+      "Crystals",
+      "Bacteria",
+      "Nitrite",
+      "Urine Albumin / Microalbuminuria",
+      "Urine Creatinine",
+      "Urine Albumin / Creatinine Ratio",
+      "UIBC"
     ],
     "consult_included": false,
     "smart_report": false,
@@ -281,9 +1097,9 @@
     "provider": "redcliffe",
     "name": "Smart Full Body Checkup",
     "claimed_params": 89,
+    "extracted_params": 9,
     "panels": [
       "urine",
-      "thyroid",
       "lft",
       "lipid",
       "kft",
@@ -291,7 +1107,11 @@
       "inflammation",
       "cbc"
     ],
-    "biomarkers": [],
+    "biomarkers": [
+      "total-t3|Total T3",
+      "total-t4|Total T4",
+      "tsh|TSH"
+    ],
     "covered": [
       "colour",
       "appearance",
@@ -303,9 +1123,6 @@
       "blood",
       "leukocyte-esterase",
       "microscopic-examination",
-      "total-t3",
-      "total-t4",
-      "tsh",
       "total-bilirubin",
       "direct-bilirubin",
       "indirect-bilirubin",
@@ -348,8 +1165,7 @@
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -360,22 +1176,82 @@
       "absolute-monocytes",
       "absolute-eosinophils",
       "absolute-basophils",
-      "mpv"
+      "mpv",
+      "total-t3",
+      "total-t4",
+      "tsh"
     ],
+    "parameters": [
+      {
+        "name": "Urine Routine & Microscopic Examination Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "urine"
+      },
+      {
+        "name": "Thyroid Profile Total",
+        "group": null,
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Liver Function Test (LFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "lft"
+      },
+      {
+        "name": "Lipid Profile Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "lipid"
+      },
+      {
+        "name": "Kidney Function Test (KFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "kft"
+      },
+      {
+        "name": "HBA1C Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "Blood Sugar Fasting",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "ESR Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "inflammation"
+      },
+      {
+        "name": "Complete Blood Count (CBC) Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "cbc"
+      }
+    ],
+    "unmapped_params": [],
     "consult_included": false,
     "smart_report": false,
     "fasting_required": true,
     "gender": "any",
-    "tat_hours": 11
+    "tat_hours": 13
   },
   {
     "id": "redcliffe-PL124I",
     "provider": "redcliffe",
     "name": "Fit India Full Body Checkup with Free HbA1c",
     "claimed_params": 90,
+    "extracted_params": 10,
     "panels": [
       "urine",
-      "thyroid",
       "lft",
       "lipid",
       "kft",
@@ -384,6 +1260,9 @@
       "cbc"
     ],
     "biomarkers": [
+      "total-t3|Total T3",
+      "total-t4|Total T4",
+      "tsh|TSH",
       "serum-iron|Serum Iron"
     ],
     "covered": [
@@ -397,9 +1276,6 @@
       "blood",
       "leukocyte-esterase",
       "microscopic-examination",
-      "total-t3",
-      "total-t4",
-      "tsh",
       "total-bilirubin",
       "direct-bilirubin",
       "indirect-bilirubin",
@@ -442,8 +1318,7 @@
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -455,25 +1330,111 @@
       "absolute-eosinophils",
       "absolute-basophils",
       "mpv",
+      "total-t3",
+      "total-t4",
+      "tsh",
       "serum-iron"
     ],
+    "parameters": [
+      {
+        "name": "Urine Routine & Microscopic Examination Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "urine"
+      },
+      {
+        "name": "Thyroid Profile Total",
+        "group": null,
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Liver Function Test (LFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "lft"
+      },
+      {
+        "name": "Lipid Profile Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "lipid"
+      },
+      {
+        "name": "Kidney Function Test (KFT)",
+        "group": null,
+        "biomarker": null,
+        "panel": "kft"
+      },
+      {
+        "name": "Iron Test",
+        "group": null,
+        "biomarker": "serum-iron",
+        "panel": null
+      },
+      {
+        "name": "HBA1C Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "Blood Sugar Fasting",
+        "group": null,
+        "biomarker": null,
+        "panel": "diabetes"
+      },
+      {
+        "name": "ESR Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "inflammation"
+      },
+      {
+        "name": "Complete Blood Count (CBC) Test",
+        "group": null,
+        "biomarker": null,
+        "panel": "cbc"
+      }
+    ],
+    "unmapped_params": [],
     "consult_included": false,
     "smart_report": false,
     "fasting_required": true,
     "gender": "any",
-    "tat_hours": 11
+    "tat_hours": 14
   },
   {
     "id": "max-lab-46399",
     "provider": "max-lab",
     "name": "Wellwise Essential Profile",
     "claimed_params": 50,
-    "panels": [
-      "cbc",
-      "diabetes",
-      "urine"
-    ],
+    "extracted_params": 54,
+    "panels": [],
     "biomarkers": [
+      "hemoglobin|Hemoglobin",
+      "hematocrit-pcv|Hematocrit (PCV)",
+      "wbc-count|WBC Count",
+      "rbc-count|RBC Count",
+      "mcv|MCV",
+      "mch|MCH",
+      "mchc|MCHC",
+      "platelet-count|Platelet Count",
+      "mpv|MPV",
+      "rdw|RDW",
+      "neutrophils|Neutrophils %",
+      "lymphocytes|Lymphocytes %",
+      "monocytes|Monocytes %",
+      "eosinophils|Eosinophils %",
+      "basophils|Basophils %",
+      "absolute-neutrophils|Absolute Neutrophils",
+      "absolute-lymphocytes|Absolute Lymphocytes",
+      "absolute-monocytes|Absolute Monocytes",
+      "absolute-eosinophils|Absolute Eosinophils",
+      "absolute-basophils|Absolute Basophils",
+      "hba1c|HbA1c",
+      "estimated-average-glucose|Estimated Average Glucose",
+      "fasting-glucose|Fasting Glucose",
       "total-cholesterol|Total Cholesterol",
       "triglycerides|Triglycerides",
       "tsh|TSH",
@@ -484,19 +1445,26 @@
       "direct-bilirubin|Direct Bilirubin",
       "indirect-bilirubin|Indirect Bilirubin",
       "sgot-ast|SGOT (AST)",
-      "sgpt-alt|SGPT (ALT)"
+      "sgpt-alt|SGPT (ALT)",
+      "colour|Colour",
+      "ph|pH",
+      "specific-gravity|Specific Gravity",
+      "protein|Protein",
+      "glucose|Glucose",
+      "ketones|Ketones",
+      "blood|Blood"
     ],
     "covered": [
       "hemoglobin",
-      "rbc-count",
-      "wbc-count",
-      "platelet-count",
       "hematocrit-pcv",
+      "wbc-count",
+      "rbc-count",
       "mcv",
       "mch",
       "mchc",
-      "rdw-cv",
-      "rdw-sd",
+      "platelet-count",
+      "mpv",
+      "rdw",
       "neutrophils",
       "lymphocytes",
       "monocytes",
@@ -507,20 +1475,9 @@
       "absolute-monocytes",
       "absolute-eosinophils",
       "absolute-basophils",
-      "mpv",
-      "fasting-glucose",
       "hba1c",
       "estimated-average-glucose",
-      "colour",
-      "appearance",
-      "ph",
-      "specific-gravity",
-      "protein",
-      "glucose",
-      "ketones",
-      "blood",
-      "leukocyte-esterase",
-      "microscopic-examination",
+      "fasting-glucose",
       "total-cholesterol",
       "triglycerides",
       "tsh",
@@ -531,7 +1488,351 @@
       "direct-bilirubin",
       "indirect-bilirubin",
       "sgot-ast",
-      "sgpt-alt"
+      "sgpt-alt",
+      "colour",
+      "ph",
+      "specific-gravity",
+      "protein",
+      "glucose",
+      "ketones",
+      "blood"
+    ],
+    "parameters": [
+      {
+        "name": "Haemoglobin",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "hemoglobin",
+        "panel": null
+      },
+      {
+        "name": "Packed Cell Volume (PCV)",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "hematocrit-pcv",
+        "panel": null
+      },
+      {
+        "name": "TLC",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "wbc-count",
+        "panel": null
+      },
+      {
+        "name": "RBC Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "rbc-count",
+        "panel": null
+      },
+      {
+        "name": "MCV",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mcv",
+        "panel": null
+      },
+      {
+        "name": "MCH",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mch",
+        "panel": null
+      },
+      {
+        "name": "MCHC",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mchc",
+        "panel": null
+      },
+      {
+        "name": "Platelet Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "platelet-count",
+        "panel": null
+      },
+      {
+        "name": "MPV",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "mpv",
+        "panel": null
+      },
+      {
+        "name": "RDW",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "rdw",
+        "panel": null
+      },
+      {
+        "name": "Neutrophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "neutrophils",
+        "panel": null
+      },
+      {
+        "name": "Lymphocytes",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "lymphocytes",
+        "panel": null
+      },
+      {
+        "name": "Monocytes",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "monocytes",
+        "panel": null
+      },
+      {
+        "name": "Eosinophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "eosinophils",
+        "panel": null
+      },
+      {
+        "name": "Basophils",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "basophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute Neutrophil Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-neutrophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute Lymphocyte Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-lymphocytes",
+        "panel": null
+      },
+      {
+        "name": "Absolute Monocyte Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-monocytes",
+        "panel": null
+      },
+      {
+        "name": "Absolute Eosinophil Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-eosinophils",
+        "panel": null
+      },
+      {
+        "name": "Absolute Basophil Count",
+        "group": "Complete Blood Count(CBC)",
+        "biomarker": "absolute-basophils",
+        "panel": null
+      },
+      {
+        "name": "Glycosylated Haemoglobin (HbA1c)",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "hba1c",
+        "panel": null
+      },
+      {
+        "name": "Glycosylated Haemoglobin (HbA1c) IFCC",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "hba1c",
+        "panel": null
+      },
+      {
+        "name": "Average Glucose Value For the Last 3 Months",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "estimated-average-glucose",
+        "panel": null
+      },
+      {
+        "name": "Average Glucose Value For the Last 3 Months IFCC",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "estimated-average-glucose",
+        "panel": null
+      },
+      {
+        "name": "Glucose - Fasting",
+        "group": "Detailed Diabetes Tests",
+        "biomarker": "fasting-glucose",
+        "panel": null
+      },
+      {
+        "name": "Cholesterol",
+        "group": "Heart Detailed Profile",
+        "biomarker": "total-cholesterol",
+        "panel": null
+      },
+      {
+        "name": "Triglyceride",
+        "group": "Heart Detailed Profile",
+        "biomarker": "triglycerides",
+        "panel": null
+      },
+      {
+        "name": "TSH (Thyroid Stimulating Hormone)",
+        "group": "Thyroid Detailed Profile",
+        "biomarker": "tsh",
+        "panel": null
+      },
+      {
+        "name": "Urea",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "urea",
+        "panel": null
+      },
+      {
+        "name": "Creatinine",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "creatinine",
+        "panel": null
+      },
+      {
+        "name": "eGFR by MDRD",
+        "group": "Kidney Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "eGFR by CKD EPI 2021",
+        "group": "Kidney Detailed Profile",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Uric Acid",
+        "group": "Kidney Detailed Profile",
+        "biomarker": "uric-acid",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin - Total",
+        "group": "Liver Detailed Profile",
+        "biomarker": "total-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin - Direct",
+        "group": "Liver Detailed Profile",
+        "biomarker": "direct-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin - Indirect",
+        "group": "Liver Detailed Profile",
+        "biomarker": "indirect-bilirubin",
+        "panel": null
+      },
+      {
+        "name": "SGOT (AST)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "sgot-ast",
+        "panel": null
+      },
+      {
+        "name": "SGPT (ALT)",
+        "group": "Liver Detailed Profile",
+        "biomarker": "sgpt-alt",
+        "panel": null
+      },
+      {
+        "name": "Color",
+        "group": "Complete Urine Analysis",
+        "biomarker": "colour",
+        "panel": null
+      },
+      {
+        "name": "pH",
+        "group": "Complete Urine Analysis",
+        "biomarker": "ph",
+        "panel": null
+      },
+      {
+        "name": "Specific Gravity",
+        "group": "Complete Urine Analysis",
+        "biomarker": "specific-gravity",
+        "panel": null
+      },
+      {
+        "name": "Protein",
+        "group": "Complete Urine Analysis",
+        "biomarker": "protein",
+        "panel": null
+      },
+      {
+        "name": "Glucose",
+        "group": "Complete Urine Analysis",
+        "biomarker": "glucose",
+        "panel": null
+      },
+      {
+        "name": "Ketones",
+        "group": "Complete Urine Analysis",
+        "biomarker": "ketones",
+        "panel": null
+      },
+      {
+        "name": "Blood",
+        "group": "Complete Urine Analysis",
+        "biomarker": "blood",
+        "panel": null
+      },
+      {
+        "name": "Bilirubin",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Urobilinogen",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "RBC",
+        "group": "Complete Urine Analysis",
+        "biomarker": "rbc-count",
+        "panel": null
+      },
+      {
+        "name": "WBC",
+        "group": "Complete Urine Analysis",
+        "biomarker": "wbc-count",
+        "panel": null
+      },
+      {
+        "name": "Squamous Epithelial Cells",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Casts",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Crystals",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Bacteria",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      },
+      {
+        "name": "Nitrite",
+        "group": "Complete Urine Analysis",
+        "biomarker": null,
+        "panel": null
+      }
+    ],
+    "unmapped_params": [
+      "eGFR by MDRD",
+      "eGFR by CKD EPI 2021",
+      "Bilirubin",
+      "Urobilinogen",
+      "Squamous Epithelial Cells",
+      "Casts",
+      "Crystals",
+      "Bacteria",
+      "Nitrite"
     ],
     "consult_included": false,
     "smart_report": false,
